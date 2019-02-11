@@ -28,7 +28,7 @@ public class Query {
             + "nama_nas,"
             + "alamat_nas,"
             + "hp_nas, "
-            + "status)"
+            + "saldo_nas)"
             + "VALUES(?,?,?,?,?)";
     
     //UPDATE
@@ -38,7 +38,7 @@ public class Query {
             + "nama_nas = ?,"
             + "alamat_nas = ?,"
             + "hp_nas = ?,"
-            + "status = ?"
+            + "saldo_nas = ?"
             + "WHERE id = ?";
     
     
@@ -52,8 +52,16 @@ public class Query {
     private String nama_nas;
     private String alamat_nas;
     private String hp_nas;
-    private String status_nas;
+    private String saldo_nas;
     //-------
+
+    public String getSaldo_nas() {
+        return saldo_nas;
+    }
+
+    public void setSaldo_nas(String saldo_nas) {
+        this.saldo_nas = saldo_nas;
+    }
 
     public String getHp_nas() {
         return hp_nas;
@@ -96,18 +104,6 @@ public class Query {
         this.alamat_nas = alamat_nas;
     }
 
-
-    public String getStatus_nas() {
-        return status_nas;
-    }
-
-    public void setStatus_nas(String status_nas) {
-        this.status_nas = status_nas;
-    }
-    
-    
-    
-    
     
     
 }

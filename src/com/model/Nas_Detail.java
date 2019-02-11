@@ -47,10 +47,9 @@ public class Nas_Detail extends javax.swing.JDialog {
         det_kode = new javax.swing.JLabel();
         det_nama = new javax.swing.JLabel();
         det_alamat = new javax.swing.JLabel();
-        det_status = new javax.swing.JLabel();
+        xtasdsd = new javax.swing.JLabel();
         det_hp = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        btn_simpan_nasabah1 = new java.awt.Button();
         det_saldo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -104,10 +103,10 @@ public class Nas_Detail extends javax.swing.JDialog {
         jLabel5.setText("Hp");
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel6.setText("Status");
+        jLabel6.setText("Saldo");
 
         btn_simpan_nasabah.setBackground(new java.awt.Color(0, 112, 192));
-        btn_simpan_nasabah.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        btn_simpan_nasabah.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_simpan_nasabah.setForeground(new java.awt.Color(255, 255, 255));
         btn_simpan_nasabah.setLabel("Keluar");
         btn_simpan_nasabah.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +116,7 @@ public class Nas_Detail extends javax.swing.JDialog {
         });
 
         txt_id.setBackground(new java.awt.Color(255, 255, 255));
-        txt_id.setForeground(new java.awt.Color(255, 0, 0));
+        txt_id.setForeground(new java.awt.Color(255, 255, 255));
         txt_id.setText("jLabel7");
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -144,17 +143,21 @@ public class Nas_Detail extends javax.swing.JDialog {
         det_alamat.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         det_alamat.setText("Kode");
 
-        det_status.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        det_status.setText("Kode");
+        xtasdsd.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        xtasdsd.setText("Rp.");
 
         det_hp.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         det_hp.setText("Kode");
 
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel13.setText("Saldo");
-
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel14.setText(":");
+        btn_simpan_nasabah1.setBackground(new java.awt.Color(0, 153, 0));
+        btn_simpan_nasabah1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_simpan_nasabah1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_simpan_nasabah1.setLabel("Lihat tabungan");
+        btn_simpan_nasabah1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_simpan_nasabah1ActionPerformed(evt);
+            }
+        });
 
         det_saldo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         det_saldo.setText("Kode");
@@ -169,78 +172,76 @@ public class Nas_Detail extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_simpan_nasabah, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel13))
+                                    .addComponent(jLabel5))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(det_kode)
+                                    .addComponent(det_nama)
+                                    .addComponent(det_alamat)
+                                    .addComponent(det_hp)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(xtasdsd)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(det_saldo))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(det_kode)
-                                            .addComponent(det_nama)
-                                            .addComponent(det_alamat)
-                                            .addComponent(det_hp)
-                                            .addComponent(det_status)))))))
+                                        .addComponent(det_saldo))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_simpan_nasabah, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                                .addComponent(btn_simpan_nasabah1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(txt_id)))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel8)
-                    .addComponent(det_kode))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel10)
-                    .addComponent(det_nama))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel7)
-                    .addComponent(det_alamat))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel11)
-                    .addComponent(det_hp))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel12)
-                    .addComponent(det_status))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14)
-                    .addComponent(det_saldo))
-                .addGap(55, 55, 55)
-                .addComponent(txt_id)
-                .addGap(25, 25, 25)
-                .addComponent(btn_simpan_nasabah, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel8)
+                            .addComponent(det_kode))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel10)
+                            .addComponent(det_nama))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel7)
+                            .addComponent(det_alamat))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel11)
+                            .addComponent(det_hp))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel12)
+                            .addComponent(xtasdsd)
+                            .addComponent(det_saldo))
+                        .addGap(93, 93, 93)
+                        .addComponent(txt_id)
+                        .addGap(25, 25, 25)
+                        .addComponent(btn_simpan_nasabah, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_simpan_nasabah1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -268,6 +269,10 @@ public class Nas_Detail extends javax.swing.JDialog {
     private void btn_simpan_nasabahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpan_nasabahActionPerformed
        this.dispose();
     }//GEN-LAST:event_btn_simpan_nasabahActionPerformed
+
+    private void btn_simpan_nasabah1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpan_nasabah1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_simpan_nasabah1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -314,18 +319,16 @@ public class Nas_Detail extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button btn_simpan_nasabah;
+    private java.awt.Button btn_simpan_nasabah1;
     public static javax.swing.JLabel det_alamat;
     public static javax.swing.JLabel det_hp;
     public static javax.swing.JLabel det_kode;
     public static javax.swing.JLabel det_nama;
-    private javax.swing.JLabel det_saldo;
-    public static javax.swing.JLabel det_status;
+    public static javax.swing.JLabel det_saldo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -337,5 +340,6 @@ public class Nas_Detail extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public static javax.swing.JLabel txt_id;
+    public static javax.swing.JLabel xtasdsd;
     // End of variables declaration//GEN-END:variables
 }

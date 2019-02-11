@@ -37,7 +37,7 @@ public class Fungsi {
             ps.setString(2, s.getNama_nas());
             ps.setString(3, s.getAlamat_nas());
             ps.setString(4, s.getHp_nas());
-            ps.setString(5, s.getStatus_nas());
+            ps.setString(5, s.getSaldo_nas());
             
             ps.executeUpdate();
             return true;
@@ -60,7 +60,7 @@ public class Fungsi {
             ps.setString(2, s.getNama_nas());
             ps.setString(3, s.getAlamat_nas());
             ps.setString(4, s.getHp_nas());
-            ps.setString(5, s.getStatus_nas());
+            ps.setString(5, s.getSaldo_nas());
             ps.setString(6, s.getId_nas());
             ps.executeUpdate();
             return true;
@@ -95,7 +95,7 @@ public class Fungsi {
                     + "nama_nas LIKE'" + cari + "%' OR "
                     + "alamat_nas LIKE'" + cari + "%' OR "
                     + "hp_nas LIKE'" + cari + "%' OR "
-                    + "status LIKE'" + cari + "%'"
+                    + "saldo_nas LIKE'" + cari + "%'"
                     + ")";
         }
         String Data[] = new String[4];
@@ -109,7 +109,7 @@ public class Fungsi {
                 Data[0] = rs.getString("id_nas");
                 Data[1] = rs.getString("kode_nas");
                 Data[2] = rs.getString("nama_nas");
-                Data[3] = rs.getString("status");
+                Data[3] = rs.getString("saldo_nas");
                 
                 model.addRow(Data);
 

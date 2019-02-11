@@ -21,7 +21,7 @@ public class Nas_tambah extends javax.swing.JDialog {
     public Nas_tambah(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        txt_status_aktif.setSelected(true);
+        
     }
 
     /**
@@ -46,12 +46,9 @@ public class Nas_tambah extends javax.swing.JDialog {
         txt_alamat = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txt_hp = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         btn_simpan_nasabah = new java.awt.Button();
         btn_hapus = new java.awt.Button();
         txt_id = new javax.swing.JLabel();
-        txt_status_aktif = new javax.swing.JCheckBox();
-        txt_status_non_aktif = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -131,9 +128,6 @@ public class Nas_tambah extends javax.swing.JDialog {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel6.setText("Status");
-
         btn_simpan_nasabah.setBackground(new java.awt.Color(0, 112, 192));
         btn_simpan_nasabah.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btn_simpan_nasabah.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,24 +146,6 @@ public class Nas_tambah extends javax.swing.JDialog {
         txt_id.setBackground(new java.awt.Color(255, 255, 255));
         txt_id.setForeground(new java.awt.Color(255, 255, 255));
         txt_id.setText("jLabel7");
-
-        buttonGroup1.add(txt_status_aktif);
-        txt_status_aktif.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        txt_status_aktif.setText("Aktif");
-        txt_status_aktif.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_status_aktifActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(txt_status_non_aktif);
-        txt_status_non_aktif.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        txt_status_non_aktif.setText("Non-Aktif");
-        txt_status_non_aktif.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_status_non_aktifActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,14 +170,8 @@ public class Nas_tambah extends javax.swing.JDialog {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_status_non_aktif, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_status_aktif))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jLabel5))
+                        .addGap(0, 173, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -224,14 +194,7 @@ public class Nas_tambah extends javax.swing.JDialog {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_hp, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txt_status_aktif)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_status_non_aktif)))
-                .addGap(24, 24, 24)
+                .addGap(76, 76, 76)
                 .addComponent(txt_id)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,16 +222,8 @@ public class Nas_tambah extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_jLabel9MouseClicked
 
-    private void txt_status_aktifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_status_aktifActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_status_aktifActionPerformed
-
-    private void txt_status_non_aktifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_status_non_aktifActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_status_non_aktifActionPerformed
-
     private void btn_simpan_nasabahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpan_nasabahActionPerformed
-        String status = null;
+        
 
         if (this.txt_kode.getText().length() == 0
                 || this.txt_nama.getText().length() == 0
@@ -279,19 +234,15 @@ public class Nas_tambah extends javax.swing.JDialog {
                     "Semua harus diisi", "INFO", JOptionPane.WARNING_MESSAGE);
 
         } else {
-            if (txt_status_aktif.isSelected()) {
-                status = "Aktif";
-            } else if (txt_status_non_aktif.isSelected()) {
-                status = "Non-Aktif";
-            }
+           
             Query s = new Query();
             s.setId_nas(this.txt_id.getText());
             s.setKode_nas(this.txt_kode.getText());
             s.setNama_nas(this.txt_nama.getText());
             s.setAlamat_nas(this.txt_alamat.getText());
             s.setHp_nas(this.txt_hp.getText());
-            s.setStatus_nas(status);
-
+            s.setSaldo_nas("0");
+            
             if (Fungsi.createNasabah(s)) {
 
 //                setClean();
@@ -376,7 +327,6 @@ public class Nas_tambah extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -385,7 +335,5 @@ public class Nas_tambah extends javax.swing.JDialog {
     private javax.swing.JLabel txt_id;
     private javax.swing.JTextField txt_kode;
     private javax.swing.JTextField txt_nama;
-    private javax.swing.JCheckBox txt_status_aktif;
-    private javax.swing.JCheckBox txt_status_non_aktif;
     // End of variables declaration//GEN-END:variables
 }
