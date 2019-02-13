@@ -54,6 +54,7 @@ public class Nas_tambah extends javax.swing.JDialog {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 2));
 
         jPanel2.setBackground(new java.awt.Color(0, 112, 192));
 

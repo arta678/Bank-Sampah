@@ -49,6 +49,30 @@ public class Fungsi {
 
     }
     
+    public static boolean createSampah(Query s) {
+        String sql = Query.REGISTER_SAMPAH;
+        try {
+            ps = konek.prepareStatement(sql);
+            ps.setString(1, s.getKode_samp());
+            ps.setString(2, s.getKategori());
+            ps.setString(3, s.getNama_samp());
+            ps.setString(4, s.getHarga_1());
+            ps.setString(5, s.getHarga_2());
+            ps.setString(6, s.getHarga_pgul());
+            ps.setString(7, s.getStok());
+            ps.setString(8, s.getCatatan_samp());
+           
+            
+            ps.executeUpdate();
+            return true;
+
+        } catch (SQLException ex) {
+            return false;
+//            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
     //UPDATE
     //UPDATE
     public static boolean updateNasbah(Query s) {
@@ -110,6 +134,51 @@ public class Fungsi {
                 Data[1] = rs.getString("kode_nas");
                 Data[2] = rs.getString("nama_nas");
                 Data[3] = rs.getString("saldo_nas");
+                
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public static void Tabel_sampah(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_sampah.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+            sql = Query.DAFTAR_SAMPAH;
+
+        } else {
+            sql = "SELECT * FROM sampah WHERE ("
+                    + "id_samp LIKE'" + cari + "%' OR "
+                    + "kode_samp LIKE'" + cari + "%' OR "
+                    + "kategori LIKE'" + cari + "%' OR "
+                    + "nama_samp LIKE'" + cari + "%' OR "
+                    + "harga_1 LIKE'" + cari + "%' OR "
+                    + "harga_2 LIKE'" + cari + "%' OR "
+                    + "harga_pgul LIKE'" + cari + "%' OR "
+                    + "stok LIKE'" + cari + "%' OR "
+                    + "catatan_samp LIKE'" + cari + "%'"
+                    + ")";
+        }
+        String Data[] = new String[4];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("id_samp");
+                Data[1] = rs.getString("kode_samp");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("stok");
                 
                 model.addRow(Data);
 

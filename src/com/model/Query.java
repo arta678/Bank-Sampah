@@ -31,6 +31,19 @@ public class Query {
             + "saldo_nas)"
             + "VALUES(?,?,?,?,?)";
     
+    public static String REGISTER_SAMPAH = "INSERT INTO sampah("
+            + "kode_samp,"
+             + "kategori,"
+            + "nama_samp,"
+            + "harga_1,"
+            + "harga_2, "
+            + "harga_pgul, "
+            + "stok, "
+            + "catatan_samp)"
+            + "VALUES(?,?,?,?,?,?,?)";
+    
+    
+    
     //UPDATE
     //UPDATE
      public static String UPDATE_NASABAH = "UPDATE nasabah SET "
@@ -54,6 +67,96 @@ public class Query {
     private String hp_nas;
     private String saldo_nas;
     //-------
+    //SAMPAH 
+    //-------
+    private String id_samp;
+    private String kode_samp;
+    private String kategori;
+    private String nama_samp;
+    private String harga_1;
+    private String harga_2;
+    private String harga_pgul;
+    private String stok;
+    private String catatan_samp;
+    //--------
+
+    public String getKode_samp() {
+        return kode_samp;
+    }
+
+    public void setKode_samp(String kode_samp) {
+        this.kode_samp = kode_samp;
+    }
+
+    
+    public String getStok() {
+        return stok;
+    }
+
+    public void setStok(String stok) {
+        this.stok = stok;
+    }
+    
+    
+
+    public String getId_samp() {
+        return id_samp;
+    }
+
+    public void setId_samp(String id_samp) {
+        this.id_samp = id_samp;
+    }
+
+    public String getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
+    }
+
+    public String getNama_samp() {
+        return nama_samp;
+    }
+
+    public void setNama_samp(String nama_samp) {
+        this.nama_samp = nama_samp;
+    }
+
+    public String getHarga_1() {
+        return harga_1;
+    }
+
+    public void setHarga_1(String harga_1) {
+        this.harga_1 = harga_1;
+    }
+
+    public String getHarga_2() {
+        return harga_2;
+    }
+
+    public void setHarga_2(String harga_2) {
+        this.harga_2 = harga_2;
+    }
+
+    public String getHarga_pgul() {
+        return harga_pgul;
+    }
+
+    public void setHarga_pgul(String harga_pgul) {
+        this.harga_pgul = harga_pgul;
+    }
+
+    public String getCatatan_samp() {
+        return catatan_samp;
+    }
+
+    public void setCatatan_samp(String catatan_samp) {
+        this.catatan_samp = catatan_samp;
+    }
+    
+    
+    
 
     public String getSaldo_nas() {
         return saldo_nas;

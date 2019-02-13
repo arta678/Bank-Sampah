@@ -56,6 +56,7 @@ public class Nas_Detail extends javax.swing.JDialog {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 2));
 
         jPanel2.setBackground(new java.awt.Color(0, 112, 192));
 
@@ -108,7 +109,7 @@ public class Nas_Detail extends javax.swing.JDialog {
         btn_simpan_nasabah.setBackground(new java.awt.Color(0, 112, 192));
         btn_simpan_nasabah.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_simpan_nasabah.setForeground(new java.awt.Color(255, 255, 255));
-        btn_simpan_nasabah.setLabel("Keluar");
+        btn_simpan_nasabah.setLabel("Tutup");
         btn_simpan_nasabah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_simpan_nasabahActionPerformed(evt);
