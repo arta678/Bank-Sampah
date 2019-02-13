@@ -11,6 +11,8 @@ import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 //import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -30,6 +32,7 @@ class Main extends javax.swing.JFrame {
     public Connection konek = con.getKonek();
     int[] tab = new int[10];
     Suara suara;
+    Date date = new Date();
 
     public Main() {
         initComponents();
@@ -39,8 +42,9 @@ class Main extends javax.swing.JFrame {
         resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5, btn_7, btn_6});
         Fungsi.Tabel_nasabah("");
         Fungsi.Tabel_sampah("");
-        
-        
+        txt_button_datang.setSelected(true);
+        txt_date.setDate(date);
+
         //Disabel
 //        tabung_nama_nasabah.setEnabled(false);
 //        tabung_jenis_sampah.setEnabled(false);
@@ -135,16 +139,6 @@ class Main extends javax.swing.JFrame {
         jPanel22 = new javax.swing.JPanel();
         rSButtonHover7 = new rojerusan.RSButtonHover();
         jPanel25 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
-        tabung_id_nasabah = new javax.swing.JTextField();
-        jLabel33 = new javax.swing.JLabel();
-        tabung_id_sampah = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
-        tabung_banyak_sampah = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        rSButtonHover8 = new rojerusan.RSButtonHover();
         jPanel26 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         tabung_nama_nasabah = new javax.swing.JTextField();
@@ -154,6 +148,22 @@ class Main extends javax.swing.JFrame {
         tabung_total = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         tabung_harga_sampah = new javax.swing.JTextField();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        tabung_id_nasabah = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        tabung_id_sampah = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        txt_button_datang = new javax.swing.JRadioButton();
+        txt_button_jemput = new javax.swing.JRadioButton();
+        jLabel34 = new javax.swing.JLabel();
+        tabung_banyak_sampah = new javax.swing.JTextField();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        txt_date = new com.toedter.calendar.JDateChooser();
+        txt_simpan_tabungan = new rojerusan.RSButtonHover();
+        rSButtonHover8 = new rojerusan.RSButtonHover();
+        txt_id_sim = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
@@ -524,6 +534,11 @@ class Main extends javax.swing.JFrame {
         jLabel11.setText("Jumlah Transaksi");
 
         jPanel6.setBackground(new java.awt.Color(70, 70, 202));
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel6MousePressed(evt);
+            }
+        });
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Lihat Transaksi");
@@ -1299,121 +1314,54 @@ class Main extends javax.swing.JFrame {
         jPanel25.setBackground(new java.awt.Color(255, 255, 255));
         jPanel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
 
-        jLabel32.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel32.setText("ID Nasabah");
+        jPanel26.setBackground(new java.awt.Color(204, 204, 255));
 
-        tabung_id_nasabah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        tabung_id_nasabah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabung_id_nasabahActionPerformed(evt);
-            }
-        });
-        tabung_id_nasabah.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                tabung_id_nasabahKeyTyped(evt);
-            }
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tabung_id_nasabahKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                tabung_id_nasabahKeyReleased(evt);
-            }
-        });
-
-        jLabel33.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel33.setText("ID Sampah");
-
-        tabung_id_sampah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        tabung_id_sampah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabung_id_sampahActionPerformed(evt);
-            }
-        });
-
-        jLabel34.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel34.setText("Berat Sampah (Kg)");
-
-        tabung_banyak_sampah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        tabung_banyak_sampah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabung_banyak_sampahActionPerformed(evt);
-            }
-        });
-
-        jLabel35.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel35.setText("Jenis Simpanan");
-
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jRadioButton1.setText("Datang");
-
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jRadioButton2.setText("Jemput Sampah");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
-
-        rSButtonHover8.setBackground(new java.awt.Color(115, 125, 206));
-        rSButtonHover8.setText("SIMPAN");
-        rSButtonHover8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rSButtonHover8MouseClicked(evt);
-            }
-        });
-        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonHover8ActionPerformed(evt);
-            }
-        });
-
-        jLabel38.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel38.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(136, 135, 135));
         jLabel38.setText("Nama Nasabah");
 
         tabung_nama_nasabah.setBackground(new java.awt.Color(230, 232, 235));
-        tabung_nama_nasabah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        tabung_nama_nasabah.setForeground(new java.awt.Color(153, 153, 153));
+        tabung_nama_nasabah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        tabung_nama_nasabah.setEnabled(false);
         tabung_nama_nasabah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tabung_nama_nasabahActionPerformed(evt);
             }
         });
 
-        jLabel37.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel37.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(136, 135, 135));
         jLabel37.setText("Jenis Sampah");
 
         tabung_jenis_sampah.setBackground(new java.awt.Color(230, 232, 235));
-        tabung_jenis_sampah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        tabung_jenis_sampah.setForeground(new java.awt.Color(153, 153, 153));
+        tabung_jenis_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        tabung_jenis_sampah.setEnabled(false);
         tabung_jenis_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tabung_jenis_sampahActionPerformed(evt);
             }
         });
 
-        jLabel36.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel36.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(136, 135, 135));
         jLabel36.setText("Total");
 
         tabung_total.setBackground(new java.awt.Color(230, 232, 235));
         tabung_total.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        tabung_total.setEnabled(false);
         tabung_total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tabung_totalActionPerformed(evt);
             }
         });
 
-        jLabel39.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel39.setText("Harga");
+        jLabel39.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(136, 135, 135));
+        jLabel39.setText("Harga/Kg");
 
         tabung_harga_sampah.setBackground(new java.awt.Color(230, 232, 235));
-        tabung_harga_sampah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        tabung_harga_sampah.setForeground(new java.awt.Color(153, 153, 153));
+        tabung_harga_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        tabung_harga_sampah.setEnabled(false);
         tabung_harga_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tabung_harga_sampahActionPerformed(evt);
@@ -1430,16 +1378,16 @@ class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tabung_total, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                            .addComponent(jLabel39)
                             .addComponent(tabung_harga_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel38)
                             .addComponent(jLabel37)
                             .addComponent(tabung_nama_nasabah)
-                            .addComponent(tabung_jenis_sampah)))
+                            .addComponent(tabung_jenis_sampah)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel26Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel36)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1463,6 +1411,175 @@ class Main extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
+        jPanel27.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel32.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel32.setText("ID Nasabah");
+
+        tabung_id_nasabah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        tabung_id_nasabah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tabung_id_nasabahActionPerformed(evt);
+            }
+        });
+        tabung_id_nasabah.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tabung_id_nasabahKeyTyped(evt);
+            }
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tabung_id_nasabahKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tabung_id_nasabahKeyReleased(evt);
+            }
+        });
+
+        jLabel33.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel33.setText("ID Sampah");
+
+        tabung_id_sampah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        tabung_id_sampah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tabung_id_sampahActionPerformed(evt);
+            }
+        });
+
+        jLabel35.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel35.setText("Jenis Menabung");
+
+        buttonGroup1.add(txt_button_datang);
+        txt_button_datang.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_button_datang.setText("Datang");
+        txt_button_datang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_button_datangActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(txt_button_jemput);
+        txt_button_jemput.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        txt_button_jemput.setText("Jemput Sampah");
+        txt_button_jemput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_button_jemputActionPerformed(evt);
+            }
+        });
+
+        jLabel34.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel34.setText("Berat Sampah (Kg)");
+
+        tabung_banyak_sampah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        tabung_banyak_sampah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tabung_banyak_sampahActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_button_datang)
+                    .addComponent(txt_button_jemput)
+                    .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tabung_id_nasabah, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tabung_id_sampah, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tabung_banyak_sampah, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tabung_id_nasabah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tabung_id_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txt_button_datang, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_button_jemput, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tabung_banyak_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        jPanel28.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel40.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel40.setText("Tanggal");
+
+        txt_date.setBackground(new java.awt.Color(255, 255, 255));
+        txt_date.setDateFormatString("dd-MM-yyyy");
+        txt_date.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txt_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(217, 217, 217))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel40)
+                .addGap(3, 3, 3)
+                .addComponent(txt_date, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        txt_simpan_tabungan.setBackground(new java.awt.Color(115, 125, 206));
+        txt_simpan_tabungan.setText("SIMPAN");
+        txt_simpan_tabungan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_simpan_tabunganMouseClicked(evt);
+            }
+        });
+        txt_simpan_tabungan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_simpan_tabunganActionPerformed(evt);
+            }
+        });
+
+        rSButtonHover8.setBackground(new java.awt.Color(255, 102, 51));
+        rSButtonHover8.setText("HAPUS");
+        rSButtonHover8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonHover8MouseClicked(evt);
+            }
+        });
+        rSButtonHover8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover8ActionPerformed(evt);
+            }
+        });
+
+        txt_id_sim.setForeground(new java.awt.Color(255, 255, 255));
+        txt_id_sim.setText("1");
+
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
@@ -1470,49 +1587,35 @@ class Main extends javax.swing.JFrame {
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tabung_id_nasabah, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tabung_id_sampah, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tabung_banyak_sampah, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(rSButtonHover8, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(txt_id_sim)
+                    .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel25Layout.createSequentialGroup()
+                            .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_simpan_tabungan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel25Layout.createSequentialGroup()
+                            .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jLabel32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tabung_id_nasabah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tabung_id_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tabung_banyak_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(292, Short.MAX_VALUE))
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_simpan_tabungan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonHover8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(txt_id_sim)
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
@@ -1522,9 +1625,12 @@ class Main extends javax.swing.JFrame {
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(704, Short.MAX_VALUE))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addComponent(rSButtonHover7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(1047, Short.MAX_VALUE))))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1762,9 +1868,8 @@ class Main extends javax.swing.JFrame {
     private void btn_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_8MouseClicked
         Dialog_keluar keluar = new Dialog_keluar(this, true);
         keluar.setVisible(true);
-        
-        
-        
+
+
     }//GEN-LAST:event_btn_8MouseClicked
 
     private void btn_8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_8MouseExited
@@ -1792,7 +1897,6 @@ class Main extends javax.swing.JFrame {
 
         try {
 
-            
             int baris = tabel_nasabah.getSelectedRow();
             Nas_Detail detail = new Nas_Detail(this, true);
 //            f..setText(tabel_nasabah.getValueAt(baris, 1).toString());
@@ -1801,7 +1905,7 @@ class Main extends javax.swing.JFrame {
             try {
 
                 Connection konek = con.getKonek();
-                String sql = "SELECT * FROM nasabah WHERE id_nas = '" +Nas_Detail.txt_id.getText() + "'";
+                String sql = "SELECT * FROM nasabah WHERE id_nas = '" + Nas_Detail.txt_id.getText() + "'";
                 Statement st = konek.createStatement();
                 ResultSet rs = st.executeQuery(sql);
 
@@ -1811,7 +1915,7 @@ class Main extends javax.swing.JFrame {
                     Nas_Detail.det_alamat.setText(rs.getString("alamat_nas"));
                     Nas_Detail.det_hp.setText(rs.getString("hp_nas"));
                     Nas_Detail.det_saldo.setText(rs.getString("saldo_nas"));
-                    
+
                 }
 
             } catch (Exception e) {
@@ -1862,8 +1966,8 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonHover5ActionPerformed
 
     private void rSButtonHover6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover6ActionPerformed
-    try {
-      
+        try {
+
             int baris = tabel_sampah.getSelectedRow();
             Samp_detail detail = new Samp_detail(this, true);
 //            f..setText(tabel_nasabah.getValueAt(baris, 1).toString());
@@ -1872,7 +1976,7 @@ class Main extends javax.swing.JFrame {
             try {
 
                 Connection konek = con.getKonek();
-                String sql = "SELECT * FROM sampah WHERE id_samp = '" +Samp_detail.txt_id.getText() + "'";
+                String sql = "SELECT * FROM sampah WHERE id_samp = '" + Samp_detail.txt_id.getText() + "'";
                 Statement st = konek.createStatement();
                 ResultSet rs = st.executeQuery(sql);
 
@@ -1885,8 +1989,7 @@ class Main extends javax.swing.JFrame {
                     Samp_detail.det_harga_pgul.setText(rs.getString("harga_pgul"));
                     Samp_detail.det_stok.setText(rs.getString("stok"));
                     Samp_detail.det_catatan_sampah.setText(rs.getString("catatan_samp"));
-                    
-                    
+
                 }
 
             } catch (Exception e) {
@@ -1911,10 +2014,11 @@ class Main extends javax.swing.JFrame {
 
     private void jPanel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseClicked
         Tabpane.setSelectedIndex(7);
+        tabung_id_nasabah.requestFocus();
     }//GEN-LAST:event_jPanel18MouseClicked
 
     private void jPanel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel20MouseClicked
-       Tabpane.setSelectedIndex(8);
+        Tabpane.setSelectedIndex(8);
     }//GEN-LAST:event_jPanel20MouseClicked
 
     private void rSButtonHover7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonHover7MouseClicked
@@ -1950,14 +2054,16 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tabung_id_nasabahActionPerformed
 
     private void tabung_id_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_id_sampahActionPerformed
+
         try {
-            
+
             Connection konek = con.getKonek();
             String sql = "SELECT * FROM sampah WHERE kode_samp = '" + tabung_id_sampah.getText() + "'";
             Statement st = konek.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
+
                 tabung_jenis_sampah.setText(rs.getString("nama_samp"));
                 tabung_harga_sampah.setText(rs.getString("harga_1"));
                 //                txt_alamat_nasabah.setText(rs.getString("username"));
@@ -1965,37 +2071,37 @@ class Main extends javax.swing.JFrame {
 
             }
 
-            tabung_banyak_sampah.requestFocus();
-            
+            txt_button_datang.requestFocus();
 
         } catch (Exception e) {
             System.out.println(e);
         }
+
+
     }//GEN-LAST:event_tabung_id_sampahActionPerformed
 
     private void tabung_banyak_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_banyak_sampahActionPerformed
-       
-//            try {
-//                String hargaSampah = this.tabung.getText();
-//                String beratSampah = this.txt_berat_sampah.getText();
-//
-//                int harga = Integer.parseInt(txt_harga_sampah.getText());
-//                int berat = Integer.parseInt(txt_berat_sampah.getText());
-//                int hasil;
-//                hasil = harga * berat;
-//                String hasilString = String.valueOf(hasil);
-//
-////        int a = Integer.parseInt(this.fd_panjang.getText());
-//                txt_total_harga_sampah.setText(hasilString);
-//
-////            fd_panjang.requestFocus();
-//                btn_simpan_tabungan.requestFocus();
-//            } catch (Exception e) {
-////            JOptionPane.showMessageDialog(this, e);
-//
-////            fd_panjang.requestFocus();
-//            }
-        
+        try {
+            String hargaSampah = this.tabung_harga_sampah.getText();
+            String beratSampah = this.tabung_banyak_sampah.getText();
+
+            int harga = Integer.parseInt(tabung_harga_sampah.getText());
+            int berat = Integer.parseInt(tabung_banyak_sampah.getText());
+            int hasil;
+            hasil = harga * berat;
+            String hasilString = String.valueOf(hasil);
+
+//        int a = Integer.parseInt(this.fd_panjang.getText());
+            tabung_total.setText(hasilString);
+
+//            fd_panjang.requestFocus();
+            txt_simpan_tabungan.requestFocus();
+        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(this, e);
+
+//            fd_panjang.requestFocus();
+        }
+
     }//GEN-LAST:event_tabung_banyak_sampahActionPerformed
 
     private void tabung_totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_totalActionPerformed
@@ -2006,9 +2112,28 @@ class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tabung_jenis_sampahActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    private void txt_button_jemputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_button_jemputActionPerformed
+        try {
+
+            Connection konek = con.getKonek();
+            String sql = "SELECT * FROM sampah WHERE kode_samp = '" + tabung_id_sampah.getText() + "'";
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                tabung_harga_sampah.setText(rs.getString("harga_2"));
+                //                txt_alamat_nasabah.setText(rs.getString("username"));
+                //                txt_noHp.setText(rs.getString("password"));
+
+            }
+
+            txt_button_datang.requestFocus();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_txt_button_jemputActionPerformed
 
     private void tabung_nama_nasabahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_nama_nasabahActionPerformed
         // TODO add your handling code here:
@@ -2019,7 +2144,7 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonHover8MouseClicked
 
     private void rSButtonHover8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover8ActionPerformed
-        // TODO add your handling code here:
+        hapus_tabungan();
     }//GEN-LAST:event_rSButtonHover8ActionPerformed
 
     private void tabung_harga_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_harga_sampahActionPerformed
@@ -2027,7 +2152,7 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tabung_harga_sampahActionPerformed
 
     private void tabung_id_nasabahKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tabung_id_nasabahKeyTyped
-        
+
     }//GEN-LAST:event_tabung_id_nasabahKeyTyped
 
     private void tabung_id_nasabahKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tabung_id_nasabahKeyPressed
@@ -2035,8 +2160,87 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tabung_id_nasabahKeyPressed
 
     private void tabung_id_nasabahKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tabung_id_nasabahKeyReleased
-       
+
     }//GEN-LAST:event_tabung_id_nasabahKeyReleased
+
+    private void txt_simpan_tabunganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_simpan_tabunganMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_simpan_tabunganMouseClicked
+
+    private void txt_simpan_tabunganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_simpan_tabunganActionPerformed
+        if (this.tabung_nama_nasabah.getText().length() == 0
+                || this.tabung_jenis_sampah.getText().length() == 0
+                || this.tabung_harga_sampah.getText().length() == 0
+                || this.tabung_total.getText().length() == 0) {
+//            /       || /this.txtERROR.setText("SEMUA HARUS DIISI");
+            JOptionPane.showMessageDialog(this,
+                    "SEMUA HARUS DIISI", "INFO", JOptionPane.WARNING_MESSAGE);
+
+        } else {
+            try {
+//                String date = ((JTextField) txt_tanggal.getDateEditor().getUiComponent()).getText();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String startDateString = dateFormat.format(txt_date.getDate());
+
+                Query s = new Query();
+                s.setId_sim(this.txt_id_sim.getText());
+                s.setTgl_sim(startDateString);
+                s.setId_nas(this.tabung_id_nasabah.getText());
+                s.setId_samp(this.tabung_id_sampah.getText());
+                s.setHarga_samp(this.tabung_harga_sampah.getText());
+                s.setQty_samp(this.tabung_banyak_sampah.getText());
+                s.setTotal_samp(this.tabung_total.getText());
+
+                if (Fungsi.createSimpanan(s)) {
+//                    setClean();
+//                    Fungsi.setDaftarTabungan_MainTab("");
+//                    ts.clickGo();
+                    JOptionPane.showMessageDialog(this,
+                            "Menabung Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+
+                } else {
+                    JOptionPane.showMessageDialog(this,
+                            "PENAMBAHAN GAGAL", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+//                TabPane.setSelectedIndex(3);
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            hapus_tabungan();
+
+        }
+    }//GEN-LAST:event_txt_simpan_tabunganActionPerformed
+
+    private void txt_button_datangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_button_datangActionPerformed
+        try {
+
+            Connection konek = con.getKonek();
+            String sql = "SELECT * FROM sampah WHERE kode_samp = '" + tabung_id_sampah.getText() + "'";
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                tabung_harga_sampah.setText(rs.getString("harga_1"));
+                //                txt_alamat_nasabah.setText(rs.getString("username"));
+                //                txt_noHp.setText(rs.getString("password"));
+
+            }
+
+            txt_button_datang.requestFocus();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_txt_button_datangActionPerformed
+
+    private void jPanel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MousePressed
+        Tabpane.setSelectedIndex(1);
+        setColor(btn_2);
+//        ind_2.setOpaque(true);
+        resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5, btn_7, btn_6});
+    }//GEN-LAST:event_jPanel6MousePressed
 
     /**
      * @param args the command line arguments
@@ -2119,6 +2323,7 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2143,6 +2348,8 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -2150,8 +2357,6 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel menubar;
@@ -2173,10 +2378,15 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tabung_jenis_sampah;
     private javax.swing.JTextField tabung_nama_nasabah;
     private javax.swing.JTextField tabung_total;
+    private javax.swing.JRadioButton txt_button_datang;
+    private javax.swing.JRadioButton txt_button_jemput;
+    private com.toedter.calendar.JDateChooser txt_date;
+    private javax.swing.JLabel txt_id_sim;
     private javax.swing.JLabel txt_jumlah_transaksi;
     private javax.swing.JLabel txt_jumlah_transaksi1;
     private javax.swing.JTextField txt_search_nasabah;
     private javax.swing.JTextField txt_search_sampah;
+    private rojerusan.RSButtonHover txt_simpan_tabungan;
     // End of variables declaration//GEN-END:variables
 
     private void setColor(JPanel pane) {
@@ -2188,5 +2398,16 @@ class Main extends javax.swing.JFrame {
             pane[i].setBackground(new Color(35, 45, 59));
 
         }
+    }
+
+    private void hapus_tabungan() {
+        tabung_banyak_sampah.setText("");
+        tabung_harga_sampah.setText("");
+        tabung_id_nasabah.setText("");
+        tabung_id_sampah.setText("");
+        tabung_nama_nasabah.setText("");
+        tabung_total.setText("");
+        tabung_jenis_sampah.setText("");
+        tabung_id_nasabah.requestFocus();
     }
 }

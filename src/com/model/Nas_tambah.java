@@ -145,7 +145,7 @@ public class Nas_tambah extends javax.swing.JDialog {
         btn_hapus.setLabel("Hapus");
 
         txt_id.setBackground(new java.awt.Color(255, 255, 255));
-        txt_id.setForeground(new java.awt.Color(255, 255, 255));
+        txt_id.setForeground(new java.awt.Color(255, 51, 51));
         txt_id.setText("jLabel7");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

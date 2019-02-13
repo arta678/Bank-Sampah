@@ -10,19 +10,17 @@ package com.model;
  * @author artawgn
  */
 public class Query {
-    
+
     public static String DAFTAR_NASABAH = "SELECT * FROM nasabah";
     public static String DAFTAR_PETUGAS = "SELECT * FROM petugas";
     public static String DAFTAR_SAMPAH = "SELECT * FROM sampah";
     public static String DAFTAR_SIMPANAN = "SELECT * FROM simpanan";
     public static String DAFTAR_PENARIKAN = "SELECT * FROM penarikan";
     public static String DAFTAR_LOGIN = "SELECT * FROM login";
-    
-    
+
     //CREATE
     //CREATE
     //CREATE
-    
     public static String REGISTER_NASABAH = "INSERT INTO nasabah("
             + "kode_nas,"
             + "nama_nas,"
@@ -30,10 +28,10 @@ public class Query {
             + "hp_nas, "
             + "saldo_nas)"
             + "VALUES(?,?,?,?,?)";
-    
+
     public static String REGISTER_SAMPAH = "INSERT INTO sampah("
             + "kode_samp,"
-             + "kategori,"
+            + "kategori,"
             + "nama_samp,"
             + "harga_1,"
             + "harga_2, "
@@ -41,21 +39,26 @@ public class Query {
             + "stok, "
             + "catatan_samp)"
             + "VALUES(?,?,?,?,?,?,?)";
-    
-    
-    
+    public static String REGISTER_SIMPANAN = "INSERT INTO simpanan("
+            + "id_sim,"
+            + "tgl_sim,"
+            + "id_nas,"
+            + "id_samp,"
+            + "harga_samp,"
+            + "qty_samp, "
+            + "total_samp)"
+            + "VALUES(?,?,?,?,?,?,?)";
+
     //UPDATE
     //UPDATE
-     public static String UPDATE_NASABAH = "UPDATE nasabah SET "
+    public static String UPDATE_NASABAH = "UPDATE nasabah SET "
             + "kode_nas = ?,"
             + "nama_nas = ?,"
             + "alamat_nas = ?,"
             + "hp_nas = ?,"
             + "saldo_nas = ?"
             + "WHERE id = ?";
-    
-    
-    
+
     //GET SET
     //GET SET
     //GET SET
@@ -80,6 +83,60 @@ public class Query {
     private String catatan_samp;
     //--------
 
+    //SIMPANAN
+    private String id_sim;
+    private String tgl_sim;
+//    private String id_nas;
+    private String harga_samp;
+   
+    private String qty_samp;
+    private String total_samp;
+    //________
+
+    public String getHarga_samp() {
+        return harga_samp;
+    }
+
+    public void setHarga_samp(String harga_samp) {
+        this.harga_samp = harga_samp;
+    }
+    
+    
+
+    public String getId_sim() {
+        return id_sim;
+    }
+
+    public void setId_sim(String id_sim) {
+        this.id_sim = id_sim;
+    }
+
+    public String getTgl_sim() {
+        return tgl_sim;
+    }
+
+    public void setTgl_sim(String tgl_sim) {
+        this.tgl_sim = tgl_sim;
+    }
+
+    public String getQty_samp() {
+        return qty_samp;
+    }
+
+    public void setQty_samp(String qty_samp) {
+        this.qty_samp = qty_samp;
+    }
+
+    public String getTotal_samp() {
+        return total_samp;
+    }
+
+    public void setTotal_samp(String total_samp) {
+        this.total_samp = total_samp;
+    }
+    
+    
+
     public String getKode_samp() {
         return kode_samp;
     }
@@ -88,7 +145,6 @@ public class Query {
         this.kode_samp = kode_samp;
     }
 
-    
     public String getStok() {
         return stok;
     }
@@ -96,8 +152,6 @@ public class Query {
     public void setStok(String stok) {
         this.stok = stok;
     }
-    
-    
 
     public String getId_samp() {
         return id_samp;
@@ -154,9 +208,6 @@ public class Query {
     public void setCatatan_samp(String catatan_samp) {
         this.catatan_samp = catatan_samp;
     }
-    
-    
-    
 
     public String getSaldo_nas() {
         return saldo_nas;
@@ -181,7 +232,6 @@ public class Query {
     public void setId_nas(String id_nas) {
         this.id_nas = id_nas;
     }
-    
 
     public String getKode_nas() {
         return kode_nas;
@@ -207,6 +257,4 @@ public class Query {
         this.alamat_nas = alamat_nas;
     }
 
-    
-    
 }
