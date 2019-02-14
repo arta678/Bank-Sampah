@@ -2185,8 +2185,8 @@ class Main extends javax.swing.JFrame {
                 Query s = new Query();
                 s.setId_sim(this.txt_id_sim.getText());
                 s.setTgl_sim(startDateString);
-                s.setId_nas(this.tabung_id_nasabah.getText());
-                s.setId_samp(this.tabung_id_sampah.getText());
+                s.setNama_nas(this.tabung_nama_nasabah.getText());
+                s.setKode_samp(this.tabung_jenis_sampah.getText());
                 s.setHarga_samp(this.tabung_harga_sampah.getText());
                 s.setQty_samp(this.tabung_banyak_sampah.getText());
                 s.setTotal_samp(this.tabung_total.getText());

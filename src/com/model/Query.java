@@ -38,12 +38,12 @@ public class Query {
             + "harga_pgul, "
             + "stok, "
             + "catatan_samp)"
-            + "VALUES(?,?,?,?,?,?,?)";
+            + "VALUES(?,?,?,?,?,?,?,?)";
     public static String REGISTER_SIMPANAN = "INSERT INTO simpanan("
             + "id_sim,"
             + "tgl_sim,"
-            + "id_nas,"
-            + "id_samp,"
+            + "nama_nas,"
+            + "kode_samp,"
             + "harga_samp,"
             + "qty_samp, "
             + "total_samp)"

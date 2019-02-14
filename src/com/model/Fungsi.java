@@ -78,8 +78,8 @@ public class Fungsi {
             ps = konek.prepareStatement(sql);
             
             ps.setString(1, s.getTgl_sim());
-            ps.setString(2, s.getId_nas());
-            ps.setString(3, s.getId_samp());
+            ps.setString(2, s.getNama_nas());
+            ps.setString(3, s.getKode_samp());
             ps.setString(4, s.getHarga_samp());
             ps.setString(5, s.getQty_samp());
             ps.setString(6, s.getTotal_samp());
