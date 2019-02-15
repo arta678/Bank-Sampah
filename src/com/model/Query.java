@@ -40,14 +40,19 @@ public class Query {
             + "catatan_samp)"
             + "VALUES(?,?,?,?,?,?,?,?)";
     public static String REGISTER_SIMPANAN = "INSERT INTO simpanan("
-            + "id_sim,"
+           
             + "tgl_sim,"
-            + "nama_nas,"
+            + "kode_nas,"
             + "kode_samp,"
             + "harga_samp,"
-            + "qty_samp, "
+            + "qty_samp,"
             + "total_samp)"
-            + "VALUES(?,?,?,?,?,?,?)";
+            + "VALUES(?,?,?,?,?,?)";
+    public static String REGISTER_PENARIKAN = "INSERT INTO penarikan("
+            + "kode_nas,"
+            + "tgl_pen,"
+            + "saldo_nas)"
+            + "VALUES(?,?,?)";
 
     //UPDATE
     //UPDATE
@@ -86,12 +91,23 @@ public class Query {
     //SIMPANAN
     private String id_sim;
     private String tgl_sim;
-//    private String id_nas;
+//    private String nama_nas;
     private String harga_samp;
    
     private String qty_samp;
     private String total_samp;
+    private String tgl_pen;
+    
     //________
+
+    public String getTgl_pen() {
+        return tgl_pen;
+    }
+
+    public void setTgl_pen(String tgl_pen) {
+        this.tgl_pen = tgl_pen;
+    }
+    
 
     public String getHarga_samp() {
         return harga_samp;
