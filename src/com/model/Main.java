@@ -3281,6 +3281,7 @@ class Main extends javax.swing.JFrame {
 //                    setClean();
                 Fungsi.Tabel_nasabah("");
                 Fungsi.Tabel_sampah("");
+                Fungsi.Tabel_tabungan("");
 //                    ts.clickGo();
                 JOptionPane.showMessageDialog(this,
                         "Menabung Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
