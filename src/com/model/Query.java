@@ -51,7 +51,7 @@ public class Query {
     public static String REGISTER_PENARIKAN = "INSERT INTO penarikan("
             + "kode_nas,"
             + "tgl_pen,"
-            + "saldo_nas)"
+            + "saldo_penarikan)"
             + "VALUES(?,?,?)";
 
     //UPDATE
@@ -96,10 +96,36 @@ public class Query {
    
     private String qty_samp;
     private String total_samp;
+    
+    
+    //PENARIKAN
     private String tgl_pen;
+    private String id_pen;
+    private String saldo_penarikan;
+    
     
     //________
 
+    public String getSaldo_penarikan() {
+        return saldo_penarikan;
+    }
+
+    public void setSaldo_penarikan(String saldo_penarikan) {
+        this.saldo_penarikan = saldo_penarikan;
+    }
+    
+    
+
+    public String getId_pen() {
+        return id_pen;
+    }
+
+    public void setId_pen(String id_pen) {
+        this.id_pen = id_pen;
+    }
+
+    
+    
     public String getTgl_pen() {
         return tgl_pen;
     }

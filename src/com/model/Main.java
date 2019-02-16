@@ -43,6 +43,7 @@ class Main extends javax.swing.JFrame {
         Fungsi.Tabel_nasabah("");
         Fungsi.Tabel_sampah("");
         Fungsi.Tabel_tabungan("");
+        Fungsi.Tabel_penarikan("");
 
         txt_button_datang.setSelected(true);
         txt_date.setDate(date);
@@ -194,6 +195,7 @@ class Main extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         penarikan_isi_sisa_saldo = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
+        penarikan_isi_id_nas = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         penarikan_id_nas = new javax.swing.JTextField();
@@ -1881,19 +1883,23 @@ class Main extends javax.swing.JFrame {
 
         penarikan_isi_saldo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         penarikan_isi_saldo.setForeground(new java.awt.Color(136, 135, 135));
-        penarikan_isi_saldo.setText("ini Saldo");
+        penarikan_isi_saldo.setText("xxxxxxx");
 
         penarikan_isi_penarikan.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         penarikan_isi_penarikan.setForeground(new java.awt.Color(136, 135, 135));
-        penarikan_isi_penarikan.setText("ini Saldo");
+        penarikan_isi_penarikan.setText("xxxxxxx");
 
         penarikan_isi_sisa_saldo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         penarikan_isi_sisa_saldo.setForeground(new java.awt.Color(136, 135, 135));
-        penarikan_isi_sisa_saldo.setText("ini Saldo");
+        penarikan_isi_sisa_saldo.setText("xxxxxxx");
 
         jLabel62.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(136, 135, 135));
         jLabel62.setText("Sisa saldo");
+
+        penarikan_isi_id_nas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        penarikan_isi_id_nas.setForeground(new java.awt.Color(136, 135, 135));
+        penarikan_isi_id_nas.setText("001");
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -1923,7 +1929,10 @@ class Main extends javax.swing.JFrame {
                             .addComponent(penarikan_isi_penarikan, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(penarikan_isi_id_nas)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
@@ -1947,6 +1956,8 @@ class Main extends javax.swing.JFrame {
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(penarikan_isi_sisa_saldo)
                     .addComponent(jLabel62))
+                .addGap(18, 18, 18)
+                .addComponent(penarikan_isi_id_nas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2120,7 +2131,7 @@ class Main extends javax.swing.JFrame {
         );
 
         txt_simpan_tabungan1.setBackground(new java.awt.Color(115, 125, 206));
-        txt_simpan_tabungan1.setText("SIMPAN");
+        txt_simpan_tabungan1.setText("Tarik Saldo");
         txt_simpan_tabungan1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txt_simpan_tabungan1MouseClicked(evt);
@@ -2904,6 +2915,7 @@ class Main extends javax.swing.JFrame {
                 penarikan_alamat_nas.setText(rs.getString("alamat_nas"));
                 penarikan_hp_nas.setText(rs.getString("hp_nas"));
                 penarikan_total_saldo_nas.setText(rs.getString("saldo_nas"));
+                penarikan_isi_id_nas.setText(rs.getString("kode_nas"));
                 //                txt_alamat_nasabah.setText(rs.getString("username"));
                 //                txt_noHp.setText(rs.getString("password"));
 
@@ -2933,7 +2945,23 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_simpan_tabungan1MouseClicked
 
     private void txt_simpan_tabungan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_simpan_tabungan1ActionPerformed
-        // TODO add your handling code here:
+        int pesankeluar = JOptionPane.showOptionDialog(this, "apakah anda yakin ingin menarik saldo tabungan ?", "Konfirmasi penarikan", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+
+        if (pesankeluar == JOptionPane.YES_OPTION) {
+            if (this.penarikan_id_nas.getText().length() == 0
+                    || this.penarikan_jumlah_penarikan_saldo.getText().length() == 0
+                    ) {
+//            /       || /this.txtERROR.setText("SEMUA HARUS DIISI");
+                JOptionPane.showMessageDialog(this,
+                        "SEMUA HARUS DIISI", "INFO", JOptionPane.WARNING_MESSAGE);
+
+            } else {
+                tambahpenarikan();
+//                clean_penarikan();
+
+            }
+
+        }
     }//GEN-LAST:event_txt_simpan_tabungan1ActionPerformed
 
     private void penarikan_total_saldo_nasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_total_saldo_nasActionPerformed
@@ -2951,11 +2979,6 @@ class Main extends javax.swing.JFrame {
 //            hasil = harga - berat;
 //            String hasilString = String.valueOf(hasil);
 
-
-            
-
-
-            
             String sql = "SELECT * FROM nasabah WHERE kode_nas = '" + penarikan_id_nas.getText() + "'";
             Statement st = konek.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -2963,7 +2986,7 @@ class Main extends javax.swing.JFrame {
             while (rs.next()) {
                 penarikan_isi_saldo.setText(rs.getString("saldo_nas"));
                 penarikan_isi_penarikan.setText(this.penarikan_jumlah_penarikan_saldo.getText());
-                
+
             }
             String hargaSampah = this.penarikan_isi_saldo.getText();
             String beratSampah = this.penarikan_isi_penarikan.getText();
@@ -2974,8 +2997,6 @@ class Main extends javax.swing.JFrame {
             hasil = harga - berat;
             String hasilString = String.valueOf(hasil);
             penarikan_isi_sisa_saldo.setText(hasilString);
-
-            
 
         } catch (Exception e) {
             System.out.println(e);
@@ -3163,6 +3184,7 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JTextField penarikan_alamat_nas;
     private javax.swing.JTextField penarikan_hp_nas;
     private javax.swing.JTextField penarikan_id_nas;
+    private javax.swing.JLabel penarikan_isi_id_nas;
     private javax.swing.JLabel penarikan_isi_penarikan;
     private javax.swing.JLabel penarikan_isi_saldo;
     private javax.swing.JLabel penarikan_isi_sisa_saldo;
@@ -3272,5 +3294,41 @@ class Main extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    private void tambahpenarikan() {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String startDateString = dateFormat.format(txt_date1.getDate());
+
+            Query s = new Query();
+//                s.setId_sim(this.txt_id_sim.getText());
+            
+            s.setKode_nas(this.penarikan_isi_id_nas.getText());
+            s.setTgl_pen(startDateString);
+            s.setSaldo_nas(this.penarikan_isi_penarikan.getText());
+            
+
+            if (Fungsi.createPenarikan(s)) {
+//                    setClean();
+                Fungsi.Tabel_nasabah("");
+                Fungsi.Tabel_penarikan("");
+
+                JOptionPane.showMessageDialog(this,
+                        "Penarikan Saldo Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "penarikan Saldo Gagal !", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+//                TabPane.setSelectedIndex(3);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    private void clean_penarikan() {
+        
     }
 }

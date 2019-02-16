@@ -97,9 +97,9 @@ public class Fungsi {
         try {
             ps = konek.prepareStatement(sql);
             
-            ps.setString(1, s.getTgl_pen());
-            ps.setString(2, s.getKode_nas());
-            ps.setString(3, s.getSaldo_nas());
+            ps.setString(1, s.getKode_nas());
+            ps.setString(2, s.getTgl_pen());
+            ps.setString(3, s.getSaldo_penarikan());
             ps.executeUpdate();
             return true;
 
@@ -209,9 +209,9 @@ public class Fungsi {
             while (rs.next()) {
 
                 Data[0] = rs.getString("id_pen");
-                Data[1] = rs.getString("tgl_nas");
-                Data[2] = rs.getString("kode_nas");
-                Data[3] = rs.getString("saldo_nas");
+                Data[1] = rs.getString("kode_nas");
+                Data[2] = rs.getString("tgl_pen");
+                Data[3] = rs.getString("saldo_penarikan");
                 
                 model.addRow(Data);
 
