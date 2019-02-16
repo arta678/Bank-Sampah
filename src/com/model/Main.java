@@ -1762,7 +1762,7 @@ class Main extends javax.swing.JFrame {
                 {"1", "15/05/2009", "Arta Wiguna", "10000"}
             },
             new String [] {
-                "No.", "Tanggal", "ID Nasabah", "Jumlah"
+                "No.", "Tanggal", "ID Nasabah", "Setoran"
             }
         ) {
             boolean[] canEdit = new boolean [] {
