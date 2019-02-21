@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -48,6 +49,7 @@ class Main extends javax.swing.JFrame {
         txt_button_datang.setSelected(true);
         txt_date.setDate(date);
         txt_date1.setDate(date);
+        hitungjumlahNasabah();
 
         //Disabel
 //        tabung_nama_nasabah.setEnabled(false);
@@ -2940,7 +2942,7 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_penarikan_id_nasKeyReleased
 
     private void txt_simpan_tabungan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_simpan_tabungan1MouseClicked
-    // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_txt_simpan_tabungan1MouseClicked
 
     private void txt_simpan_tabungan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_simpan_tabungan1ActionPerformed
@@ -3400,5 +3402,22 @@ class Main extends javax.swing.JFrame {
             System.out.println(e);
 
         }
+    }
+
+    private void hitungjumlahNasabah() {
+        try {
+            String sql = "select * from namatable";
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+            }
+
+            JOptionPane.showMessageDialog(rootPane, rs.getRow());
+
+        } catch (Exception e) {
+        }
+
     }
 }
