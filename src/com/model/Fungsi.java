@@ -80,9 +80,10 @@ public class Fungsi {
             ps.setString(1, s.getTgl_sim());
             ps.setString(2, s.getKode_nas());
             ps.setString(3, s.getKode_samp());
-            ps.setString(4, s.getHarga_samp());
-            ps.setString(5, s.getQty_samp());
-            ps.setString(6, s.getTotal_samp());
+            ps.setString(4, s.getNama_samp());
+            ps.setString(5, s.getHarga_samp());
+            ps.setString(6, s.getQty_samp());
+            ps.setString(7, s.getTotal_samp());
             ps.executeUpdate();
             return true;
 
@@ -121,8 +122,8 @@ public class Fungsi {
             ps.setString(2, s.getNama_nas());
             ps.setString(3, s.getAlamat_nas());
             ps.setString(4, s.getHp_nas());
-            ps.setString(5, s.getSaldo_nas());
-            ps.setString(6, s.getId_nas());
+//            ps.setString(5, s.getSaldo_nas());
+            ps.setString(5, s.getId_nas());
             ps.executeUpdate();
             return true;
 
@@ -159,7 +160,7 @@ public class Fungsi {
                     + "saldo_nas LIKE'" + cari + "%'"
                     + ")";
         }
-        String Data[] = new String[4];
+        String Data[] = new String[3];
 
         try {
             Statement st = konek.createStatement();
@@ -170,7 +171,7 @@ public class Fungsi {
                 Data[0] = rs.getString("id_nas");
                 Data[1] = rs.getString("kode_nas");
                 Data[2] = rs.getString("nama_nas");
-                Data[3] = rs.getString("saldo_nas");
+                
                 
                 model.addRow(Data);
 
@@ -222,7 +223,7 @@ public class Fungsi {
 
     }
     
-    public static void Tabel_tabungan(String cari) {
+    public static void Tabel_Simpanan(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_tabungan.getModel();
 
         while (model.getRowCount() > 0) {
@@ -239,12 +240,13 @@ public class Fungsi {
                     + "tgl_simp LIKE'" + cari + "%' OR "
                     + "kode_nas LIKE'" + cari + "%' OR "
                     + "kode_samp LIKE'" + cari + "%' OR "
+                    + "nama_samp LIKE'" + cari + "%' OR "
                     + "harga_samp LIKE'" + cari + "%' OR "
                     + "qty_samp LIKE'" + cari + "%' OR "
                     + "total_samp LIKE'" + cari + "%'"
                     + ")";
         }
-        String Data[] = new String[4];
+        String Data[] = new String[5];
 
         try {
             Statement st = konek.createStatement();
@@ -255,7 +257,8 @@ public class Fungsi {
                 Data[0] = rs.getString("id_sim");
                 Data[1] = rs.getString("tgl_sim");
                 Data[2] = rs.getString("kode_nas");
-                Data[3] = rs.getString("total_samp");
+                Data[3] = rs.getString("nama_samp");
+                Data[4] = rs.getString("total_samp");
                 
                 model.addRow(Data);
 

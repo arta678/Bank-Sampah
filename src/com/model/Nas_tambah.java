@@ -61,7 +61,7 @@ public class Nas_tambah extends javax.swing.JDialog {
         jLabel1.setBackground(new java.awt.Color(0, 112, 192));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tambah Data Nasabah");
+        jLabel1.setText("TAMBAH DATA NASABAH");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/icons8_Multiply_25px.png"))); // NOI18N
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,9 +90,9 @@ public class Nas_tambah extends javax.swing.JDialog {
         );
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel2.setText("Kode nasabah");
+        jLabel2.setText("Kode Nasabah");
 
-        txt_kode.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
+        txt_kode.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         txt_kode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_kodeActionPerformed(evt);
@@ -102,7 +102,7 @@ public class Nas_tambah extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setText("Nama ");
 
-        txt_nama.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
+        txt_nama.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         txt_nama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_namaActionPerformed(evt);
@@ -112,7 +112,7 @@ public class Nas_tambah extends javax.swing.JDialog {
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel4.setText("Alamat");
 
-        txt_alamat.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
+        txt_alamat.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         txt_alamat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_alamatActionPerformed(evt);
@@ -122,7 +122,7 @@ public class Nas_tambah extends javax.swing.JDialog {
         jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel5.setText("Nomor Hp");
 
-        txt_hp.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
+        txt_hp.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         txt_hp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_hpActionPerformed(evt);
@@ -139,13 +139,18 @@ public class Nas_tambah extends javax.swing.JDialog {
             }
         });
 
-        btn_hapus.setBackground(new java.awt.Color(255, 102, 51));
+        btn_hapus.setBackground(new java.awt.Color(255, 51, 0));
         btn_hapus.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         btn_hapus.setForeground(new java.awt.Color(255, 255, 255));
-        btn_hapus.setLabel("Hapus");
+        btn_hapus.setLabel("Tutup");
+        btn_hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hapusActionPerformed(evt);
+            }
+        });
 
         txt_id.setBackground(new java.awt.Color(255, 255, 255));
-        txt_id.setForeground(new java.awt.Color(255, 51, 51));
+        txt_id.setForeground(new java.awt.Color(255, 255, 255));
         txt_id.setText("jLabel7");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -162,7 +167,7 @@ public class Nas_tambah extends javax.swing.JDialog {
                     .addComponent(txt_hp)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txt_id)
                             .addComponent(btn_simpan_nasabah, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -172,7 +177,7 @@ public class Nas_tambah extends javax.swing.JDialog {
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5))
-                        .addGap(0, 173, Short.MAX_VALUE)))
+                        .addGap(0, 185, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -276,6 +281,10 @@ public class Nas_tambah extends javax.swing.JDialog {
     private void txt_hpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_hpActionPerformed
         btn_simpan_nasabah.requestFocus();
     }//GEN-LAST:event_txt_hpActionPerformed
+
+    private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_hapusActionPerformed
 
     /**
      * @param args the command line arguments

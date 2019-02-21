@@ -17,6 +17,8 @@ public class Query {
     public static String DAFTAR_SIMPANAN = "SELECT * FROM simpanan";
     public static String DAFTAR_PENARIKAN = "SELECT * FROM penarikan";
     public static String DAFTAR_LOGIN = "SELECT * FROM login";
+    public static String JUMLAH_NASABAH = "SELECT COUNT(id_nas) FROM nasabah";
+   
 
     //CREATE
     //CREATE
@@ -44,10 +46,11 @@ public class Query {
             + "tgl_sim,"
             + "kode_nas,"
             + "kode_samp,"
+            + "nama_samp,"
             + "harga_samp,"
             + "qty_samp,"
             + "total_samp)"
-            + "VALUES(?,?,?,?,?,?)";
+            + "VALUES(?,?,?,?,?,?,?)";
     public static String REGISTER_PENARIKAN = "INSERT INTO penarikan("
             + "kode_nas,"
             + "tgl_pen,"
@@ -60,9 +63,9 @@ public class Query {
             + "kode_nas = ?,"
             + "nama_nas = ?,"
             + "alamat_nas = ?,"
-            + "hp_nas = ?,"
-            + "saldo_nas = ?"
-            + "WHERE id = ?";
+            + "hp_nas = ?"
+        
+            + "WHERE id_nas = ?";
 
     //GET SET
     //GET SET

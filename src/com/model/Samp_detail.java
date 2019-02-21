@@ -119,7 +119,7 @@ public class Samp_detail extends javax.swing.JDialog {
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel6.setText("Harga DHS2");
 
-        btn_simpan_nasabah.setBackground(new java.awt.Color(0, 112, 192));
+        btn_simpan_nasabah.setBackground(new java.awt.Color(153, 153, 153));
         btn_simpan_nasabah.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_simpan_nasabah.setForeground(new java.awt.Color(255, 255, 255));
         btn_simpan_nasabah.setLabel("Tutup");
@@ -164,7 +164,7 @@ public class Samp_detail extends javax.swing.JDialog {
         det_harga_1.setText("Kode");
 
         btn_simpan_nasabah1.setActionCommand("Edit Sampah");
-        btn_simpan_nasabah1.setBackground(new java.awt.Color(0, 153, 0));
+        btn_simpan_nasabah1.setBackground(new java.awt.Color(255, 51, 0));
         btn_simpan_nasabah1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_simpan_nasabah1.setForeground(new java.awt.Color(255, 255, 255));
         btn_simpan_nasabah1.setLabel("Edit Sampah");
@@ -187,7 +187,7 @@ public class Samp_detail extends javax.swing.JDialog {
         det_harga_pgul.setText("Kode");
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel15.setText("Stok");
+        jLabel15.setText("Total Berat");
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel16.setText(":");
@@ -202,7 +202,6 @@ public class Samp_detail extends javax.swing.JDialog {
         jLabel18.setText(":");
 
         det_catatan_sampah.setBackground(new java.awt.Color(255, 255, 255));
-        det_catatan_sampah.setEditable(false);
         det_catatan_sampah.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
         xtasdsd1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N

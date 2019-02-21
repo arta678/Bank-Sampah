@@ -42,7 +42,7 @@ class Main extends javax.swing.JFrame {
         resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5, btn_7, btn_6});
         Fungsi.Tabel_nasabah("");
         Fungsi.Tabel_sampah("");
-        Fungsi.Tabel_tabungan("");
+        Fungsi.Tabel_Simpanan("");
         Fungsi.Tabel_penarikan("");
 
         txt_button_datang.setSelected(true);
@@ -195,7 +195,6 @@ class Main extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         penarikan_isi_sisa_saldo = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
-        penarikan_isi_id_nas = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         penarikan_id_nas = new javax.swing.JTextField();
@@ -1070,10 +1069,10 @@ class Main extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover2.setBackground(new java.awt.Color(51, 153, 0));
+        rSButtonHover2.setBackground(new java.awt.Color(255, 51, 0));
         rSButtonHover2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/edit.png"))); // NOI18N
         rSButtonHover2.setText("Ubah");
-        rSButtonHover2.setColorHover(new java.awt.Color(66, 182, 8));
+        rSButtonHover2.setColorHover(new java.awt.Color(251, 90, 50));
         rSButtonHover2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonHover2ActionPerformed(evt);
@@ -1083,40 +1082,40 @@ class Main extends javax.swing.JFrame {
         tabel_nasabah.setForeground(new java.awt.Color(0, 0, 0));
         tabel_nasabah.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "P001", "Arta Wiguna", "Aktif"},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"1", "P001", "Arta Wiguna"},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "No.", "Kode", "Nama", "Status"
+                "No.", "Kode", "Nama"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, true
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1138,8 +1137,6 @@ class Main extends javax.swing.JFrame {
             tabel_nasabah.getColumnModel().getColumn(0).setMaxWidth(50);
             tabel_nasabah.getColumnModel().getColumn(1).setMinWidth(100);
             tabel_nasabah.getColumnModel().getColumn(1).setMaxWidth(100);
-            tabel_nasabah.getColumnModel().getColumn(3).setMinWidth(100);
-            tabel_nasabah.getColumnModel().getColumn(3).setMaxWidth(100);
         }
 
         txt_search_nasabah.addActionListener(new java.awt.event.ActionListener() {
@@ -1155,10 +1152,10 @@ class Main extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/search.png"))); // NOI18N
 
-        rSButtonHover3.setBackground(new java.awt.Color(255, 153, 0));
+        rSButtonHover3.setBackground(new java.awt.Color(0, 153, 51));
         rSButtonHover3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/eye.png"))); // NOI18N
         rSButtonHover3.setText("Lihat");
-        rSButtonHover3.setColorHover(new java.awt.Color(250, 178, 70));
+        rSButtonHover3.setColorHover(new java.awt.Color(48, 226, 48));
         rSButtonHover3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonHover3ActionPerformed(evt);
@@ -1216,10 +1213,10 @@ class Main extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
-        rSButtonHover4.setBackground(new java.awt.Color(51, 153, 0));
+        rSButtonHover4.setBackground(new java.awt.Color(255, 51, 0));
         rSButtonHover4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/edit.png"))); // NOI18N
         rSButtonHover4.setText("Ubah");
-        rSButtonHover4.setColorHover(new java.awt.Color(66, 182, 8));
+        rSButtonHover4.setColorHover(new java.awt.Color(251, 90, 50));
         rSButtonHover4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonHover4ActionPerformed(evt);
@@ -1239,10 +1236,10 @@ class Main extends javax.swing.JFrame {
             }
         });
 
-        rSButtonHover6.setBackground(new java.awt.Color(255, 153, 0));
+        rSButtonHover6.setBackground(new java.awt.Color(0, 204, 0));
         rSButtonHover6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/eye.png"))); // NOI18N
         rSButtonHover6.setText("Lihat");
-        rSButtonHover6.setColorHover(new java.awt.Color(250, 178, 70));
+        rSButtonHover6.setColorHover(new java.awt.Color(48, 226, 48));
         rSButtonHover6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonHover6ActionPerformed(evt);
@@ -1759,14 +1756,14 @@ class Main extends javax.swing.JFrame {
         tabel_tabungan.setForeground(new java.awt.Color(0, 0, 0));
         tabel_tabungan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "15/05/2009", "Arta Wiguna", "10000"}
+                {"1", "15/05/2009", "Arta Wiguna", null, "10000"}
             },
             new String [] {
-                "No.", "Tanggal", "ID Nasabah", "Setoran"
+                "No.", "Tanggal", "ID Nasabah", "Jenis Sampah", "Setoran"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1807,8 +1804,8 @@ class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel63)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4))
+                .addGap(19, 19, 19))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1858,6 +1855,15 @@ class Main extends javax.swing.JFrame {
 
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
         jPanel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
+        jPanel31.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jPanel31AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         jPanel32.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -1897,10 +1903,6 @@ class Main extends javax.swing.JFrame {
         jLabel62.setForeground(new java.awt.Color(136, 135, 135));
         jLabel62.setText("Sisa saldo");
 
-        penarikan_isi_id_nas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        penarikan_isi_id_nas.setForeground(new java.awt.Color(136, 135, 135));
-        penarikan_isi_id_nas.setText("001");
-
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
@@ -1929,10 +1931,7 @@ class Main extends javax.swing.JFrame {
                             .addComponent(penarikan_isi_penarikan, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(penarikan_isi_id_nas)))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
@@ -1956,8 +1955,6 @@ class Main extends javax.swing.JFrame {
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(penarikan_isi_sisa_saldo)
                     .addComponent(jLabel62))
-                .addGap(18, 18, 18)
-                .addComponent(penarikan_isi_id_nas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2550,7 +2547,7 @@ class Main extends javax.swing.JFrame {
 
             try {
 
-                Connection konek = con.getKonek();
+//                Connection konek = con.getKonek();
                 String sql = "SELECT * FROM nasabah WHERE id_nas = '" + Nas_Detail.txt_id.getText() + "'";
                 Statement st = konek.createStatement();
                 ResultSet rs = st.executeQuery(sql);
@@ -2582,21 +2579,23 @@ class Main extends javax.swing.JFrame {
 
     private void rSButtonHover2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover2ActionPerformed
 //        try {
-//
-//      
 //            int baris = tabel_nasabah.getSelectedRow();
-//            Nas_Edit edit = new Nas_Edit(this, true);
-//            edit.txt_id.setText(tabel_nasabah.getValueAt(baris, 0).toString());
-//            edit.txt_kode.setText(tabel_nasabah.getValueAt(baris, 1).toString());
-//            edit.txt_nama.setText(tabel_nasabah.getValueAt(baris, 2).toString());
-//            edit.txt_alamat.setText(tabel_nasabah.getValueAt(baris, 3).toString());
-//            edit.txt_hp.setText(tabel_nasabah.getValueAt(baris, 4).toString());
-//            edit.setVisible(true);
+//            Nas_Edit f = new Nas_Edit(this, true);
+//            f.txt_kode.setText(tabel_nasabah.getValueAt(baris, 1).toString());
+//            f.txt_nama.setText(tabel_nasabah.getValueAt(baris, 2).toString());
+////            f.txt_alamat.setText(tabel_nasabah.getValueAt(baris, 3).toString());
+////            f.txt_hp.setText(tabel_nasabah.getValueAt(baris, 4).toString());
+//
+//            f.txt_id.setText(tabel_nasabah.getValueAt(baris, 0).toString());
+//
+//            f.setVisible(true);
 //
 //        } catch (Exception e) {
 //            System.out.println(e);
 //
 //        }
+
+        proses_penampilan_edit_nasabah();
     }//GEN-LAST:event_rSButtonHover2ActionPerformed
 
     private void rSButtonHover4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover4ActionPerformed
@@ -2826,7 +2825,7 @@ class Main extends javax.swing.JFrame {
                         "SEMUA HARUS DIISI", "INFO", JOptionPane.WARNING_MESSAGE);
 
             } else {
-                tambahTabungan();
+                tambahSimpanan();
                 clean_tabungan();
 
             }
@@ -2915,7 +2914,7 @@ class Main extends javax.swing.JFrame {
                 penarikan_alamat_nas.setText(rs.getString("alamat_nas"));
                 penarikan_hp_nas.setText(rs.getString("hp_nas"));
                 penarikan_total_saldo_nas.setText(rs.getString("saldo_nas"));
-                penarikan_isi_id_nas.setText(rs.getString("kode_nas"));
+//                penarikan_isi_id_nas.setText(rs.getString("kode_nas"));
                 //                txt_alamat_nasabah.setText(rs.getString("username"));
                 //                txt_noHp.setText(rs.getString("password"));
 
@@ -2941,23 +2940,49 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_penarikan_id_nasKeyReleased
 
     private void txt_simpan_tabungan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_simpan_tabungan1MouseClicked
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_txt_simpan_tabungan1MouseClicked
 
     private void txt_simpan_tabungan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_simpan_tabungan1ActionPerformed
-        int pesankeluar = JOptionPane.showOptionDialog(this, "apakah anda yakin ingin menarik saldo tabungan ?", "Konfirmasi penarikan", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+        int pesankeluar = JOptionPane.showOptionDialog(this, "apakah anda yakin ingin menarik saldo tabungan ? Setelah menekan ya proses tidak bisa dibatalkan", "Konfirmasi penarikan", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 
         if (pesankeluar == JOptionPane.YES_OPTION) {
             if (this.penarikan_id_nas.getText().length() == 0
-                    || this.penarikan_jumlah_penarikan_saldo.getText().length() == 0
-                    ) {
+                    || this.penarikan_jumlah_penarikan_saldo.getText().length() == 0) {
 //            /       || /this.txtERROR.setText("SEMUA HARUS DIISI");
                 JOptionPane.showMessageDialog(this,
                         "SEMUA HARUS DIISI", "INFO", JOptionPane.WARNING_MESSAGE);
 
             } else {
-                tambahpenarikan();
-//                clean_penarikan();
+//                tambahpenarikan();
+                try {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    String startDateString = dateFormat.format(txt_date1.getDate());
+
+                    Query s = new Query();
+//                s.setId_sim(this.txt_id_sim.getText());
+
+                    s.setKode_nas(penarikan_id_nas.getText());
+                    s.setTgl_pen(startDateString);
+                    s.setSaldo_nas(penarikan_isi_penarikan.getText());
+
+                    if (Fungsi.createPenarikan(s)) {
+//                    setClean();
+                        Fungsi.Tabel_nasabah("");
+                        Fungsi.Tabel_penarikan("");
+
+                        JOptionPane.showMessageDialog(this,
+                                "Penarikan Saldo Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+
+                    } else {
+                        JOptionPane.showMessageDialog(this,
+                                "penarikan Saldo Gagal !", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
+//                TabPane.setSelectedIndex(3);
+
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
 
             }
 
@@ -2969,38 +2994,17 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_penarikan_total_saldo_nasActionPerformed
 
     private void penarikan_jumlah_penarikan_saldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_jumlah_penarikan_saldoActionPerformed
-        try {
-//            String hargaSampah = this.penarikan_isi_saldo.getText();
-//            String beratSampah = this.penarikan_isi_penarikan.getText();
-//
-//            int harga = Integer.parseInt(penarikan_isi_saldo.getText());
-//            int berat = Integer.parseInt(penarikan_isi_penarikan.getText());
-//            int hasil;
-//            hasil = harga - berat;
-//            String hasilString = String.valueOf(hasil);
 
-            String sql = "SELECT * FROM nasabah WHERE kode_nas = '" + penarikan_id_nas.getText() + "'";
-            Statement st = konek.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+        int totalsaldo = Integer.parseInt(this.penarikan_total_saldo_nas.getText());
+        int penarikan = Integer.parseInt(this.penarikan_jumlah_penarikan_saldo.getText());
+        if (totalsaldo > penarikan) {
+            perhitunganpenarikansaldo();
 
-            while (rs.next()) {
-                penarikan_isi_saldo.setText(rs.getString("saldo_nas"));
-                penarikan_isi_penarikan.setText(this.penarikan_jumlah_penarikan_saldo.getText());
-
-            }
-            String hargaSampah = this.penarikan_isi_saldo.getText();
-            String beratSampah = this.penarikan_isi_penarikan.getText();
-
-            int harga = Integer.parseInt(penarikan_isi_saldo.getText());
-            int berat = Integer.parseInt(penarikan_isi_penarikan.getText());
-            int hasil;
-            hasil = harga - berat;
-            String hasilString = String.valueOf(hasil);
-            penarikan_isi_sisa_saldo.setText(hasilString);
-
-        } catch (Exception e) {
-            System.out.println(e);
+        } else {
+            JOptionPane.showMessageDialog(this, "jumlah penarikan lebih besar dari jumlah saldo nasabah, silakan periksa lagi !");
         }
+
+
     }//GEN-LAST:event_penarikan_jumlah_penarikan_saldoActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
@@ -3030,6 +3034,10 @@ class Main extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_tabung_banyak_sampahKeyTyped
+
+    private void jPanel31AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel31AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel31AncestorAdded
 
     /**
      * @param args the command line arguments
@@ -3184,7 +3192,6 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JTextField penarikan_alamat_nas;
     private javax.swing.JTextField penarikan_hp_nas;
     private javax.swing.JTextField penarikan_id_nas;
-    private javax.swing.JLabel penarikan_isi_id_nas;
     private javax.swing.JLabel penarikan_isi_penarikan;
     private javax.swing.JLabel penarikan_isi_saldo;
     private javax.swing.JLabel penarikan_isi_sisa_saldo;
@@ -3250,7 +3257,7 @@ class Main extends javax.swing.JFrame {
         tabung_id_nasabah.requestFocus();
     }
 
-    private void tambahTabungan() {
+    private void tambahSimpanan() {
         try {
 
             String hargaSampah = this.tabung_harga_sampah.getText();
@@ -3273,6 +3280,7 @@ class Main extends javax.swing.JFrame {
             s.setTgl_sim(startDateString);
             s.setKode_nas(this.tabung_id_nasabah.getText());
             s.setKode_samp(this.tabung_id_sampah.getText());
+            s.setNama_samp(this.tabung_jenis_sampah.getText());
             s.setHarga_samp(this.tabung_harga_sampah.getText());
             s.setQty_samp(this.tabung_banyak_sampah.getText());
             s.setTotal_samp(hasilString);
@@ -3281,7 +3289,7 @@ class Main extends javax.swing.JFrame {
 //                    setClean();
                 Fungsi.Tabel_nasabah("");
                 Fungsi.Tabel_sampah("");
-                Fungsi.Tabel_tabungan("");
+                Fungsi.Tabel_Simpanan("");
 //                    ts.clickGo();
                 JOptionPane.showMessageDialog(this,
                         "Menabung Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
@@ -3304,11 +3312,10 @@ class Main extends javax.swing.JFrame {
 
             Query s = new Query();
 //                s.setId_sim(this.txt_id_sim.getText());
-            
-            s.setKode_nas(this.penarikan_isi_id_nas.getText());
+
+            s.setKode_nas(this.penarikan_id_nas.getText());
             s.setTgl_pen(startDateString);
             s.setSaldo_nas(this.penarikan_isi_penarikan.getText());
-            
 
             if (Fungsi.createPenarikan(s)) {
 //                    setClean();
@@ -3330,6 +3337,68 @@ class Main extends javax.swing.JFrame {
     }
 
     private void clean_penarikan() {
-        
+
+    }
+
+    private void perhitunganpenarikansaldo() {
+        try {
+            String sql = "SELECT * FROM nasabah WHERE kode_nas = '" + penarikan_id_nas.getText() + "'";
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                penarikan_isi_saldo.setText(rs.getString("saldo_nas"));
+                penarikan_isi_penarikan.setText(this.penarikan_jumlah_penarikan_saldo.getText());
+
+            }
+            String hargaSampah = this.penarikan_isi_saldo.getText();
+            String beratSampah = this.penarikan_isi_penarikan.getText();
+
+            int harga = Integer.parseInt(penarikan_isi_saldo.getText());
+            int berat = Integer.parseInt(penarikan_isi_penarikan.getText());
+            int hasil;
+            hasil = harga - berat;
+            String hasilString = String.valueOf(hasil);
+            penarikan_isi_sisa_saldo.setText(hasilString);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    private void proses_penampilan_edit_nasabah() {
+        try {
+
+            int baris = tabel_nasabah.getSelectedRow();
+            Nas_Edit detail = new Nas_Edit(this, true);
+//            f..setText(tabel_nasabah.getValueAt(baris, 1).toString());
+            detail.txt_id.setText(tabel_nasabah.getValueAt(baris, 0).toString());
+
+            try {
+
+//                Connection konek = con.getKonek();
+                String sql = "SELECT * FROM nasabah WHERE id_nas = '" + Nas_Edit.txt_id.getText() + "'";
+                Statement st = konek.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+
+                while (rs.next()) {
+                    Nas_Edit.txt_kode.setText(rs.getString("kode_nas"));
+                    Nas_Edit.txt_nama.setText(rs.getString("nama_nas"));
+                    Nas_Edit.txt_alamat.setText(rs.getString("alamat_nas"));
+                    Nas_Edit.txt_hp.setText(rs.getString("hp_nas"));
+//                    Nas_Detail.det_saldo.setText(rs.getString("saldo_nas"));
+
+                }
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+            detail.setVisible(true);
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
     }
 }
