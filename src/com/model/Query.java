@@ -38,9 +38,8 @@ public class Query {
             + "harga_1,"
             + "harga_2, "
             + "harga_pgul, "
-            + "stok, "
-            + "catatan_samp)"
-            + "VALUES(?,?,?,?,?,?,?,?)";
+            + "stok)"
+            + "VALUES(?,?,?,?,?,?,?)";
     public static String REGISTER_SIMPANAN = "INSERT INTO simpanan("
            
             + "tgl_sim,"

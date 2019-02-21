@@ -60,7 +60,7 @@ public class Fungsi {
             ps.setString(5, s.getHarga_2());
             ps.setString(6, s.getHarga_pgul());
             ps.setString(7, s.getStok());
-            ps.setString(8, s.getCatatan_samp());
+           
            
             
             ps.executeUpdate();
@@ -288,8 +288,7 @@ public class Fungsi {
                     + "harga_1 LIKE'" + cari + "%' OR "
                     + "harga_2 LIKE'" + cari + "%' OR "
                     + "harga_pgul LIKE'" + cari + "%' OR "
-                    + "stok LIKE'" + cari + "%' OR "
-                    + "catatan_samp LIKE'" + cari + "%'"
+                    + "stok LIKE'" + cari + "%'"
                     + ")";
         }
         String Data[] = new String[4];
