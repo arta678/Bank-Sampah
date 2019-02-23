@@ -21,7 +21,7 @@ public class Nas_Edit extends javax.swing.JDialog {
     public Nas_Edit(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
     }
 
     /**
@@ -229,26 +229,25 @@ public class Nas_Edit extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void btn_simpan_nasabahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpan_nasabahActionPerformed
-        
-  if (this.txt_kode.getText().length() == 0
+
+        if (this.txt_kode.getText().length() == 0
                 || txt_nama.getText().length() == 0
                 || this.txt_alamat.getText().length() == 0
                 || this.txt_hp.getText().length() == 0) {
             //this.txtERROR.setText("SEMUA HARUS DIISI");
             JOptionPane.showMessageDialog(this,
                     "Mohon Diisi Semua", "INFO", JOptionPane.WARNING_MESSAGE);
-            
+
         } else {
             Query s = new Query();
-            
+
             s.setId_nas(this.txt_id.getText());
 //            s.setKode_nasabah();
             s.setKode_nas(this.txt_kode.getText());
             s.setNama_nas(this.txt_nama.getText());
             s.setAlamat_nas(this.txt_alamat.getText());
             s.setHp_nas(this.txt_hp.getText());
-           
-            
+
             if (Fungsi.updateNasbah(s)) {
 //                setClean();
 //                ts.clickGo();
@@ -256,30 +255,30 @@ public class Nas_Edit extends javax.swing.JDialog {
                 Fungsi.Tabel_nasabah("");
                 JOptionPane.showMessageDialog(this,
                         "Data Sudah Diperbaharui", "INFO", JOptionPane.INFORMATION_MESSAGE);
-                
+
             } else {
                 JOptionPane.showMessageDialog(this,
                         "Data Gagal Diperbaharui", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
-            
+
         }
         this.dispose();
     }//GEN-LAST:event_btn_simpan_nasabahActionPerformed
 
     private void txt_kodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_kodeActionPerformed
-        
+
     }//GEN-LAST:event_txt_kodeActionPerformed
 
     private void txt_namaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_namaActionPerformed
-        
+
     }//GEN-LAST:event_txt_namaActionPerformed
 
     private void txt_alamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_alamatActionPerformed
-        
+
     }//GEN-LAST:event_txt_alamatActionPerformed
 
     private void txt_hpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_hpActionPerformed
-       
+
     }//GEN-LAST:event_txt_hpActionPerformed
 
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed

@@ -47,12 +47,13 @@ public class Sampah_Edit extends javax.swing.JDialog {
         edit_harga1_sampah = new javax.swing.JTextField();
         btn_simpan_sampah = new java.awt.Button();
         btn_tutup = new java.awt.Button();
-        txt_id = new javax.swing.JLabel();
+        txt_id_edit_sampah = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         edit_harga2_sampah = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         edit_hargar_pengepul_sampah = new javax.swing.JTextField();
         edit_kategori_sampah = new javax.swing.JComboBox();
+        edit_stok = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -147,9 +148,9 @@ public class Sampah_Edit extends javax.swing.JDialog {
             }
         });
 
-        txt_id.setBackground(new java.awt.Color(255, 255, 255));
-        txt_id.setForeground(new java.awt.Color(255, 255, 255));
-        txt_id.setText("jLabel7");
+        txt_id_edit_sampah.setBackground(new java.awt.Color(255, 255, 255));
+        txt_id_edit_sampah.setForeground(new java.awt.Color(255, 255, 255));
+        txt_id_edit_sampah.setText("jLabel7");
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel6.setText("Harga DHS2");
@@ -175,6 +176,10 @@ public class Sampah_Edit extends javax.swing.JDialog {
         edit_kategori_sampah.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         edit_kategori_sampah.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Plastik", "Kertas", "Logam", " " }));
 
+        edit_stok.setBackground(new java.awt.Color(255, 255, 255));
+        edit_stok.setForeground(new java.awt.Color(255, 255, 255));
+        edit_stok.setText("jLabel7");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,9 +188,6 @@ public class Sampah_Edit extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txt_id)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -207,7 +209,12 @@ public class Sampah_Edit extends javax.swing.JDialog {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(edit_kode_sampah, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txt_id_edit_sampah)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(edit_stok)
+                        .addGap(88, 88, 88))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,7 +245,9 @@ public class Sampah_Edit extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edit_hargar_pengepul_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txt_id)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_id_edit_sampah)
+                    .addComponent(edit_stok))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_simpan_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,18 +309,18 @@ public class Sampah_Edit extends javax.swing.JDialog {
         } else {
 
             Query s = new Query();
-            s.setId_samp(this.txt_id.getText());
+            s.setId_samp(this.txt_id_edit_sampah.getText());
             s.setKode_samp(this.edit_kode_sampah.getText());
             s.setKategori(kategori);
             s.setNama_samp(this.edit_jenis_sampah.getText());
             s.setHarga_1(this.edit_harga1_sampah.getText());
             s.setHarga_2(this.edit_harga2_sampah.getText());
             s.setHarga_pgul(this.edit_hargar_pengepul_sampah.getText());
-            s.setStok("0");
+            s.setStok(this.edit_stok.getText());
             
 
     
-            if (Fungsi.createSampah(s)) {
+            if (Fungsi.updateSampah(s)) {
                 Fungsi.Tabel_sampah("");
                 JOptionPane.showMessageDialog(this,
                         "Pendaftaran Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
@@ -404,6 +413,7 @@ public class Sampah_Edit extends javax.swing.JDialog {
     public static javax.swing.JTextField edit_jenis_sampah;
     public static javax.swing.JComboBox edit_kategori_sampah;
     public static javax.swing.JTextField edit_kode_sampah;
+    public static javax.swing.JLabel edit_stok;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -414,6 +424,6 @@ public class Sampah_Edit extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public static javax.swing.JLabel txt_id;
+    public static javax.swing.JLabel txt_id_edit_sampah;
     // End of variables declaration//GEN-END:variables
 }

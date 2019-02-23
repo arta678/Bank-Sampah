@@ -41,7 +41,6 @@ public class Query {
             + "stok)"
             + "VALUES(?,?,?,?,?,?,?)";
     public static String REGISTER_SIMPANAN = "INSERT INTO simpanan("
-           
             + "tgl_sim,"
             + "kode_nas,"
             + "kode_samp,"
@@ -63,8 +62,17 @@ public class Query {
             + "nama_nas = ?,"
             + "alamat_nas = ?,"
             + "hp_nas = ?"
-        
             + "WHERE id_nas = ?";
+    
+    public static String UPDATE_SAMPAH = "UPDATE sampah SET "
+            + "kode_samp = ?,"
+            + "kategori = ?,"
+            + "nama_samp = ?,"
+            + "harga_1 = ?,"
+            + "harga_2 = ?,"
+            + "harga_pgul = ?,"
+            + "stok = ?"
+            + "WHERE id_samp = ?";
 
     //GET SET
     //GET SET

@@ -21,14 +21,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Fungsi {
     //    private static final Connection konek = con.getKonek();
-    
+
     private static com.koneksi.Konek con = new Konek();
     private static PreparedStatement ps = null;
     private static final Connection konek = con.getKonek();
-    
+
     //CREATE 
     //CREATE 
-    
     public static boolean createNasabah(Query s) {
         String sql = Query.REGISTER_NASABAH;
         try {
@@ -38,7 +37,7 @@ public class Fungsi {
             ps.setString(3, s.getAlamat_nas());
             ps.setString(4, s.getHp_nas());
             ps.setString(5, s.getSaldo_nas());
-            
+
             ps.executeUpdate();
             return true;
 
@@ -48,7 +47,7 @@ public class Fungsi {
         }
 
     }
-    
+
     public static boolean createSampah(Query s) {
         String sql = Query.REGISTER_SAMPAH;
         try {
@@ -60,9 +59,7 @@ public class Fungsi {
             ps.setString(5, s.getHarga_2());
             ps.setString(6, s.getHarga_pgul());
             ps.setString(7, s.getStok());
-           
-           
-            
+
             ps.executeUpdate();
             return true;
 
@@ -72,11 +69,12 @@ public class Fungsi {
         }
 
     }
+
     public static boolean createSimpanan(Query s) {
         String sql = Query.REGISTER_SIMPANAN;
         try {
             ps = konek.prepareStatement(sql);
-            
+
             ps.setString(1, s.getTgl_sim());
             ps.setString(2, s.getKode_nas());
             ps.setString(3, s.getKode_samp());
@@ -93,11 +91,12 @@ public class Fungsi {
         }
 
     }
+
     public static boolean createPenarikan(Query s) {
         String sql = Query.REGISTER_PENARIKAN;
         try {
             ps = konek.prepareStatement(sql);
-            
+
             ps.setString(1, s.getKode_nas());
             ps.setString(2, s.getTgl_pen());
             ps.setString(3, s.getSaldo_penarikan());
@@ -110,7 +109,7 @@ public class Fungsi {
         }
 
     }
-    
+
     //UPDATE
     //UPDATE
     public static boolean updateNasbah(Query s) {
@@ -134,11 +133,33 @@ public class Fungsi {
         }
 
     }
-    
-    
+
+    public static boolean updateSampah(Query s) {
+        String sql = Query.UPDATE_SAMPAH;
+
+        try {
+            ps = konek.prepareStatement(sql);
+            ps.setString(1, s.getKode_samp());
+            ps.setString(2, s.getKategori());
+            ps.setString(3, s.getNama_samp());
+            ps.setString(4, s.getHarga_1());
+            ps.setString(5, s.getHarga_2());
+            ps.setString(6, s.getHarga_pgul());
+            ps.setString(7, s.getStok());
+            ps.setString(8, s.getId_samp());
+            ps.executeUpdate();
+            return true;
+
+        } catch (SQLException ex) {
+            return false;
+
+//            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
     //TABEl
     //TABEL
-    
     public static void Tabel_nasabah(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_nasabah.getModel();
 
@@ -171,8 +192,7 @@ public class Fungsi {
                 Data[0] = rs.getString("id_nas");
                 Data[1] = rs.getString("kode_nas");
                 Data[2] = rs.getString("nama_nas");
-                
-                
+
                 model.addRow(Data);
 
             }
@@ -181,7 +201,7 @@ public class Fungsi {
         }
 
     }
-    
+
     public static void Tabel_penarikan(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_penarikan.getModel();
 
@@ -210,10 +230,10 @@ public class Fungsi {
             while (rs.next()) {
 
                 Data[0] = rs.getString("id_pen");
-                Data[1] = rs.getString("kode_nas");
-                Data[2] = rs.getString("tgl_pen");
+                Data[1] = rs.getString("tgl_pen");
+                Data[2] = rs.getString("kode_nas");
                 Data[3] = rs.getString("saldo_penarikan");
-                
+
                 model.addRow(Data);
 
             }
@@ -222,7 +242,7 @@ public class Fungsi {
         }
 
     }
-    
+
     public static void Tabel_Simpanan(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_tabungan.getModel();
 
@@ -246,7 +266,7 @@ public class Fungsi {
                     + "total_samp LIKE'" + cari + "%'"
                     + ")";
         }
-        String Data[] = new String[5];
+        String Data[] = new String[6];
 
         try {
             Statement st = konek.createStatement();
@@ -254,12 +274,20 @@ public class Fungsi {
 
             while (rs.next()) {
 
-                Data[0] = rs.getString("id_sim");
-                Data[1] = rs.getString("tgl_sim");
-                Data[2] = rs.getString("kode_nas");
-                Data[3] = rs.getString("nama_samp");
-                Data[4] = rs.getString("total_samp");
+//                Data[0] = rs.getString("id_sim");
+//                Data[1] = rs.getString("tgl_sim");
+//                Data[2] = rs.getString("kode_nas");
+//                Data[3] = rs.getString("nama_samp");
+//                Data[4] = rs.getString("total_samp");
                 
+//                Data[0] = rs.getString("id_sim");
+                Data[0] = rs.getString("tgl_sim");
+                Data[1] = rs.getString("kode_nas");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("harga_samp");
+                Data[4] = rs.getString("qty_samp");
+                Data[5] = rs.getString("total_samp");
+
                 model.addRow(Data);
 
             }
@@ -268,6 +296,7 @@ public class Fungsi {
         }
 
     }
+
     public static void Tabel_sampah(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_sampah.getModel();
 
@@ -303,7 +332,7 @@ public class Fungsi {
                 Data[1] = rs.getString("kode_samp");
                 Data[2] = rs.getString("nama_samp");
                 Data[3] = rs.getString("stok");
-                
+
                 model.addRow(Data);
 
             }
@@ -312,9 +341,5 @@ public class Fungsi {
         }
 
     }
-    
-    
-    
-    
-    
+
 }
