@@ -48,6 +48,7 @@ class Main extends javax.swing.JFrame {
         Fungsi.Tabel_sampah("");
         Fungsi.Tabel_Simpanan("");
         Fungsi.Tabel_penarikan("");
+        Fungsi.Tabel_buku_tabungan("");
 
         txt_button_datang.setSelected(true);
         txt_date.setDate(date);
@@ -325,6 +326,14 @@ class Main extends javax.swing.JFrame {
         tabel_tabungan = new rojerusan.RSTableMetro();
         jLabel63 = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tabel_buku_tabungan = new rojerusan.RSTableMetro();
+        jLabel103 = new javax.swing.JLabel();
+        buku_tabungan_nama_nasabah = new javax.swing.JLabel();
+        buku_tabungan_saldo = new javax.swing.JLabel();
+        jLabel106 = new javax.swing.JLabel();
+        rSButtonHover14 = new rojerusan.RSButtonHover();
+        buku_tabungan_id_nasabah = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         rSButtonHover9 = new rojerusan.RSButtonHover();
         jPanel31 = new javax.swing.JPanel();
@@ -1299,8 +1308,8 @@ class Main extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/search.png"))); // NOI18N
 
         rSButtonHover3.setBackground(new java.awt.Color(0, 153, 51));
-        rSButtonHover3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/saving.png"))); // NOI18N
-        rSButtonHover3.setText("Tabung");
+        rSButtonHover3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/eye.png"))); // NOI18N
+        rSButtonHover3.setText("Detil");
         rSButtonHover3.setColorHover(new java.awt.Color(48, 226, 48));
         rSButtonHover3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1393,7 +1402,7 @@ class Main extends javax.swing.JFrame {
         detail_id.setText("detail_id");
 
         rSButtonHover12.setBackground(new java.awt.Color(51, 0, 255));
-        rSButtonHover12.setText("Tabung");
+        rSButtonHover12.setText("Input ke tabungan");
         rSButtonHover12.setColorHover(new java.awt.Color(48, 226, 48));
         rSButtonHover12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1447,8 +1456,8 @@ class Main extends javax.swing.JFrame {
                         .addComponent(detail_id, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel37Layout.createSequentialGroup()
-                        .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                        .addComponent(rSButtonHover12, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(rSButtonHover10, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -1605,7 +1614,7 @@ class Main extends javax.swing.JFrame {
 
         rSButtonHover6.setBackground(new java.awt.Color(0, 204, 0));
         rSButtonHover6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/eye.png"))); // NOI18N
-        rSButtonHover6.setText("Lihat");
+        rSButtonHover6.setText("Detil");
         rSButtonHover6.setColorHover(new java.awt.Color(48, 226, 48));
         rSButtonHover6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1782,7 +1791,7 @@ class Main extends javax.swing.JFrame {
         detail_stok.setText("-");
 
         rSButtonHover13.setBackground(new java.awt.Color(51, 0, 255));
-        rSButtonHover13.setText("Input Tabungan");
+        rSButtonHover13.setText("Input ke tabungan");
         rSButtonHover13.setColorHover(new java.awt.Color(48, 226, 48));
         rSButtonHover13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1849,7 +1858,7 @@ class Main extends javax.swing.JFrame {
                     .addGroup(jPanel43Layout.createSequentialGroup()
                         .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(detail_id_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rSButtonHover13, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1990,12 +1999,12 @@ class Main extends javax.swing.JFrame {
         jPanel39.setBackground(new java.awt.Color(255, 255, 255));
         jPanel39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jPanel39.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel39AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -2777,14 +2786,14 @@ class Main extends javax.swing.JFrame {
         if (tabel_tabungan.getColumnModel().getColumnCount() > 0) {
             tabel_tabungan.getColumnModel().getColumn(0).setMinWidth(100);
             tabel_tabungan.getColumnModel().getColumn(0).setMaxWidth(100);
-            tabel_tabungan.getColumnModel().getColumn(1).setMinWidth(65);
-            tabel_tabungan.getColumnModel().getColumn(1).setMaxWidth(65);
-            tabel_tabungan.getColumnModel().getColumn(3).setMinWidth(65);
-            tabel_tabungan.getColumnModel().getColumn(3).setMaxWidth(65);
-            tabel_tabungan.getColumnModel().getColumn(4).setMinWidth(50);
-            tabel_tabungan.getColumnModel().getColumn(4).setMaxWidth(50);
-            tabel_tabungan.getColumnModel().getColumn(5).setMinWidth(70);
-            tabel_tabungan.getColumnModel().getColumn(5).setMaxWidth(70);
+            tabel_tabungan.getColumnModel().getColumn(2).setMinWidth(75);
+            tabel_tabungan.getColumnModel().getColumn(2).setMaxWidth(75);
+            tabel_tabungan.getColumnModel().getColumn(3).setMinWidth(50);
+            tabel_tabungan.getColumnModel().getColumn(3).setMaxWidth(50);
+            tabel_tabungan.getColumnModel().getColumn(4).setMinWidth(90);
+            tabel_tabungan.getColumnModel().getColumn(4).setMaxWidth(90);
+            tabel_tabungan.getColumnModel().getColumn(5).setMinWidth(90);
+            tabel_tabungan.getColumnModel().getColumn(5).setMaxWidth(90);
         }
 
         jLabel63.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -2823,15 +2832,120 @@ class Main extends javax.swing.JFrame {
 
         jPanel24.setBackground(new java.awt.Color(255, 255, 255));
 
+        tabel_buku_tabungan.setForeground(new java.awt.Color(0, 0, 0));
+        tabel_buku_tabungan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Tanggal", "Jenis Sampah", "Harga", "Berat", "Penarikan", "Setoran"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabel_buku_tabungan.setAltoHead(30);
+        tabel_buku_tabungan.setColorBackgoundHead(new java.awt.Color(51, 51, 51));
+        tabel_buku_tabungan.setColorBordeFilas(new java.awt.Color(172, 172, 172));
+        tabel_buku_tabungan.setColorBordeHead(new java.awt.Color(172, 172, 172));
+        tabel_buku_tabungan.setColorFilasBackgound2(new java.awt.Color(244, 244, 244));
+        tabel_buku_tabungan.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        tabel_buku_tabungan.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
+        tabel_buku_tabungan.setGridColor(new java.awt.Color(255, 255, 255));
+        tabel_buku_tabungan.setRowHeight(23);
+        jScrollPane6.setViewportView(tabel_buku_tabungan);
+        if (tabel_buku_tabungan.getColumnModel().getColumnCount() > 0) {
+            tabel_buku_tabungan.getColumnModel().getColumn(0).setMinWidth(100);
+            tabel_buku_tabungan.getColumnModel().getColumn(0).setMaxWidth(100);
+            tabel_buku_tabungan.getColumnModel().getColumn(2).setMinWidth(75);
+            tabel_buku_tabungan.getColumnModel().getColumn(2).setMaxWidth(75);
+            tabel_buku_tabungan.getColumnModel().getColumn(3).setMinWidth(50);
+            tabel_buku_tabungan.getColumnModel().getColumn(3).setMaxWidth(50);
+            tabel_buku_tabungan.getColumnModel().getColumn(4).setMinWidth(90);
+            tabel_buku_tabungan.getColumnModel().getColumn(4).setMaxWidth(90);
+            tabel_buku_tabungan.getColumnModel().getColumn(5).setMinWidth(90);
+            tabel_buku_tabungan.getColumnModel().getColumn(5).setMaxWidth(90);
+        }
+
+        jLabel103.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel103.setText("Informasi Tabungan");
+
+        buku_tabungan_nama_nasabah.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        buku_tabungan_nama_nasabah.setText("Nasabah");
+
+        buku_tabungan_saldo.setFont(new java.awt.Font("Arial", 1, 40)); // NOI18N
+        buku_tabungan_saldo.setForeground(new java.awt.Color(255, 0, 0));
+        buku_tabungan_saldo.setText("50000");
+
+        jLabel106.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel106.setText("Saldo");
+
+        rSButtonHover14.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonHover14.setText("<< KEMBALI");
+        rSButtonHover14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonHover14MouseClicked(evt);
+            }
+        });
+        rSButtonHover14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonHover14ActionPerformed(evt);
+            }
+        });
+
+        buku_tabungan_id_nasabah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        buku_tabungan_id_nasabah.setText("0");
+
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 999, Short.MAX_VALUE)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel24Layout.createSequentialGroup()
+                                .addComponent(rSButtonHover14, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buku_tabungan_id_nasabah))
+                            .addComponent(buku_tabungan_nama_nasabah)
+                            .addComponent(jLabel103))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 652, Short.MAX_VALUE)
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buku_tabungan_saldo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel106)))
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 385, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(buku_tabungan_saldo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(641, 641, 641))
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel106)
+                        .addComponent(buku_tabungan_id_nasabah))
+                    .addComponent(rSButtonHover14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel103)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buku_tabungan_nama_nasabah)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6)
+                .addGap(23, 23, 23))
         );
 
         Tabpane.addTab(".", jPanel24);
@@ -2854,12 +2968,12 @@ class Main extends javax.swing.JFrame {
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
         jPanel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jPanel31.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel31AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -3512,11 +3626,12 @@ class Main extends javax.swing.JFrame {
 //        setColor(btn_7);
 ////        ind_7.setOpaque(true);
 //        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5, btn_1, btn_6});
+
     }//GEN-LAST:event_btn_8MousePressed
 
     private void btn_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_8MouseClicked
-        Dialog_keluar keluar = new Dialog_keluar(this, true);
-        keluar.setVisible(true);
+//        Dialog_keluar keluar = new Dialog_keluar(this, true);
+//        keluar.setVisible(true);
 
 
     }//GEN-LAST:event_btn_8MouseClicked
@@ -3544,19 +3659,19 @@ class Main extends javax.swing.JFrame {
 
     private void rSButtonHover3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover3ActionPerformed
 
-        Tabpane.setSelectedIndex(7);
-
-        setColor(btn_2);
-        resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5, btn_7, btn_6});
-
-        try {
-            int baris = tabel_nasabah.getSelectedRow();
-            this.tabung_id_nasabah.setText(tabel_nasabah.getValueAt(baris, 1).toString());
-            tabung_id_nasabahActionPerformed(evt);
-
-        } catch (Exception e) {
-        }
-//        tampil_detail_nasabah();
+//        Tabpane.setSelectedIndex(7);
+//
+//        setColor(btn_2);
+//        resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5, btn_7, btn_6});
+//
+//        try {
+//            int baris = tabel_nasabah.getSelectedRow();
+//            this.tabung_id_nasabah.setText(tabel_nasabah.getValueAt(baris, 1).toString());
+//            tabung_id_nasabahActionPerformed(evt);
+//
+//        } catch (Exception e) {
+//        }
+        tampil_detail_nasabah();
     }//GEN-LAST:event_rSButtonHover3ActionPerformed
 
     private void txt_search_nasabahKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_nasabahKeyReleased
@@ -3665,11 +3780,8 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonHover7ActionPerformed
 
     private void tabung_id_nasabahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_id_nasabahActionPerformed
+
         try {
-//            connection.Konek con = new Konek();
-//            //    private static final Connection konek = con.getKonek();
-//            //        PreparedStatement ps = null;
-//            Connection konek = con.getKonek();
             String sql = "SELECT * FROM nasabah WHERE kode_nas = '" + tabung_id_nasabah.getText() + "'";
             Statement st = konek.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -3682,8 +3794,10 @@ class Main extends javax.swing.JFrame {
             tabung_id_sampah.requestFocus();
 
         } catch (Exception e) {
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, "Nasabah Tidak ditemukan");
         }
+
+
     }//GEN-LAST:event_tabung_id_nasabahActionPerformed
 
     private void tabung_id_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_id_sampahActionPerformed
@@ -4030,7 +4144,28 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel31AncestorAdded
 
     private void rSButtonHover10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover10ActionPerformed
-        // TODO add your handling code here:
+        Tabpane.setSelectedIndex(8);
+        try {
+            int baris = tabel_nasabah.getSelectedRow();
+            this.buku_tabungan_id_nasabah.setText(tabel_nasabah.getValueAt(baris, 1).toString());
+            this.buku_tabungan_nama_nasabah.setText(tabel_nasabah.getValueAt(baris, 2).toString());
+//            this.buku_tabungan_saldo.setText(tabel_nasabah.getValueAt(baris, 5).toString());
+            Fungsi.Tabel_buku_tabungan(this.buku_tabungan_id_nasabah.getText());
+            try {
+                String sql = "SELECT * FROM nasabah WHERE id_nas = '" + Main.buku_tabungan_id_nasabah.getText() + "'";
+                Statement st = konek.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+                while (rs.next()) {
+                    Main.buku_tabungan_saldo.setText(rs.getString("saldo_nas"));
+                }
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+        } catch (Exception e) {
+        }
+
     }//GEN-LAST:event_rSButtonHover10ActionPerformed
 
     private void rSButtonHover11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonHover11MouseClicked
@@ -4111,7 +4246,7 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonHover12ActionPerformed
 
     private void rSButtonHover13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover13ActionPerformed
-       Tabpane.setSelectedIndex(7);
+        Tabpane.setSelectedIndex(7);
 
         setColor(btn_2);
         resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5, btn_7, btn_6});
@@ -4124,6 +4259,17 @@ class Main extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_rSButtonHover13ActionPerformed
+
+    private void rSButtonHover14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonHover14MouseClicked
+        Tabpane.setSelectedIndex(2);
+        setColor(btn_3);
+//        ind_3.setOpaque(true);
+        resetColor(new JPanel[]{btn_2, btn_1, btn_4, btn_5, btn_7, btn_6});
+    }//GEN-LAST:event_rSButtonHover14MouseClicked
+
+    private void rSButtonHover14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonHover14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4171,6 +4317,9 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JPanel btn_6;
     private javax.swing.JPanel btn_7;
     private javax.swing.JPanel btn_8;
+    public static javax.swing.JLabel buku_tabungan_id_nasabah;
+    private javax.swing.JLabel buku_tabungan_nama_nasabah;
+    public static javax.swing.JLabel buku_tabungan_saldo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel detail_alamat_nas;
     private javax.swing.JLabel detail_harga1;
@@ -4191,6 +4340,8 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -4337,6 +4488,7 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -4376,6 +4528,7 @@ class Main extends javax.swing.JFrame {
     private rojerusan.RSButtonHover rSButtonHover11;
     private rojerusan.RSButtonHover rSButtonHover12;
     private rojerusan.RSButtonHover rSButtonHover13;
+    private rojerusan.RSButtonHover rSButtonHover14;
     private rojerusan.RSButtonHover rSButtonHover2;
     private rojerusan.RSButtonHover rSButtonHover3;
     private rojerusan.RSButtonHover rSButtonHover4;
@@ -4384,6 +4537,7 @@ class Main extends javax.swing.JFrame {
     private rojerusan.RSButtonHover rSButtonHover7;
     private rojerusan.RSButtonHover rSButtonHover8;
     private rojerusan.RSButtonHover rSButtonHover9;
+    public static rojerusan.RSTableMetro tabel_buku_tabungan;
     public static rojerusan.RSTableMetro tabel_nasabah;
     public static rojerusan.RSTableMetro tabel_penarikan;
     public static rojerusan.RSTableMetro tabel_penjualan;
@@ -4418,7 +4572,7 @@ class Main extends javax.swing.JFrame {
 
     private void setColor(JPanel pane) {
 //        pane.setBackground(new Color(69, 85, 107));
-        pane.setBackground(new Color(0,204,51));
+        pane.setBackground(new Color(0, 204, 51));
     }
 
     private void resetColor(JPanel[] pane) {
@@ -4529,10 +4683,6 @@ class Main extends javax.swing.JFrame {
         penarikan_isi_penarikan.setText("xxxxxxx");
         penarikan_isi_sisa_saldo.setText("xxxxxxx");
         penarikan_id_nas.requestFocus();
-        
-        
-        
-        
 
     }
 
@@ -4719,15 +4869,14 @@ class Main extends javax.swing.JFrame {
                 ResultSet rs = st.executeQuery(sql);
 
                 while (rs.next()) {
-                    
+
                     Sampah_Edit.edit_kode_sampah.setText(rs.getString("kode_samp"));
 //                    Sampah_Edit.edit_kategori_sampah.setText(rs.getString("kategori"));
                     Sampah_Edit.edit_jenis_sampah.setText(rs.getString("nama_samp"));
                     Sampah_Edit.edit_harga1_sampah.setText(rs.getString("harga_1"));
                     Sampah_Edit.edit_harga2_sampah.setText(rs.getString("harga_2"));
                     Sampah_Edit.edit_hargar_pengepul_sampah.setText(rs.getString("harga_pgul"));
-                     Sampah_Edit.edit_stok.setText(rs.getString("stok"));
-
+                    Sampah_Edit.edit_stok.setText(rs.getString("stok"));
                 }
 
             } catch (Exception e) {

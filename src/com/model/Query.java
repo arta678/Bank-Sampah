@@ -17,6 +17,7 @@ public class Query {
     public static String DAFTAR_SIMPANAN = "SELECT * FROM simpanan";
     public static String DAFTAR_PENARIKAN = "SELECT * FROM penarikan";
     public static String DAFTAR_LOGIN = "SELECT * FROM login";
+    public static String DAFTAR_LAPORAN_TABUNGAN = "SELECT * FROM laporan_tabungan";
     public static String JUMLAH_NASABAH = "SELECT COUNT(id_nas) FROM nasabah";
    
 
