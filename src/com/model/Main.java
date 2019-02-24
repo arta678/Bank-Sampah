@@ -49,10 +49,12 @@ class Main extends javax.swing.JFrame {
         Fungsi.Tabel_Simpanan("");
         Fungsi.Tabel_penarikan("");
         Fungsi.Tabel_buku_tabungan("");
+//        Fungsi.Tabel_PopUp_penjualan_sampah("");
 
         txt_button_datang.setSelected(true);
         txt_date.setDate(date);
         txt_date1.setDate(date);
+        txt_date_penjualan.setDate(date);
         hitungjumlahNasabah();
         tabel_nasabah.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
@@ -260,32 +262,24 @@ class Main extends javax.swing.JFrame {
         rSButtonHover11 = new rojerusan.RSButtonHover();
         jPanel39 = new javax.swing.JPanel();
         jPanel40 = new javax.swing.JPanel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
-        penarikan_isi_saldo1 = new javax.swing.JLabel();
-        penarikan_isi_penarikan1 = new javax.swing.JLabel();
-        jSeparator7 = new javax.swing.JSeparator();
-        penarikan_isi_sisa_saldo1 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
         jPanel41 = new javax.swing.JPanel();
         jLabel78 = new javax.swing.JLabel();
         penjualan_id_pengepul = new javax.swing.JTextField();
         jLabel79 = new javax.swing.JLabel();
-        penarikan_nama_nas1 = new javax.swing.JTextField();
+        penjualan_id_sampah = new javax.swing.JTextField();
         jLabel80 = new javax.swing.JLabel();
-        penarikan_alamat_nas1 = new javax.swing.JTextField();
+        penjualan_nama_sampah = new javax.swing.JTextField();
         jLabel81 = new javax.swing.JLabel();
-        penarikan_hp_nas1 = new javax.swing.JTextField();
+        penjualan_harga_sampah = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
-        penarikan_total_saldo_nas1 = new javax.swing.JTextField();
+        penjualan_stok_sampah = new javax.swing.JTextField();
         jLabel83 = new javax.swing.JLabel();
-        penarikan_jumlah_penarikan_saldo1 = new javax.swing.JTextField();
+        penjualan_jumlah_sampah = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jPanel42 = new javax.swing.JPanel();
         jLabel84 = new javax.swing.JLabel();
         txt_date_penjualan = new com.toedter.calendar.JDateChooser();
+        penjualan_total_penjualan_sampah = new javax.swing.JLabel();
         txt_simpan_tabungan2 = new rojerusan.RSButtonHover();
         txt_id_sim2 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -2010,95 +2004,15 @@ class Main extends javax.swing.JFrame {
 
         jPanel40.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel72.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel72.setText("Rincian Penarikan");
-
-        jLabel73.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel73.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel73.setText("Saldo");
-
-        jLabel74.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel74.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel74.setText("Penarikan");
-
-        jLabel75.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel75.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel75.setText(":");
-
-        jLabel76.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel76.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel76.setText(":");
-
-        penarikan_isi_saldo1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        penarikan_isi_saldo1.setForeground(new java.awt.Color(136, 135, 135));
-        penarikan_isi_saldo1.setText("xxxxxxx");
-
-        penarikan_isi_penarikan1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        penarikan_isi_penarikan1.setForeground(new java.awt.Color(136, 135, 135));
-        penarikan_isi_penarikan1.setText("xxxxxxx");
-
-        penarikan_isi_sisa_saldo1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        penarikan_isi_sisa_saldo1.setForeground(new java.awt.Color(136, 135, 135));
-        penarikan_isi_sisa_saldo1.setText("xxxxxxx");
-
-        jLabel77.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel77.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel77.setText("Sisa saldo");
-
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
         jPanel40Layout.setHorizontalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel40Layout.createSequentialGroup()
-                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel40Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel72))
-                    .addGroup(jPanel40Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel77)
-                            .addGroup(jPanel40Layout.createSequentialGroup()
-                                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel74)
-                                    .addComponent(jLabel73))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(penarikan_isi_sisa_saldo1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(penarikan_isi_saldo1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(penarikan_isi_penarikan1, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel40Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addGap(0, 234, Short.MAX_VALUE)
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel40Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel72)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel73)
-                    .addComponent(jLabel75)
-                    .addComponent(penarikan_isi_saldo1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel74)
-                    .addComponent(jLabel76)
-                    .addComponent(penarikan_isi_penarikan1))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(penarikan_isi_sisa_saldo1)
-                    .addComponent(jLabel77))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 439, Short.MAX_VALUE)
         );
 
         jPanel41.setBackground(new java.awt.Color(204, 204, 255));
@@ -2128,54 +2042,64 @@ class Main extends javax.swing.JFrame {
         jLabel79.setForeground(new java.awt.Color(136, 135, 135));
         jLabel79.setText("ID Sampah");
 
-        penarikan_nama_nas1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        penarikan_nama_nas1.addActionListener(new java.awt.event.ActionListener() {
+        penjualan_id_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        penjualan_id_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                penarikan_nama_nas1ActionPerformed(evt);
+                penjualan_id_sampahActionPerformed(evt);
             }
         });
 
         jLabel80.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel80.setText("Alamat");
+        jLabel80.setText("Jenis Sampah");
 
-        penarikan_alamat_nas1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        penarikan_alamat_nas1.addActionListener(new java.awt.event.ActionListener() {
+        penjualan_nama_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        penjualan_nama_sampah.setEnabled(false);
+        penjualan_nama_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                penarikan_alamat_nas1ActionPerformed(evt);
+                penjualan_nama_sampahActionPerformed(evt);
             }
         });
 
         jLabel81.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel81.setText("No-Hp");
+        jLabel81.setText("Harga Sampah");
 
-        penarikan_hp_nas1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        penarikan_hp_nas1.addActionListener(new java.awt.event.ActionListener() {
+        penjualan_harga_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        penjualan_harga_sampah.setEnabled(false);
+        penjualan_harga_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                penarikan_hp_nas1ActionPerformed(evt);
+                penjualan_harga_sampahActionPerformed(evt);
             }
         });
 
         jLabel82.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel82.setText("Total Saldo");
+        jLabel82.setText("Stok");
 
-        penarikan_total_saldo_nas1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        penarikan_total_saldo_nas1.addActionListener(new java.awt.event.ActionListener() {
+        penjualan_stok_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        penjualan_stok_sampah.setEnabled(false);
+        penjualan_stok_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                penarikan_total_saldo_nas1ActionPerformed(evt);
+                penjualan_stok_sampahActionPerformed(evt);
             }
         });
 
         jLabel83.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel83.setText("Jumlah Penarikan");
+        jLabel83.setText("Jumlah Jual Sampah");
 
-        penarikan_jumlah_penarikan_saldo1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        penarikan_jumlah_penarikan_saldo1.addActionListener(new java.awt.event.ActionListener() {
+        penjualan_jumlah_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        penjualan_jumlah_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                penarikan_jumlah_penarikan_saldo1ActionPerformed(evt);
+                penjualan_jumlah_sampahActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Lihat");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -2186,20 +2110,23 @@ class Main extends javax.swing.JFrame {
             .addGroup(jPanel41Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(penjualan_jumlah_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(penarikan_jumlah_penarikan_saldo1, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                        .addComponent(jLabel83))
-                    .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel79)
-                        .addComponent(jLabel80)
-                        .addComponent(penarikan_nama_nas1)
-                        .addComponent(penarikan_alamat_nas1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                        .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(penarikan_hp_nas1)
+                        .addComponent(penjualan_nama_sampah, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                        .addComponent(penjualan_harga_sampah)
                         .addComponent(penjualan_id_pengepul)
                         .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(penarikan_total_saldo_nas1)))
+                        .addComponent(penjualan_stok_sampah)
+                        .addComponent(jLabel81)
+                        .addComponent(jLabel82)
+                        .addGroup(jPanel41Layout.createSequentialGroup()
+                            .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(penjualan_id_sampah, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel80, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel83))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel41Layout.setVerticalGroup(
@@ -2212,24 +2139,26 @@ class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel79)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(penarikan_nama_nas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(penjualan_id_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel80)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(penarikan_alamat_nas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(penjualan_nama_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel81)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(penarikan_hp_nas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(penjualan_harga_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel82)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(penarikan_total_saldo_nas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(penjualan_stok_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel83)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(penarikan_jumlah_penarikan_saldo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(penjualan_jumlah_sampah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel42.setBackground(new java.awt.Color(204, 204, 255));
@@ -2241,6 +2170,8 @@ class Main extends javax.swing.JFrame {
         txt_date_penjualan.setDateFormatString("yyyy-MM-dd");
         txt_date_penjualan.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
 
+        penjualan_total_penjualan_sampah.setText("jLabel72");
+
         javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
         jPanel42.setLayout(jPanel42Layout);
         jPanel42Layout.setHorizontalGroup(
@@ -2248,7 +2179,11 @@ class Main extends javax.swing.JFrame {
             .addGroup(jPanel42Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel84)
+                    .addGroup(jPanel42Layout.createSequentialGroup()
+                        .addComponent(jLabel84)
+                        .addGap(31, 31, 31)
+                        .addComponent(penjualan_total_penjualan_sampah)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(txt_date_penjualan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(217, 217, 217))
         );
@@ -2256,14 +2191,16 @@ class Main extends javax.swing.JFrame {
             jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel42Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel84)
+                .addGroup(jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel84)
+                    .addComponent(penjualan_total_penjualan_sampah))
                 .addGap(3, 3, 3)
                 .addComponent(txt_date_penjualan, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
         txt_simpan_tabungan2.setBackground(new java.awt.Color(115, 125, 206));
-        txt_simpan_tabungan2.setText("Tarik Saldo");
+        txt_simpan_tabungan2.setText("Proses Jual");
         txt_simpan_tabungan2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txt_simpan_tabungan2MouseClicked(evt);
@@ -2317,7 +2254,7 @@ class Main extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Tanggal", "Pengepul", "Sampah", "Harga", "", "Jumlah"
+                "Tanggal", "Pengepul", "Sampah", "Harga", "Kg", "Jumlah"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2340,7 +2277,9 @@ class Main extends javax.swing.JFrame {
         jScrollPane5.setViewportView(tabel_penjualan);
         if (tabel_penjualan.getColumnModel().getColumnCount() > 0) {
             tabel_penjualan.getColumnModel().getColumn(0).setMinWidth(100);
-            tabel_penjualan.getColumnModel().getColumn(0).setMaxWidth(0);
+            tabel_penjualan.getColumnModel().getColumn(0).setMaxWidth(100);
+            tabel_penjualan.getColumnModel().getColumn(4).setMinWidth(50);
+            tabel_penjualan.getColumnModel().getColumn(4).setMaxWidth(50);
             tabel_penjualan.getColumnModel().getColumn(5).setMinWidth(60);
             tabel_penjualan.getColumnModel().getColumn(5).setMaxWidth(60);
         }
@@ -2360,8 +2299,8 @@ class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel85)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(9, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5))
+                .addGap(9, 9, 9))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3604,6 +3543,8 @@ class Main extends javax.swing.JFrame {
         setColor(btn_5);
 //        ind_5.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_1, btn_7, btn_6});
+        this.penjualan_id_pengepul.requestFocus();
+        
     }//GEN-LAST:event_btn_5MousePressed
 
     private void btn_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MousePressed
@@ -4195,32 +4136,102 @@ class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_penjualan_id_pengepulKeyReleased
 
-    private void penarikan_nama_nas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_nama_nas1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_penarikan_nama_nas1ActionPerformed
+    private void penjualan_id_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penjualan_id_sampahActionPerformed
+        try {
 
-    private void penarikan_alamat_nas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_alamat_nas1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_penarikan_alamat_nas1ActionPerformed
+            Connection konek = con.getKonek();
+            String sql = "SELECT * FROM sampah WHERE kode_samp = '" + penjualan_id_sampah.getText() + "'";
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
 
-    private void penarikan_hp_nas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_hp_nas1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_penarikan_hp_nas1ActionPerformed
+            while (rs.next()) {
 
-    private void penarikan_total_saldo_nas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_total_saldo_nas1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_penarikan_total_saldo_nas1ActionPerformed
+                penjualan_nama_sampah.setText(rs.getString("nama_samp"));
+                penjualan_harga_sampah.setText(rs.getString("harga_pgul"));
+                penjualan_stok_sampah.setText(rs.getString("stok"));
+                penjualan_jumlah_sampah.setText(rs.getString("stok"));
+//                                txt_alamat_nasabah.setText(rs.getString("username"));
+                //                txt_noHp.setText(rs.getString("password"));
 
-    private void penarikan_jumlah_penarikan_saldo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_jumlah_penarikan_saldo1ActionPerformed
+            }
+
+            penjualan_jumlah_sampah.requestFocus();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_penjualan_id_sampahActionPerformed
+
+    private void penjualan_nama_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penjualan_nama_sampahActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_penarikan_jumlah_penarikan_saldo1ActionPerformed
+    }//GEN-LAST:event_penjualan_nama_sampahActionPerformed
+
+    private void penjualan_harga_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penjualan_harga_sampahActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_penjualan_harga_sampahActionPerformed
+
+    private void penjualan_stok_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penjualan_stok_sampahActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_penjualan_stok_sampahActionPerformed
+
+    private void penjualan_jumlah_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penjualan_jumlah_sampahActionPerformed
+        txt_simpan_tabungan2ActionPerformed(evt);
+    }//GEN-LAST:event_penjualan_jumlah_sampahActionPerformed
 
     private void txt_simpan_tabungan2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_simpan_tabungan2MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_simpan_tabungan2MouseClicked
 
     private void txt_simpan_tabungan2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_simpan_tabungan2ActionPerformed
-        // TODO add your handling code here:
+//        int pesankeluar = JOptionPane.showOptionDialog(this, "Apakah data-data sudah benar ?", "Konfirmasi menabung", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+        if (this.penjualan_id_pengepul.getText().length() == 0
+                || this.penjualan_id_sampah.getText().length() == 0
+                || this.penjualan_jumlah_sampah.getText().length() == 0) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Inputan ada yang kosong !", "Informasi", JOptionPane.WARNING_MESSAGE);
+
+        } else {
+            String hargaSampah = this.penjualan_harga_sampah.getText();
+            String beratSampah = this.penjualan_jumlah_sampah.getText();
+
+            int harga = Integer.parseInt(penjualan_harga_sampah.getText());
+            int berat = Integer.parseInt(penjualan_jumlah_sampah.getText());
+            int hasil;
+            hasil = harga * berat;
+            String hasilString = String.valueOf(hasil);
+
+            penjualan_total_penjualan_sampah.setText(hasilString);
+            
+            
+
+            String nama_pengepul = penjualan_id_pengepul.getText();
+            String nama_sampah = penjualan_nama_sampah.getText();
+            String harga_sampah = penjualan_harga_sampah.getText();
+            String stok_sampah = penjualan_stok_sampah.getText();
+            String jumlah_jual = penjualan_jumlah_sampah.getText();
+//            String total_penjualan= penjualan_total_penjualan_sampah.getText();
+
+            int pesankeluar = JOptionPane.showOptionDialog(this, "Apakah Data sudah benar ?"
+                    + "\n"
+                    + "\nPengepul   : " + nama_pengepul
+                    + "\nSampah     : " + nama_sampah
+                    + "\nHarga      : " + harga_sampah
+                    + "\nKg         : " + jumlah_jual
+                    + "\nTotal Penjualan : " + hasilString
+                    + "\n"
+                    + "\nKlik yes untuk proses penjualan", "Konfirmasi Penjualan", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+            if (pesankeluar == JOptionPane.YES_OPTION) {
+
+                tampahPenjualan();
+
+                clean_penjualan();
+
+            }
+
+        }
+
+
     }//GEN-LAST:event_txt_simpan_tabungan2ActionPerformed
 
     private void jPanel39AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel39AncestorAdded
@@ -4270,6 +4281,13 @@ class Main extends javax.swing.JFrame {
     private void rSButtonHover14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonHover14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonHover14ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        showTabelSampah a = new showTabelSampah(this, true);
+        a.setVisible(true);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4335,6 +4353,7 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JLabel detail_nama_nas;
     private javax.swing.JLabel detail_saldo_nas;
     private javax.swing.JLabel detail_stok;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -4409,12 +4428,6 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
@@ -4500,29 +4513,26 @@ class Main extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JPanel menubar;
     private javax.swing.JPanel pane_home;
     private javax.swing.JTextField penarikan_alamat_nas;
-    private javax.swing.JTextField penarikan_alamat_nas1;
     private javax.swing.JTextField penarikan_hp_nas;
-    private javax.swing.JTextField penarikan_hp_nas1;
     private javax.swing.JTextField penarikan_id_nas;
     private javax.swing.JLabel penarikan_isi_penarikan;
-    private javax.swing.JLabel penarikan_isi_penarikan1;
     private javax.swing.JLabel penarikan_isi_saldo;
-    private javax.swing.JLabel penarikan_isi_saldo1;
     private javax.swing.JLabel penarikan_isi_sisa_saldo;
-    private javax.swing.JLabel penarikan_isi_sisa_saldo1;
     private javax.swing.JTextField penarikan_jumlah_penarikan_saldo;
-    private javax.swing.JTextField penarikan_jumlah_penarikan_saldo1;
     private javax.swing.JTextField penarikan_nama_nas;
-    private javax.swing.JTextField penarikan_nama_nas1;
     private javax.swing.JTextField penarikan_total_saldo_nas;
-    private javax.swing.JTextField penarikan_total_saldo_nas1;
+    private javax.swing.JTextField penjualan_harga_sampah;
     private javax.swing.JTextField penjualan_id_pengepul;
+    private javax.swing.JTextField penjualan_id_sampah;
+    private javax.swing.JTextField penjualan_jumlah_sampah;
+    private javax.swing.JTextField penjualan_nama_sampah;
+    private javax.swing.JTextField penjualan_stok_sampah;
+    private javax.swing.JLabel penjualan_total_penjualan_sampah;
     private rojerusan.RSButtonHover rSButtonHover1;
     private rojerusan.RSButtonHover rSButtonHover10;
     private rojerusan.RSButtonHover rSButtonHover11;
@@ -4889,6 +4899,63 @@ class Main extends javax.swing.JFrame {
             System.out.println(e);
 
         }
+    }
+
+    private void tampahPenjualan() {
+        try {
+            String hargaSampah = this.penjualan_harga_sampah.getText();
+            String beratSampah = this.penjualan_jumlah_sampah.getText();
+
+            int harga = Integer.parseInt(penjualan_harga_sampah.getText());
+            int berat = Integer.parseInt(penjualan_jumlah_sampah.getText());
+            int hasil;
+            hasil = harga * berat;
+            String hasilString = String.valueOf(hasil);
+
+            penjualan_total_penjualan_sampah.setText(hasilString);
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String startDateString = dateFormat.format(txt_date_penjualan.getDate());
+
+            Query s = new Query();
+            s.setTgl_jual(startDateString);
+            s.setNama_pengepul(this.penjualan_id_pengepul.getText());
+            s.setKode_samp(this.penjualan_id_sampah.getText());
+            s.setNama_samp(this.penjualan_nama_sampah.getText());
+            s.setHarga_samp(this.penjualan_harga_sampah.getText());
+            s.setBerat(this.penjualan_jumlah_sampah.getText());
+            s.setTotal_harga("0");
+
+            if (Fungsi.createPenjualan(s)) {
+//                    setClean();
+//                Fungsi.Tabel_nasabah("");
+                Fungsi.Tabel_sampah("");
+                
+//                Fungsi.Tabel_Simpanan("");
+//                    ts.clickGo();
+                JOptionPane.showMessageDialog(this,
+                        "Menabung Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "PENAMBAHAN GAGAL", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+//                TabPane.setSelectedIndex(3);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+    private void clean_penjualan() {
+        penjualan_id_pengepul.setText("");
+        penjualan_id_sampah.setText("");
+        penjualan_jumlah_sampah.setText("");
+        penjualan_nama_sampah.setText("");
+        penjualan_stok_sampah.setText("");
+        penjualan_harga_sampah.setText("");
+    
     }
 
 }

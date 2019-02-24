@@ -2954,12 +2954,12 @@
                                       <Component id="jPanel39" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="rSButtonHover11" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane5" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="9" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3062,176 +3062,15 @@
                               <Layout>
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel77" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel73" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jLabel75" alignment="0" min="-2" pref="15" max="-2" attributes="0"/>
-                                                              <Component id="jLabel76" alignment="0" min="-2" pref="15" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="penarikan_isi_sisa_saldo1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="penarikan_isi_saldo1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="penarikan_isi_penarikan1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="jSeparator7" min="-2" pref="207" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace pref="21" max="32767" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="0" pref="234" max="32767" attributes="0"/>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel73" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="penarikan_isi_saldo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel76" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="penarikan_isi_penarikan1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jSeparator7" min="-2" pref="10" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="penarikan_isi_sisa_saldo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="0" pref="439" max="32767" attributes="0"/>
                                   </Group>
                                 </DimensionLayout>
                               </Layout>
-                              <SubComponents>
-                                <Component class="javax.swing.JLabel" name="jLabel72">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="Rincian Penarikan"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel73">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="Saldo"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel74">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="Penarikan"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel75">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value=":"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel76">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value=":"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="penarikan_isi_saldo1">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="xxxxxxx"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="penarikan_isi_penarikan1">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="xxxxxxx"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JSeparator" name="jSeparator7">
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="penarikan_isi_sisa_saldo1">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="xxxxxxx"/>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel77">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Arial" size="18" style="0"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="87" green="87" red="88" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="Sisa saldo"/>
-                                  </Properties>
-                                </Component>
-                              </SubComponents>
                             </Container>
                             <Container class="javax.swing.JPanel" name="jPanel41">
                               <Properties>
@@ -3246,22 +3085,26 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="penjualan_jumlah_sampah" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="penarikan_jumlah_penarikan_saldo1" alignment="0" pref="196" max="32767" attributes="0"/>
-                                                  <Component id="jLabel83" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jLabel82" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
                                                   <Component id="jLabel79" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel80" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="penarikan_nama_nas1" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="penarikan_alamat_nas1" alignment="0" pref="199" max="32767" attributes="0"/>
-                                                  <Component id="jLabel81" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                                                  <Component id="penarikan_hp_nas1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="penjualan_nama_sampah" alignment="0" pref="199" max="32767" attributes="0"/>
+                                                  <Component id="penjualan_harga_sampah" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="penjualan_id_pengepul" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="jLabel78" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="penarikan_total_saldo_nas1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="penjualan_stok_sampah" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jLabel81" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Component id="penjualan_id_sampah" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="jLabel80" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jButton1" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
+                                              <Component id="jLabel83" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace pref="17" max="32767" attributes="0"/>
                                       </Group>
@@ -3277,24 +3120,27 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel79" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="penarikan_nama_nas1" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="penjualan_id_sampah" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButton1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                          </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="penarikan_alamat_nas1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="penjualan_nama_sampah" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="penarikan_hp_nas1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="penjualan_harga_sampah" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="penarikan_total_saldo_nas1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="penjualan_stok_sampah" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="penarikan_jumlah_penarikan_saldo1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                                          <Component id="penjualan_jumlah_sampah" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="17" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -3332,14 +3178,14 @@
                                     <Property name="text" type="java.lang.String" value="ID Sampah"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="penarikan_nama_nas1">
+                                <Component class="javax.swing.JTextField" name="penjualan_id_sampah">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Arial" size="20" style="1"/>
                                     </Property>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penarikan_nama_nas1ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penjualan_id_sampahActionPerformed"/>
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel80">
@@ -3350,17 +3196,18 @@
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="87" green="87" red="88" type="rgb"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="Alamat"/>
+                                    <Property name="text" type="java.lang.String" value="Jenis Sampah"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="penarikan_alamat_nas1">
+                                <Component class="javax.swing.JTextField" name="penjualan_nama_sampah">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Arial" size="20" style="1"/>
                                     </Property>
+                                    <Property name="enabled" type="boolean" value="false"/>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penarikan_alamat_nas1ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penjualan_nama_sampahActionPerformed"/>
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel81">
@@ -3371,17 +3218,18 @@
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="87" green="87" red="88" type="rgb"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="No-Hp"/>
+                                    <Property name="text" type="java.lang.String" value="Harga Sampah"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="penarikan_hp_nas1">
+                                <Component class="javax.swing.JTextField" name="penjualan_harga_sampah">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Arial" size="20" style="1"/>
                                     </Property>
+                                    <Property name="enabled" type="boolean" value="false"/>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penarikan_hp_nas1ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penjualan_harga_sampahActionPerformed"/>
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel82">
@@ -3392,17 +3240,18 @@
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="87" green="87" red="88" type="rgb"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="Total Saldo"/>
+                                    <Property name="text" type="java.lang.String" value="Stok"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="penarikan_total_saldo_nas1">
+                                <Component class="javax.swing.JTextField" name="penjualan_stok_sampah">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Arial" size="20" style="1"/>
                                     </Property>
+                                    <Property name="enabled" type="boolean" value="false"/>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penarikan_total_saldo_nas1ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penjualan_stok_sampahActionPerformed"/>
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel83">
@@ -3413,17 +3262,25 @@
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="87" green="87" red="88" type="rgb"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="Jumlah Penarikan"/>
+                                    <Property name="text" type="java.lang.String" value="Jumlah Jual Sampah"/>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="penarikan_jumlah_penarikan_saldo1">
+                                <Component class="javax.swing.JTextField" name="penjualan_jumlah_sampah">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Arial" size="20" style="1"/>
                                     </Property>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penarikan_jumlah_penarikan_saldo1ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="penjualan_jumlah_sampahActionPerformed"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JButton" name="jButton1">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Lihat"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
                                   </Events>
                                 </Component>
                               </SubComponents>
@@ -3441,7 +3298,12 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel84" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                  <Component id="penjualan_total_penjualan_sampah" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              </Group>
                                               <Component id="txt_date_penjualan" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
@@ -3452,7 +3314,10 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="penjualan_total_penjualan_sampah" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                           <Component id="txt_date_penjualan" min="-2" pref="39" max="-2" attributes="0"/>
                                           <EmptySpace pref="15" max="32767" attributes="0"/>
@@ -3480,6 +3345,11 @@
                                     </Property>
                                   </Properties>
                                 </Component>
+                                <Component class="javax.swing.JLabel" name="penjualan_total_penjualan_sampah">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="jLabel72"/>
+                                  </Properties>
+                                </Component>
                               </SubComponents>
                             </Container>
                             <Component class="rojerusan.RSButtonHover" name="txt_simpan_tabungan2">
@@ -3487,7 +3357,7 @@
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ce" green="7d" red="73" type="rgb"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Tarik Saldo"/>
+                                <Property name="text" type="java.lang.String" value="Proses Jual"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_simpan_tabungan2MouseClicked"/>
@@ -3522,7 +3392,7 @@
                                     <Column editable="false" title="Pengepul" type="java.lang.Object"/>
                                     <Column editable="false" title="Sampah" type="java.lang.Object"/>
                                     <Column editable="true" title="Harga" type="java.lang.Object"/>
-                                    <Column editable="true" title="" type="java.lang.Object"/>
+                                    <Column editable="true" title="Kg" type="java.lang.Object"/>
                                     <Column editable="false" title="Jumlah" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
@@ -3547,7 +3417,7 @@
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
-                                    <Column maxWidth="0" minWidth="100" prefWidth="-1" resizable="true">
+                                    <Column maxWidth="100" minWidth="100" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
@@ -3567,7 +3437,7 @@
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                    <Column maxWidth="50" minWidth="50" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>

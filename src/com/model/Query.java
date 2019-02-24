@@ -17,6 +17,7 @@ public class Query {
     public static String DAFTAR_SIMPANAN = "SELECT * FROM simpanan";
     public static String DAFTAR_PENARIKAN = "SELECT * FROM penarikan";
     public static String DAFTAR_LOGIN = "SELECT * FROM login";
+    public static String DAFTAR_PENJUALAN = "SELECT * FROM penjualan";
     public static String DAFTAR_LAPORAN_TABUNGAN = "SELECT * FROM laporan_tabungan";
     public static String JUMLAH_NASABAH = "SELECT COUNT(id_nas) FROM nasabah";
    
@@ -31,6 +32,15 @@ public class Query {
             + "hp_nas, "
             + "saldo_nas)"
             + "VALUES(?,?,?,?,?)";
+    public static String REGISTER_PENJUALAN = "INSERT INTO penjualan("
+            + "tgl_jual,"
+            + "nama_pengepul,"
+            + "kode_samp,"
+            + "nama_samp, "
+            + "harga_samp, "
+            + "berat, "
+            + "total_harga)"
+            + "VALUES(?,?,?,?,?,?,?)";
 
     public static String REGISTER_SAMPAH = "INSERT INTO sampah("
             + "kode_samp,"
@@ -113,6 +123,50 @@ public class Query {
     private String tgl_pen;
     private String id_pen;
     private String saldo_penarikan;
+    
+        
+    
+    //PENJUALAN
+          private String tgl_jual;
+          private String nama_pengepul;
+          private String berat;
+          private String total_harga;
+
+    public String getTgl_jual() {
+        return tgl_jual;
+    }
+
+    public void setTgl_jual(String tgl_jual) {
+        this.tgl_jual = tgl_jual;
+    }
+
+    public String getNama_pengepul() {
+        return nama_pengepul;
+    }
+
+    public void setNama_pengepul(String nama_pengepul) {
+        this.nama_pengepul = nama_pengepul;
+    }
+
+    public String getBerat() {
+        return berat;
+    }
+
+    public void setBerat(String berat) {
+        this.berat = berat;
+    }
+
+    public String getTotal_harga() {
+        return total_harga;
+    }
+
+    public void setTotal_harga(String total_harga) {
+        this.total_harga = total_harga;
+    }
+         
+          
+          
+          
     
     
     //________
