@@ -4220,7 +4220,7 @@
                                 <Column editable="false" title="Tanggal" type="java.lang.Object">
                                   <Data value="1"/>
                                 </Column>
-                                <Column editable="false" title="Nasabah" type="java.lang.Object">
+                                <Column editable="false" title="ID Nas" type="java.lang.Object">
                                   <Data value="15/05/2009"/>
                                 </Column>
                                 <Column editable="false" title="Sampah" type="java.lang.Object">
@@ -4259,12 +4259,12 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="75" minWidth="75" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="75" minWidth="75" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -4274,7 +4274,7 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="90" minWidth="90" prefWidth="-1" resizable="true">
+                                <Column maxWidth="50" minWidth="50" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -4401,8 +4401,8 @@
                                 <Column editable="false" title="Jenis Sampah" type="java.lang.Object"/>
                                 <Column editable="false" title="Harga" type="java.lang.Object"/>
                                 <Column editable="false" title="Berat" type="java.lang.Object"/>
-                                <Column editable="false" title="Penarikan" type="java.lang.Object"/>
                                 <Column editable="false" title="Setoran" type="java.lang.Object"/>
+                                <Column editable="false" title="Penarikan" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="altoHead" type="int" value="30"/>
@@ -4526,6 +4526,9 @@
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="20" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>

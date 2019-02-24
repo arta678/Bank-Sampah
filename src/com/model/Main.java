@@ -1999,12 +1999,12 @@ class Main extends javax.swing.JFrame {
         jPanel39.setBackground(new java.awt.Color(255, 255, 255));
         jPanel39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jPanel39.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel39AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -2762,7 +2762,7 @@ class Main extends javax.swing.JFrame {
                 {"1", "15/05/2009", "Arta Wiguna", null, null, "10000"}
             },
             new String [] {
-                "Tanggal", "Nasabah", "Sampah", "Harga ", "kg", "Total"
+                "Tanggal", "ID Nas", "Sampah", "Harga ", "kg", "Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2786,12 +2786,12 @@ class Main extends javax.swing.JFrame {
         if (tabel_tabungan.getColumnModel().getColumnCount() > 0) {
             tabel_tabungan.getColumnModel().getColumn(0).setMinWidth(100);
             tabel_tabungan.getColumnModel().getColumn(0).setMaxWidth(100);
-            tabel_tabungan.getColumnModel().getColumn(2).setMinWidth(75);
-            tabel_tabungan.getColumnModel().getColumn(2).setMaxWidth(75);
+            tabel_tabungan.getColumnModel().getColumn(1).setMinWidth(75);
+            tabel_tabungan.getColumnModel().getColumn(1).setMaxWidth(75);
             tabel_tabungan.getColumnModel().getColumn(3).setMinWidth(50);
             tabel_tabungan.getColumnModel().getColumn(3).setMaxWidth(50);
-            tabel_tabungan.getColumnModel().getColumn(4).setMinWidth(90);
-            tabel_tabungan.getColumnModel().getColumn(4).setMaxWidth(90);
+            tabel_tabungan.getColumnModel().getColumn(4).setMinWidth(50);
+            tabel_tabungan.getColumnModel().getColumn(4).setMaxWidth(50);
             tabel_tabungan.getColumnModel().getColumn(5).setMinWidth(90);
             tabel_tabungan.getColumnModel().getColumn(5).setMaxWidth(90);
         }
@@ -2839,7 +2839,7 @@ class Main extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Tanggal", "Jenis Sampah", "Harga", "Berat", "Penarikan", "Setoran"
+                "Tanggal", "Jenis Sampah", "Harga", "Berat", "Setoran", "Penarikan"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2900,6 +2900,7 @@ class Main extends javax.swing.JFrame {
         });
 
         buku_tabungan_id_nasabah.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        buku_tabungan_id_nasabah.setForeground(new java.awt.Color(255, 255, 255));
         buku_tabungan_id_nasabah.setText("0");
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
@@ -2968,12 +2969,12 @@ class Main extends javax.swing.JFrame {
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
         jPanel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jPanel31.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel31AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -3924,7 +3925,7 @@ class Main extends javax.swing.JFrame {
                     || this.tabung_banyak_sampah.getText().length() == 0) {
 //            /       || /this.txtERROR.setText("SEMUA HARUS DIISI");
                 JOptionPane.showMessageDialog(this,
-                        "SEMUA HARUS DIISI", "INFO", JOptionPane.WARNING_MESSAGE);
+                        "Ups, input data salah", "INFO", JOptionPane.WARNING_MESSAGE);
 
             } else {
                 tambahSimpanan();
@@ -4158,7 +4159,6 @@ class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     Main.buku_tabungan_saldo.setText(rs.getString("saldo_nas"));
                 }
-
             } catch (Exception e) {
                 System.out.println(e);
             }

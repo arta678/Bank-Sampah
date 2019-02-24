@@ -350,9 +350,10 @@ public class Fungsi {
 
         String sql = "";
         if (cari.equals("")) {
-            sql = Query.DAFTAR_LAPORAN_TABUNGAN;
+//            sql = Query.DAFTAR_LAPORAN_TABUNGAN;
 //            sql = "SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText() + "'";
-//            sql="SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText()+ "'" +"ORDER BY `laporan_tabungan`.`tgl_tabungan` ASC";
+            sql="SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText()+ "'"
+                    +"ORDER BY laporan_tabungan.id_tabungan ASC";
         } else {
             sql = "SELECT * FROM laporan_tabungan WHERE ("
 //                    + "id_tabungan LIKE'" + cari + "%' OR "
@@ -363,7 +364,7 @@ public class Fungsi {
 //                    + "harga_2 LIKE'" + cari + "%' OR "
 //                    + "harga_pgul LIKE'" + cari + "%' OR "
                     + "kode_nas LIKE'" + cari + "%'"
-                    + ")"+"ORDER BY `laporan_tabungan`.`tgl_tabungan` ASC";
+                    + ")"+"ORDER BY laporan_tabungan.id_tabungan ASC";
         }
         String Data[] = new String[6];
 
