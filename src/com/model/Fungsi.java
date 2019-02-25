@@ -109,6 +109,7 @@ public class Fungsi {
         }
 
     }
+
     public static boolean createPenjualan(Query s) {
         String sql = Query.REGISTER_PENJUALAN;
         try {
@@ -409,10 +410,61 @@ public class Fungsi {
             Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public static void Tabel_Penjualan(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_penjualan.getModel();
 
-    public static void Tabel_PopUp_penjualan_sampah(String cari) {
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+            sql = Query.DAFTAR_PENJUALAN;
+
+        } else {
+            sql = "SELECT * FROM penjualan WHERE ("
+                    + "id_jual LIKE'" + cari + "%' OR "
+                    + "tgl_jual LIKE'" + cari + "%' OR "
+                    + "nama_pengepul LIKE'" + cari + "%' OR "
+                    + "kode_samp LIKE'" + cari + "%' OR "
+                    + "nama_samp LIKE'" + cari + "%' OR "
+                    + "harga_samp LIKE'" + cari + "%' OR "
+                    + "berat LIKE'" + cari + "%' OR "
+                    + "total_harga LIKE'" + cari + "%'"
+                    + ")";
+        }
+        String Data[] = new String[6];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+//                Data[0] = rs.getString("id_sim");
+//                Data[1] = rs.getString("tgl_sim");
+//                Data[2] = rs.getString("kode_nas");
+//                Data[3] = rs.getString("nama_samp");
+//                Data[4] = rs.getString("total_samp");
+//                Data[0] = rs.getString("id_sim");
+                Data[0] = rs.getString("tgl_jual");
+                Data[1] = rs.getString("nama_pengepul");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("harga_samp");
+                Data[4] = rs.getString("berat");
+                Data[5] = rs.getString("total_harga");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static void Tabel_showTabelSampah(String cari) {
         DefaultTableModel model = (DefaultTableModel) showtabel.tabel_penjualan_sampah.getModel();
-        
 
         while (model.getRowCount() > 0) {
             model.removeRow(0);
@@ -434,7 +486,7 @@ public class Fungsi {
                     + "stok LIKE'" + cari + "%'"
                     + ")";
         }
-        String Data[] = new String[4];
+        String Data[] = new String[3];
 
         try {
             Statement st = konek.createStatement();
@@ -442,10 +494,16 @@ public class Fungsi {
 
             while (rs.next()) {
 
-                Data[0] = rs.getString("id_samp");
-                Data[1] = rs.getString("kode_samp");
-                Data[2] = rs.getString("nama_samp");
-//                Data[3] = rs.getString("stok");
+//                Data[0] = rs.getString("id_sim");
+//                Data[1] = rs.getString("tgl_sim");
+//                Data[2] = rs.getString("kode_nas");
+//                Data[3] = rs.getString("nama_samp");
+//                Data[4] = rs.getString("total_samp");
+//                Data[0] = rs.getString("id_sim");
+//                Data[0] = rs.getString("id_samp");
+                Data[0] = rs.getString("kode_samp");
+                Data[1] = rs.getString("nama_samp");
+                Data[2] = rs.getString("stok");
 
                 model.addRow(Data);
 
@@ -455,6 +513,4 @@ public class Fungsi {
         }
 
     }
-    
-
 }

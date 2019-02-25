@@ -36,6 +36,9 @@ public class showtabel extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         tabel_penjualan_sampah.setForeground(new java.awt.Color(0, 0, 0));
         tabel_penjualan_sampah.setModel(new javax.swing.table.DefaultTableModel(
@@ -64,6 +67,12 @@ public class showtabel extends javax.swing.JFrame {
         tabel_penjualan_sampah.setGridColor(new java.awt.Color(255, 255, 255));
         tabel_penjualan_sampah.setRowHeight(23);
         jScrollPane5.setViewportView(tabel_penjualan_sampah);
+        if (tabel_penjualan_sampah.getColumnModel().getColumnCount() > 0) {
+            tabel_penjualan_sampah.getColumnModel().getColumn(0).setMinWidth(60);
+            tabel_penjualan_sampah.getColumnModel().getColumn(0).setMaxWidth(60);
+            tabel_penjualan_sampah.getColumnModel().getColumn(2).setMinWidth(65);
+            tabel_penjualan_sampah.getColumnModel().getColumn(2).setMaxWidth(65);
+        }
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel1.setText("Tabel Sampah");
@@ -134,6 +143,7 @@ public class showtabel extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
