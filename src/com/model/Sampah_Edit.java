@@ -323,11 +323,11 @@ public class Sampah_Edit extends javax.swing.JDialog {
             if (Fungsi.updateSampah(s)) {
                 Fungsi.Tabel_sampah("");
                 JOptionPane.showMessageDialog(this,
-                        "Pendaftaran Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+                        "Data sampah sudah diperbaharui !", "SUKSES", JOptionPane.INFORMATION_MESSAGE);
 
             } else {
                 JOptionPane.showMessageDialog(this,
-                        "Pendaftaran Gagal !", "ERROR", JOptionPane.ERROR_MESSAGE);
+                        "Data sampah gagal diperbaharui !", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
 
         }

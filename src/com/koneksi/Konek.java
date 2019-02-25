@@ -13,28 +13,27 @@ import java.sql.DriverManager;
  * @author artawgn
  */
 public class Konek {
-    public static Connection connection  = null;
-    String USERNAME= "root";
-    String PASSWORD= "";
-    String DB= "jdbc:mysql://localhost/bank_sampah";
-    
-    
-    
-    public Connection getKonek(){
-        
+
+    public static Connection connection = null;
+    String USERNAME = "root";
+    String PASSWORD = "";
+    String DB = "jdbc:mysql://localhost/bank_sampah";
+
+    public Connection getKonek() {
+
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(DB,USERNAME,PASSWORD);
+            connection = DriverManager.getConnection(DB, USERNAME, PASSWORD);
+//            System.out.println("Mengecek Database");
             System.out.println("Koneksi Database Sukses !");
+
             return connection;
         } catch (Exception e) {
             System.out.println("Koneksi GAGAL !");
             return null;
-            
+
         }
-    
-        
-        
+
     }
-    
+
 }

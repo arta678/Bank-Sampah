@@ -14,6 +14,7 @@ public class Query {
     public static String DAFTAR_NASABAH = "SELECT * FROM nasabah";
     public static String DAFTAR_PETUGAS = "SELECT * FROM petugas";
     public static String DAFTAR_SAMPAH = "SELECT * FROM sampah";
+     public static String DAFTAR_SAMPAH2 = "SELECT * FROM sampah";
     public static String DAFTAR_SIMPANAN = "SELECT * FROM simpanan";
     public static String DAFTAR_PENARIKAN = "SELECT * FROM penarikan";
     public static String DAFTAR_LOGIN = "SELECT * FROM login";

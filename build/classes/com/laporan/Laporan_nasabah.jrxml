@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8f65db19-520e-4be1-be3d-b901eb46003e">
+	<property name="ireport.zoom" value="1.610510000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select * from nasabah]]>
+	</queryString>
+	<field name="id_nas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_nas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_nas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat_nas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hp_nas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldo_nas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="c43019e7-8d83-4f2b-b708-f36a593f29dc"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Daftar Nasabah ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="48" width="174" height="22" uuid="b2af0e5f-0eaa-43e4-93fb-d59e12448145"/>
+				<text><![CDATA[Bank Sampah Baliku]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="142827ac-bd11-4ead-9396-ac8210969c63"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="-2" y="16" width="42" height="19" forecolor="#000000" uuid="8980d104-0982-44f8-ab97-c5b91544ee6c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Kode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="51" y="16" width="92" height="19" forecolor="#000000" uuid="1d5d2689-101e-49b7-90f1-c6ac5b0849d0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Nama Nasabah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="159" y="16" width="92" height="19" forecolor="#000000" uuid="2223ec1c-25c0-4142-b620-ad104503397c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="351" y="16" width="92" height="19" forecolor="#000000" uuid="a095c07b-498d-48d3-bda0-cc9730d78187"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Nomor Hp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="465" y="16" width="92" height="19" forecolor="#000000" uuid="227983e9-65c5-47f1-8398-28ef23bdedc5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total Saldo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="f15f4c4e-f472-417b-83da-f411b7692aef"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="-2" y="1" width="42" height="15" uuid="0eb31498-a07b-41bf-b519-c5d90f3cb47d"/>
+				<textFieldExpression><![CDATA[$F{kode_nas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="51" y="1" width="92" height="15" uuid="eb05ef81-5c9a-4af5-897d-1d2f3f15b2e2"/>
+				<textFieldExpression><![CDATA[$F{nama_nas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="159" y="1" width="92" height="15" uuid="10eba2d9-492f-4df9-bca8-d66b731a6150"/>
+				<textFieldExpression><![CDATA[$F{alamat_nas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="351" y="1" width="92" height="15" uuid="4431c0bb-5639-4e80-b966-e10d3226b4ad"/>
+				<textFieldExpression><![CDATA[$F{hp_nas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="492" y="1" width="65" height="15" forecolor="#000000" uuid="91f4fd24-3952-48af-bf34-c379a18c6828"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldo_nas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="465" y="1" width="21" height="14" forecolor="#000000" uuid="8a72b59a-b6a3-4be4-9576-769a80fc1a21"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="51305032-c4a4-4765-8930-8d78a57bbf92"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="21d71327-263c-49a7-bd20-960c12760832"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="b2f1a860-d6d4-453e-af3e-3c51f6660b60"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="50ff57a3-ab38-4620-9d3d-6426ec99e846"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

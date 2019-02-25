@@ -470,9 +470,9 @@ public class Fungsi {
             model.removeRow(0);
         }
 
-        String sql = "";
+        String sql ="";
         if (cari.equals("")) {
-            sql = Query.DAFTAR_SAMPAH;
+            sql = Query.DAFTAR_SAMPAH2;
 
         } else {
             sql = "SELECT * FROM sampah WHERE ("
@@ -486,7 +486,7 @@ public class Fungsi {
                     + "stok LIKE'" + cari + "%'"
                     + ")";
         }
-        String Data[] = new String[3];
+        String Data[] = new String[4];
 
         try {
             Statement st = konek.createStatement();
@@ -509,6 +509,7 @@ public class Fungsi {
 
             }
         } catch (SQLException ex) {
+            
             Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
         }
 

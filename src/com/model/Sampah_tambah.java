@@ -314,11 +314,11 @@ public class Sampah_tambah extends javax.swing.JDialog {
             if (Fungsi.createSampah(s)) {
                 Fungsi.Tabel_sampah("");
                 JOptionPane.showMessageDialog(this,
-                        "Pendaftaran Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+                        "Data sampah berhasi di tambah !", "SUKSES", JOptionPane.INFORMATION_MESSAGE);
 
             } else {
                 JOptionPane.showMessageDialog(this,
-                        "Pendaftaran Gagal !", "ERROR", JOptionPane.ERROR_MESSAGE);
+                        "Gagal menambahkan data !", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
 
         }
