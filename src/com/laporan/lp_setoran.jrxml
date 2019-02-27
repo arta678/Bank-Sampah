@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="5d6f3268-9e7c-40e7-9811-2969e9db5c34">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="27"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="tglDari" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tglSampai" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from simpanan where tgl_sim>=$P{tglDari} and tgl_sim<=$P{tglSampai}]]>
+	</queryString>
+	<field name="id_sim" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_sim" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_nas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_samp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_samp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_samp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qty_samp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_samp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="822" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="555" height="43" uuid="c8756e4b-3836-486d-8979-c23a405e337a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="30" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Laporan Setoran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="43" width="321" height="37" uuid="72577c2c-6e3d-4b2f-a8e6-3c6884e61514"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Bank Sampah Baliku]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="458" height="22" backcolor="#666666" uuid="4bc3026b-dcc4-431b-95bc-15f0de875815"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="57" height="15" uuid="d2ad2f9e-6127-43de-a888-315b7a90bde2"/>
+					<text><![CDATA[Tanggal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="57" y="0" width="57" height="15" uuid="77c38bbd-ae16-4178-b32b-20922fc06b1d"/>
+					<text><![CDATA[Nasabah]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="114" y="0" width="112" height="15" uuid="1b72d33a-ec84-4c99-83fd-c79804bb22a0"/>
+					<text><![CDATA[Sampah]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="226" y="0" width="57" height="15" uuid="44a90b00-013a-4b59-a251-d00d20b6d5bd"/>
+					<text><![CDATA[Harga]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="296" y="0" width="57" height="15" uuid="eaa84501-65e1-45ce-a413-52eb67d41335"/>
+					<text><![CDATA[Kg]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="378" y="0" width="57" height="15" uuid="0dd3332c-454f-4788-9f7c-cafe49157e20"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="18" width="458" height="1" uuid="6f7c17c5-9b81-4528-9a15-9ca9223c7d9e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement x="0" y="0" width="458" height="15" uuid="79edaf03-56b9-4e55-9920-a82d376c6b6d"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="57" height="15" uuid="7d5269ce-db36-42be-a752-45f2e32d0a65"/>
+					<textFieldExpression><![CDATA[$F{tgl_sim}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="57" y="0" width="57" height="15" uuid="dfcdf9b5-0645-46e0-a1f7-684809f606c5"/>
+					<textFieldExpression><![CDATA[$F{kode_nas}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="114" y="0" width="86" height="15" uuid="d3adbb95-34b6-4c8f-af3d-9008f363ed9a"/>
+					<textFieldExpression><![CDATA[$F{nama_samp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="226" y="0" width="57" height="15" uuid="5d9d725b-eb36-4508-bb12-38007fa7cb2a"/>
+					<textFieldExpression><![CDATA[$F{harga_samp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="296" y="0" width="57" height="15" uuid="cbe8c158-ae82-4d8b-ae31-7298d537ff97"/>
+					<textFieldExpression><![CDATA[$F{qty_samp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="401" y="0" width="57" height="15" uuid="00dd663e-133f-4d6d-b438-48e3f9d2d4e8"/>
+					<textFieldExpression><![CDATA[$F{total_samp}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" x="378" y="0" width="19" height="15" forecolor="#000000" uuid="cb370109-7441-4e5b-8515-2ebd16ed7f28"/>
+					<textElement>
+						<font size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Rp.]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="100" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="200" height="20" uuid="7b679c91-95bc-4d67-bb8f-df040b9e164c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

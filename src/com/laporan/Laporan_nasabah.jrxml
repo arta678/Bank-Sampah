@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8f65db19-520e-4be1-be3d-b901eb46003e">
 	<property name="ireport.zoom" value="1.610510000000001"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="206"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
@@ -84,7 +84,7 @@
 				<text><![CDATA[Nomor Hp]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="465" y="16" width="92" height="19" forecolor="#000000" uuid="227983e9-65c5-47f1-8398-28ef23bdedc5"/>
+				<reportElement style="Column header" x="461" y="16" width="92" height="19" forecolor="#000000" uuid="227983e9-65c5-47f1-8398-28ef23bdedc5"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>

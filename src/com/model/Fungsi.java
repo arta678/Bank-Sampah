@@ -6,11 +6,14 @@
 package com.model;
 
 import com.koneksi.Konek;
+import com.sun.org.apache.bcel.internal.generic.InstructionConstants;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -410,6 +413,256 @@ public class Fungsi {
             Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public static void Tabel_laporan_tabungan(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_laporan_tabungan.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+//            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            String startDateString = dateFormat.format(Main.laporan_date_dari2.getDate());
+////            Date tanggalLaporan = Main.laporan_date_dari2.getDate();
+//            sql = Query.DAFTAR_LAPORAN_TABUNGAN;
+//            sql = "SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText() + "'";
+//            sql = "SELECT * FROM laporan_tabungan WHERE tgl_tabungan = '" + startDateString + "'";
+            
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                    String tgl_DARI = format.format(Main.laporan_date_dari.getDate());
+                    String tgl_SAMPAI = format.format(Main.laporan_date_sampai.getDate());
+                    
+//            String sampai = "2019/02/25";
+            sql = "select * from laporan_tabungan where tgl_tabungan>='"+tgl_DARI+"'and tgl_tabungan<='"+tgl_SAMPAI+"'";
+//            sql = "select * from laporan_tabungan where tgl_tabungan between '"+dari+"and "+sampai"'";
+//            SELECT * FROM `tabungan` WHERE `tanggal` BETWEEN '09/01/2019' AND '11/01/2019'
+        } else {
+            sql = "SELECT * FROM laporan_tabungan WHERE ("
+                                        + "id_tabungan LIKE'" + Main.laporan_date_dari + "%'";
+//                    //                    + "tgl_tabungan LIKE'" + cari + "%' OR "
+//                    //                    + "kode_nas LIKE'" + cari + "%' OR "
+//                    //                    + "nama_samp LIKE'" + cari + "%' OR "
+//                    //                    + "harga_1 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_2 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_pgul LIKE'" + cari + "%' OR "
+//                    + "kode_nas LIKE'" + cari + "%'"
+//                    + ")" + "ORDER BY laporan_tabungan.tgl_tabungan ASC";
+        }
+        String Data[] = new String[10];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("tgl_tabungan");
+                Data[1] = rs.getString("kode");
+                Data[2] = rs.getString("kode_nas");
+                Data[3] = rs.getString("jenis_samp");
+                Data[4] = rs.getString("kode_samp");
+                Data[5] = rs.getString("harga_samp");
+                Data[6] = rs.getString("berat_samp");
+                Data[7] = rs.getString("debet");
+                Data[8] = rs.getString("kredit");
+                Data[9] = rs.getString("penjualan");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public static void Tabel_laporan_setoran(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_laporan_setoran.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+//            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            String startDateString = dateFormat.format(Main.laporan_date_dari2.getDate());
+////            Date tanggalLaporan = Main.laporan_date_dari2.getDate();
+//            sql = Query.DAFTAR_LAPORAN_TABUNGAN;
+//            sql = "SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText() + "'";
+//            sql = "SELECT * FROM laporan_tabungan WHERE tgl_tabungan = '" + startDateString + "'";
+            
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                    String tgl_DARI = format.format(Main.laporan_date_setoran_dari.getDate());
+                    String tgl_SAMPAI = format.format(Main.laporan_date_setoran_sampai.getDate());
+                    
+//            String sampai = "2019/02/25";
+            sql = "select * from simpanan where tgl_sim>='"+tgl_DARI+"'and tgl_sim<='"+tgl_SAMPAI+"'";
+//            sql = "select * from laporan_tabungan where tgl_tabungan between '"+dari+"and "+sampai"'";
+//            SELECT * FROM `tabungan` WHERE `tanggal` BETWEEN '09/01/2019' AND '11/01/2019'
+        } else {
+//            sql = "SELECT * FROM simpanan WHERE ("
+//                                        + "tgl_sim LIKE'" + tgl_DARI + "%'";
+//                    //                    + "tgl_tabungan LIKE'" + cari + "%' OR "
+//                    //                    + "kode_nas LIKE'" + cari + "%' OR "
+//                    //                    + "nama_samp LIKE'" + cari + "%' OR "
+//                    //                    + "harga_1 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_2 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_pgul LIKE'" + cari + "%' OR "
+//                    + "kode_nas LIKE'" + cari + "%'"
+//                    + ")" + "ORDER BY laporan_tabungan.tgl_tabungan ASC";
+        }
+        String Data[] = new String[6];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("tgl_sim");
+                Data[1] = rs.getString("kode_nas");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("harga_samp");
+                Data[4] = rs.getString("qty_samp");
+                Data[5] = rs.getString("total_samp");
+//                Data[6] = rs.getString("harga_samp");
+//                Data[7] = rs.getString("debet");
+//                Data[8] = rs.getString("kredit");
+//                Data[5] = rs.getString("kredit");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public static void Tabel_laporan_penarikan(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_laporan_penarikan.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+//            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            String startDateString = dateFormat.format(Main.laporan_date_dari2.getDate());
+////            Date tanggalLaporan = Main.laporan_date_dari2.getDate();
+//            sql = Query.DAFTAR_LAPORAN_TABUNGAN;
+//            sql = "SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText() + "'";
+//            sql = "SELECT * FROM laporan_tabungan WHERE tgl_tabungan = '" + startDateString + "'";
+            
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                    String tgl_DARI = format.format(Main.laporan_date_penarikan_dari.getDate());
+                    String tgl_SAMPAI = format.format(Main.laporan_date_penarikan_sampai.getDate());
+                    
+//            String sampai = "2019/02/25";
+            sql = "select * from penarikan where tgl_pen>='"+tgl_DARI+"'and tgl_pen<='"+tgl_SAMPAI+"'";
+//            sql = "select * from laporan_tabungan where tgl_tabungan between '"+dari+"and "+sampai"'";
+//            SELECT * FROM `tabungan` WHERE `tanggal` BETWEEN '09/01/2019' AND '11/01/2019'
+        } else {
+//            sql = "SELECT * FROM simpanan WHERE ("
+//                                        + "tgl_sim LIKE'" + tgl_DARI + "%'";
+//                    //                    + "tgl_tabungan LIKE'" + cari + "%' OR "
+//                    //                    + "kode_nas LIKE'" + cari + "%' OR "
+//                    //                    + "nama_samp LIKE'" + cari + "%' OR "
+//                    //                    + "harga_1 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_2 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_pgul LIKE'" + cari + "%' OR "
+//                    + "kode_nas LIKE'" + cari + "%'"
+//                    + ")" + "ORDER BY laporan_tabungan.tgl_tabungan ASC";
+        }
+        String Data[] = new String[4];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("tgl_pen");
+                Data[1] = rs.getString("kode_nas");
+                Data[2] = rs.getString("saldo_penarikan");
+//                Data[3] = rs.getString("harga_samp");
+//                Data[4] = rs.getString("qty_samp");
+//                Data[5] = rs.getString("total_samp");
+//                Data[6] = rs.getString("harga_samp");
+//                Data[7] = rs.getString("debet");
+//                Data[8] = rs.getString("kredit");
+//                Data[5] = rs.getString("kredit");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public static void Tabel_laporan_penjualan(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_laporan_penjualan.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+//            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            String startDateString = dateFormat.format(Main.laporan_date_dari2.getDate());
+////            Date tanggalLaporan = Main.laporan_date_dari2.getDate();
+//            sql = Query.DAFTAR_LAPORAN_TABUNGAN;
+//            sql = "SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText() + "'";
+//            sql = "SELECT * FROM laporan_tabungan WHERE tgl_tabungan = '" + startDateString + "'";
+            
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                    String tgl_DARI = format.format(Main.laporan_date_penjualan_dari.getDate());
+                    String tgl_SAMPAI = format.format(Main.laporan_date_pejualan_sampai.getDate());
+                    
+//            String sampai = "2019/02/25";
+            sql = "select * from penjualan where tgl_jual>='"+tgl_DARI+"'and tgl_jual<='"+tgl_SAMPAI+"'";
+//            sql = "select * from laporan_tabungan where tgl_tabungan between '"+dari+"and "+sampai"'";
+//            SELECT * FROM `tabungan` WHERE `tanggal` BETWEEN '09/01/2019' AND '11/01/2019'
+        } else {
+//            sql = "SELECT * FROM simpanan WHERE ("
+//                                        + "tgl_sim LIKE'" + tgl_DARI + "%'";
+//                    //                    + "tgl_tabungan LIKE'" + cari + "%' OR "
+//                    //                    + "kode_nas LIKE'" + cari + "%' OR "
+//                    //                    + "nama_samp LIKE'" + cari + "%' OR "
+//                    //                    + "harga_1 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_2 LIKE'" + cari + "%' OR "
+//                    //                    + "harga_pgul LIKE'" + cari + "%' OR "
+//                    + "kode_nas LIKE'" + cari + "%'"
+//                    + ")" + "ORDER BY laporan_tabungan.tgl_tabungan ASC";
+        }
+        String Data[] = new String[7];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("tgl_jual");
+                Data[1] = rs.getString("nama_pengepul");
+//                Data[2] = rs.getString("kode_samp");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("harga_samp");
+                Data[4] = rs.getString("berat");
+                Data[5] = rs.getString("total_harga");
+//                Data[7] = rs.getString("debet");
+//                Data[8] = rs.getString("kredit");
+//                Data[5] = rs.getString("kredit");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public static void Tabel_Penjualan(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_penjualan.getModel();
 
@@ -463,55 +716,4 @@ public class Fungsi {
 
     }
 
-    public static void Tabel_showTabelSampah(String cari) {
-        DefaultTableModel model = (DefaultTableModel) showtabel.tabel_penjualan_sampah.getModel();
-
-        while (model.getRowCount() > 0) {
-            model.removeRow(0);
-        }
-
-        String sql ="";
-        if (cari.equals("")) {
-            sql = Query.DAFTAR_SAMPAH2;
-
-        } else {
-            sql = "SELECT * FROM sampah WHERE ("
-                    + "id_samp LIKE'" + cari + "%' OR "
-                    + "kode_samp LIKE'" + cari + "%' OR "
-                    + "kategori LIKE'" + cari + "%' OR "
-                    + "nama_samp LIKE'" + cari + "%' OR "
-                    + "harga_1 LIKE'" + cari + "%' OR "
-                    + "harga_2 LIKE'" + cari + "%' OR "
-                    + "harga_pgul LIKE'" + cari + "%' OR "
-                    + "stok LIKE'" + cari + "%'"
-                    + ")";
-        }
-        String Data[] = new String[4];
-
-        try {
-            Statement st = konek.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-
-            while (rs.next()) {
-
-//                Data[0] = rs.getString("id_sim");
-//                Data[1] = rs.getString("tgl_sim");
-//                Data[2] = rs.getString("kode_nas");
-//                Data[3] = rs.getString("nama_samp");
-//                Data[4] = rs.getString("total_samp");
-//                Data[0] = rs.getString("id_sim");
-//                Data[0] = rs.getString("id_samp");
-                Data[0] = rs.getString("kode_samp");
-                Data[1] = rs.getString("nama_samp");
-                Data[2] = rs.getString("stok");
-
-                model.addRow(Data);
-
-            }
-        } catch (SQLException ex) {
-            
-            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
 }
