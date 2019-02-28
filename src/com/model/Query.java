@@ -13,6 +13,7 @@ public class Query {
 
     public static String DAFTAR_NASABAH = "SELECT * FROM nasabah";
     public static String DAFTAR_PETUGAS = "SELECT * FROM petugas";
+     public static String DAFTAR_USER = "SELECT * FROM user";
     public static String DAFTAR_SAMPAH = "SELECT * FROM sampah";
      public static String DAFTAR_SAMPAH2 = "SELECT * FROM sampah";
     public static String DAFTAR_SIMPANAN = "SELECT * FROM simpanan";
@@ -33,6 +34,10 @@ public class Query {
             + "hp_nas, "
             + "saldo_nas)"
             + "VALUES(?,?,?,?,?)";
+    public static String REGISTER_USER= "INSERT INTO user("
+            + "username,"
+            + "password)"
+            + "VALUES(?,?)";
     public static String REGISTER_PENJUALAN = "INSERT INTO penjualan("
             + "tgl_jual,"
             + "nama_pengepul,"
@@ -76,6 +81,11 @@ public class Query {
             + "hp_nas = ?"
             + "WHERE id_nas = ?";
     
+    public static String UPDATE_USER = "UPDATE user SET "
+            + "username = ?,"
+            + "password = ?"
+            + "WHERE id_user = ?";
+    
     public static String UPDATE_SAMPAH = "UPDATE sampah SET "
             + "kode_samp = ?,"
             + "kategori = ?,"
@@ -96,6 +106,16 @@ public class Query {
     private String alamat_nas;
     private String hp_nas;
     private String saldo_nas;
+    
+    
+    ///USER
+    
+    private String username;
+    private String password;
+    private String id_user;
+            
+            
+    
     //-------
     //SAMPAH 
     //-------
@@ -133,6 +153,35 @@ public class Query {
           private String berat;
           private String total_harga;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(String id_user) {
+        this.id_user = id_user;
+    }
+
+          
+          
+          
+          
+          
     public String getTgl_jual() {
         return tgl_jual;
     }

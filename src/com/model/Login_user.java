@@ -189,6 +189,7 @@ login_user_password.requestFocus();
             if (rs.next()) {
                 Main show = new Main();
                 show.setVisible(true);
+                Main.nama_user.setText(this.login_user_username.getText());
                 this.dispose();
 
             } else {
@@ -205,6 +206,7 @@ login_user_password.requestFocus();
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         Login_ADMIN show = new Login_ADMIN(null, true);
         show.setVisible(true);
+        Login_ADMIN.login_admin_username.requestFocus();
         
         this.dispose();
     }//GEN-LAST:event_jPanel2MouseClicked

@@ -92,6 +92,11 @@ public class Login_ADMIN extends javax.swing.JDialog {
         jLabel6.setText("LOGIN");
 
         login_admin_passowrd.setForeground(new java.awt.Color(230, 228, 228));
+        login_admin_passowrd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                login_admin_passowrdActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(23, 35, 51));
         jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -144,10 +149,11 @@ public class Login_ADMIN extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel1)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel1)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(login_admin_username, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,7 +185,7 @@ public class Login_ADMIN extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void login_admin_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_admin_usernameActionPerformed
-        // TODO add your handling code here:
+        login_admin_passowrd.requestFocus();
     }//GEN-LAST:event_login_admin_usernameActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
@@ -193,8 +199,12 @@ public class Login_ADMIN extends javax.swing.JDialog {
             Statement st = konek.createStatement();
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()) {
-                Main show = new Main();
+               Main show = new Main();
+               
+               
+                
                 show.setVisible(true);
+                Main.nama_user.setText(this.login_admin_username.getText());
                 this.dispose();
 
             } else {
@@ -213,6 +223,10 @@ public class Login_ADMIN extends javax.swing.JDialog {
         show.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void login_admin_passowrdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_admin_passowrdActionPerformed
+        LoginActionPerformed(evt);
+    }//GEN-LAST:event_login_admin_passowrdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,6 +283,6 @@ public class Login_ADMIN extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField login_admin_passowrd;
-    private javax.swing.JTextField login_admin_username;
+    public static javax.swing.JTextField login_admin_username;
     // End of variables declaration//GEN-END:variables
 }
