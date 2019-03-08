@@ -98,7 +98,9 @@
 			<frame>
 				<reportElement x="4" y="6" width="551" height="15" uuid="3de4f35f-8bac-4bd8-b160-1cf916d11be6"/>
 				<textField>
-					<reportElement style="Detail" x="0" y="0" width="65" height="15" uuid="e4854dd4-4eb3-4ea4-a6c1-8e8143449746"/>
+					<reportElement style="Detail" x="0" y="0" width="65" height="15" uuid="e4854dd4-4eb3-4ea4-a6c1-8e8143449746">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="start"/>
+					</reportElement>
 					<textFieldExpression><![CDATA[$F{kode_samp}]]></textFieldExpression>
 				</textField>
 				<textField>

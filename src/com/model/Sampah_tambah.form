@@ -342,11 +342,12 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="Plastik"/>
                 <StringItem index="1" value="Kertas"/>
                 <StringItem index="2" value="Logam"/>
-                <StringItem index="3" value=" "/>
+                <StringItem index="3" value="Botol Kaca"/>
+                <StringItem index="4" value="Lainnya"/>
               </StringArray>
             </Property>
           </Properties>

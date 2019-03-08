@@ -420,9 +420,8 @@ public class Fungsi {
         }
 
     }
-
-    public static void Tabel_User(String cari) {
-        DefaultTableModel model = (DefaultTableModel) Main.tabel_pengguna_aplikasi.getModel();
+    public static void Tabel_sampah_plastik(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_sampah.getModel();
 
         while (model.getRowCount() > 0) {
             model.removeRow(0);
@@ -430,24 +429,23 @@ public class Fungsi {
 
         String sql = "";
         if (cari.equals("")) {
-            sql = Query.DAFTAR_USER;
+        sql =    "SELECT * FROM sampah WHERE kategori = '" + Main.rb_plastik.getText()+ "'";
 
         } else {
-            sql = "SELECT * FROM user WHERE ("
-                    + "username LIKE'" + cari + "%' OR "
-                    + "password LIKE'" + cari + "%'"
-                    + ")";
+            
         }
-        String Data[] = new String[3];
+        String Data[] = new String[4];
 
         try {
             Statement st = konek.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                Data[0] = rs.getString("id_user");
-                Data[1] = rs.getString("username");
-                Data[2] = rs.getString("password");
+
+                Data[0] = rs.getString("id_samp");
+                Data[1] = rs.getString("kode_samp");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("stok");
 
                 model.addRow(Data);
 
@@ -457,6 +455,183 @@ public class Fungsi {
         }
 
     }
+    public static void Tabel_sampah_kertas(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_sampah.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+        sql =    "SELECT * FROM sampah WHERE kategori = '" + Main.rb_kertas.getText()+ "'";
+
+        } else {
+            
+        }
+        String Data[] = new String[4];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("id_samp");
+                Data[1] = rs.getString("kode_samp");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("stok");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public static void Tabel_sampah_logam(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_sampah.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+        sql =    "SELECT * FROM sampah WHERE kategori = '" + Main.rb_logam.getText()+ "'";
+
+        } else {
+            
+        }
+        String Data[] = new String[4];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("id_samp");
+                Data[1] = rs.getString("kode_samp");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("stok");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public static void Tabel_sampah_botol_kaca(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_sampah.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+        sql =    "SELECT * FROM sampah WHERE kategori = '" + Main.rb_botol_kaca.getText()+ "'";
+
+        } else {
+            
+        }
+        String Data[] = new String[4];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("id_samp");
+                Data[1] = rs.getString("kode_samp");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("stok");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public static void Tabel_sampah_lainnya(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main.tabel_sampah.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+        sql =    "SELECT * FROM sampah WHERE kategori = '" + Main.br_lainnya.getText()+ "'";
+
+        } else {
+            
+        }
+        String Data[] = new String[4];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("id_samp");
+                Data[1] = rs.getString("kode_samp");
+                Data[2] = rs.getString("nama_samp");
+                Data[3] = rs.getString("stok");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+//    public static void Tabel_User(String cari) {
+//        DefaultTableModel model = (DefaultTableModel) Main.tabel_pengguna_aplikasi.getModel();
+//
+//        while (model.getRowCount() > 0) {
+//            model.removeRow(0);
+//        }
+//
+//        String sql = "";
+//        if (cari.equals("")) {
+//            sql = Query.DAFTAR_USER;
+//
+//        } else {
+//            sql = "SELECT * FROM user WHERE ("
+//                    + "username LIKE'" + cari + "%' OR "
+//                    + "password LIKE'" + cari + "%'"
+//                    + ")";
+//        }
+//        String Data[] = new String[3];
+//
+//        try {
+//            Statement st = konek.createStatement();
+//            ResultSet rs = st.executeQuery(sql);
+//
+//            while (rs.next()) {
+//                Data[0] = rs.getString("id_user");
+//                Data[1] = rs.getString("username");
+//                Data[2] = rs.getString("password");
+//
+//                model.addRow(Data);
+//
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//    }
 
     public static void Tabel_buku_tabungan(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_buku_tabungan.getModel();

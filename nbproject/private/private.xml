@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/artawgn/NetBeansProjects/Bank%20Sampah/src/com/model/Main.java</file>
+            <file>file:/home/artawgn/NetBeansProjects/Bank%20Sampah/src/com/model/Login_user.java</file>
+            <file>file:/home/artawgn/NetBeansProjects/Bank%20Sampah/src/com/model/dialogPassword.java</file>
+            <file>file:/home/artawgn/NetBeansProjects/Bank%20Sampah/src/com/model/gantiPassword.java</file>
+        </group>
     </open-files>
 </project-private>

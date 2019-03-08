@@ -214,7 +214,7 @@ public class User_Tambah extends javax.swing.JDialog {
             if (Fungsi.createUserAplikasi(s)) {
 
 //                setClean();
-                Fungsi.Tabel_User("");
+//                Fungsi.Tabel_User("");
 //                ts.clickGo();
                 JOptionPane.showMessageDialog(this,
                         "Pendaftaran Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);

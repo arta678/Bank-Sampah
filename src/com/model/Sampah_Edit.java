@@ -174,7 +174,7 @@ public class Sampah_Edit extends javax.swing.JDialog {
         });
 
         edit_kategori_sampah.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        edit_kategori_sampah.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Plastik", "Kertas", "Logam", " " }));
+        edit_kategori_sampah.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Plastik", "Kertas", "Logam", "Botol Kaca", "Lainnya" }));
 
         edit_stok.setBackground(new java.awt.Color(255, 255, 255));
         edit_stok.setForeground(new java.awt.Color(255, 255, 255));
@@ -292,7 +292,11 @@ public class Sampah_Edit extends javax.swing.JDialog {
 
                 break;
             case 3:
-                kategori = "Tembaga";
+                kategori = "Botol Kaca";
+
+                break;
+            case 4:
+                kategori = "Lainnya";
 
                 break;
 

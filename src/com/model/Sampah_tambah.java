@@ -173,7 +173,7 @@ public class Sampah_tambah extends javax.swing.JDialog {
         });
 
         tambah_kategori_sampah.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tambah_kategori_sampah.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Plastik", "Kertas", "Logam", " " }));
+        tambah_kategori_sampah.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Plastik", "Kertas", "Logam", "Botol Kaca", "Lainnya" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -283,7 +283,11 @@ public class Sampah_tambah extends javax.swing.JDialog {
 
                 break;
             case 3:
-                kategori = "Tembaga";
+                kategori = "Botol Kaca";
+
+                break;
+            case 4:
+                kategori = "Lainnya";
 
                 break;
 
@@ -308,9 +312,7 @@ public class Sampah_tambah extends javax.swing.JDialog {
             s.setHarga_2(this.tambah_harga2_sampah.getText());
             s.setHarga_pgul(this.tambah_hargar_pengepul_sampah.getText());
             s.setStok("0");
-            
 
-    
             if (Fungsi.createSampah(s)) {
                 Fungsi.Tabel_sampah("");
                 JOptionPane.showMessageDialog(this,

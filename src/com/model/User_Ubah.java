@@ -214,7 +214,7 @@ public class User_Ubah extends javax.swing.JDialog {
             if (Fungsi.updateUser(s)) {
 
 //                setClean();
-                Fungsi.Tabel_User("");
+//                Fungsi.Tabel_User("");
 //                ts.clickGo();
                 JOptionPane.showMessageDialog(this,
                         "Pembaharuan Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
