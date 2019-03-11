@@ -5,6 +5,7 @@
  */
 package com.model;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
@@ -126,6 +127,11 @@ public class Sampah_tambah extends javax.swing.JDialog {
                 tambah_harga1_sampahActionPerformed(evt);
             }
         });
+        tambah_harga1_sampah.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tambah_harga1_sampahKeyTyped(evt);
+            }
+        });
 
         btn_simpan_sampah.setBackground(new java.awt.Color(0, 112, 192));
         btn_simpan_sampah.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -161,6 +167,11 @@ public class Sampah_tambah extends javax.swing.JDialog {
                 tambah_harga2_sampahActionPerformed(evt);
             }
         });
+        tambah_harga2_sampah.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tambah_harga2_sampahKeyTyped(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Harga ke Pengepul");
@@ -169,6 +180,11 @@ public class Sampah_tambah extends javax.swing.JDialog {
         tambah_hargar_pengepul_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tambah_hargar_pengepul_sampahActionPerformed(evt);
+            }
+        });
+        tambah_hargar_pengepul_sampah.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tambah_hargar_pengepul_sampahKeyTyped(evt);
             }
         });
 
@@ -336,7 +352,7 @@ public class Sampah_tambah extends javax.swing.JDialog {
     }//GEN-LAST:event_tambah_jenis_sampahActionPerformed
 
     private void tambah_harga1_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_harga1_sampahActionPerformed
-        btn_simpan_sampah.requestFocus();
+        tambah_harga2_sampah.requestFocus();
     }//GEN-LAST:event_tambah_harga1_sampahActionPerformed
 
     private void btn_tutupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tutupActionPerformed
@@ -344,12 +360,45 @@ public class Sampah_tambah extends javax.swing.JDialog {
     }//GEN-LAST:event_btn_tutupActionPerformed
 
     private void tambah_harga2_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_harga2_sampahActionPerformed
-        // TODO add your handling code here:
+tambah_hargar_pengepul_sampah.requestFocus();
     }//GEN-LAST:event_tambah_harga2_sampahActionPerformed
 
     private void tambah_hargar_pengepul_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_hargar_pengepul_sampahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tambah_hargar_pengepul_sampahActionPerformed
+
+    private void tambah_harga1_sampahKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tambah_harga1_sampahKeyTyped
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE || (karakter == KeyEvent.VK_ENTER))))) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Hanya Boleh Memasukkan Angka !");
+
+        }
+    }//GEN-LAST:event_tambah_harga1_sampahKeyTyped
+
+    private void tambah_harga2_sampahKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tambah_harga2_sampahKeyTyped
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE || (karakter == KeyEvent.VK_ENTER))))) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Hanya Boleh Memasukkan Angka !");
+
+        }
+    }//GEN-LAST:event_tambah_harga2_sampahKeyTyped
+
+    private void tambah_hargar_pengepul_sampahKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tambah_hargar_pengepul_sampahKeyTyped
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE || (karakter == KeyEvent.VK_ENTER))))) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Hanya Boleh Memasukkan Angka !");
+
+        }
+    }//GEN-LAST:event_tambah_hargar_pengepul_sampahKeyTyped
 
     /**
      * @param args the command line arguments

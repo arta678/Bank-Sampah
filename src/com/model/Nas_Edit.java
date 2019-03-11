@@ -98,6 +98,11 @@ public class Nas_Edit extends javax.swing.JDialog {
                 txt_kodeActionPerformed(evt);
             }
         });
+        txt_kode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_kodeKeyTyped(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setText("Nama ");
@@ -106,6 +111,11 @@ public class Nas_Edit extends javax.swing.JDialog {
         txt_nama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_namaActionPerformed(evt);
+            }
+        });
+        txt_nama.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_namaKeyTyped(evt);
             }
         });
 
@@ -118,6 +128,11 @@ public class Nas_Edit extends javax.swing.JDialog {
                 txt_alamatActionPerformed(evt);
             }
         });
+        txt_alamat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_alamatKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel5.setText("Nomor Hp");
@@ -126,6 +141,11 @@ public class Nas_Edit extends javax.swing.JDialog {
         txt_hp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_hpActionPerformed(evt);
+            }
+        });
+        txt_hp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_hpKeyTyped(evt);
             }
         });
 
@@ -266,15 +286,15 @@ public class Nas_Edit extends javax.swing.JDialog {
     }//GEN-LAST:event_btn_simpan_nasabahActionPerformed
 
     private void txt_kodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_kodeActionPerformed
-
+        txt_nama.requestFocus();
     }//GEN-LAST:event_txt_kodeActionPerformed
 
     private void txt_namaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_namaActionPerformed
-
+        txt_alamat.requestFocus();
     }//GEN-LAST:event_txt_namaActionPerformed
 
     private void txt_alamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_alamatActionPerformed
-
+        txt_hp.requestFocus();
     }//GEN-LAST:event_txt_alamatActionPerformed
 
     private void txt_hpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_hpActionPerformed
@@ -284,6 +304,30 @@ public class Nas_Edit extends javax.swing.JDialog {
     private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
         this.dispose();
     }//GEN-LAST:event_btn_hapusActionPerformed
+
+    private void txt_kodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_kodeKeyTyped
+        if (txt_kode.getText().length()==4) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_kodeKeyTyped
+
+    private void txt_namaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_namaKeyTyped
+         if (txt_nama.getText().length()==20) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_namaKeyTyped
+
+    private void txt_alamatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_alamatKeyTyped
+        if (txt_alamat.getText().length()==40) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_alamatKeyTyped
+
+    private void txt_hpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_hpKeyTyped
+       if (txt_hp.getText().length()==12) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_hpKeyTyped
 
     /**
      * @param args the command line arguments

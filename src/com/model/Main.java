@@ -986,11 +986,11 @@ class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel29.setBackground(new java.awt.Color(255, 57, 57));
+        jPanel29.setBackground(new java.awt.Color(255, 83, 83));
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/garbage.png"))); // NOI18N
 
-        jPanel30.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel30.setBackground(new java.awt.Color(204, 0, 0));
         jPanel30.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jPanel30MousePressed(evt);
@@ -2276,12 +2276,12 @@ class Main extends javax.swing.JFrame {
         jPanel39.setBackground(new java.awt.Color(255, 255, 255));
         jPanel39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jPanel39.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel39AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -2358,7 +2358,7 @@ class Main extends javax.swing.JFrame {
 
         jLabel82.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel82.setText("Stok");
+        jLabel82.setText("Stok (Kg)");
 
         penjualan_stok_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         penjualan_stok_sampah.setEnabled(false);
@@ -2370,12 +2370,17 @@ class Main extends javax.swing.JFrame {
 
         jLabel83.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(136, 135, 135));
-        jLabel83.setText("Jumlah Jual Sampah");
+        jLabel83.setText("Jumlah Jual Kg");
 
         penjualan_jumlah_sampah.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         penjualan_jumlah_sampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 penjualan_jumlah_sampahActionPerformed(evt);
+            }
+        });
+        penjualan_jumlah_sampah.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                penjualan_jumlah_sampahKeyTyped(evt);
             }
         });
 
@@ -2402,13 +2407,13 @@ class Main extends javax.swing.JFrame {
                         .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(penjualan_stok_sampah)
                         .addComponent(jLabel81)
-                        .addComponent(jLabel82)
                         .addGroup(jPanel41Layout.createSequentialGroup()
                             .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(penjualan_id_sampah, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel80, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel82))
                     .addComponent(jLabel83))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -3506,12 +3511,12 @@ class Main extends javax.swing.JFrame {
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
         jPanel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jPanel31.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel31AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -3691,6 +3696,11 @@ class Main extends javax.swing.JFrame {
         penarikan_jumlah_penarikan_saldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 penarikan_jumlah_penarikan_saldoActionPerformed(evt);
+            }
+        });
+        penarikan_jumlah_penarikan_saldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                penarikan_jumlah_penarikan_saldoKeyTyped(evt);
             }
         });
 
@@ -4600,77 +4610,6 @@ class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MouseClicked
-
-    }//GEN-LAST:event_btn_1MouseClicked
-
-    private void btn_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MouseExited
-
-    }//GEN-LAST:event_btn_1MouseExited
-
-    private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_2MouseClicked
-
-    private void btn_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_2MouseExited
-
-    private void btn_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_3MouseClicked
-
-    private void btn_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_3MouseExited
-
-    private void btn_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_4MouseClicked
-
-    private void btn_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_4MouseExited
-
-    private void btn_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_5MouseClicked
-
-    private void btn_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_5MouseExited
-
-    private void btn_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_6MouseClicked
-
-    private void btn_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_6MouseExited
-
-    private void btn_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MousePressed
-        Tabpane.setSelectedIndex(1);
-        setColor(btn_2);
-//        ind_2.setOpaque(true);
-        resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5, btn_7, btn_6});
-    }//GEN-LAST:event_btn_2MousePressed
-
-    private void btn_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_7MouseClicked
-        
-        
-  
-        dialogPassword dp = new dialogPassword(this, true);
-        dialogPassword.confirmasi_password_jpassword.requestFocus();
-        dp.setVisible(true);
-       
-
-
-    }//GEN-LAST:event_btn_7MouseClicked
-
-    private void btn_7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_7MouseExited
-
-    private void btn_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MousePressed
         Tabpane.setSelectedIndex(0);
         setColor(btn_1);
 //        ind_1.setOpaque(true);
@@ -4680,36 +4619,104 @@ class Main extends javax.swing.JFrame {
         labelSampah.setText(Float.toString(totalSampah()));
         labelNasabah.setText(Integer.toString(jumlahNasabah()));
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_1MousePressed
+    }//GEN-LAST:event_btn_1MouseClicked
 
-    private void btn_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MousePressed
+    private void btn_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MouseExited
+
+    }//GEN-LAST:event_btn_1MouseExited
+
+    private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
+        Tabpane.setSelectedIndex(1);
+        setColor(btn_2);
+//        ind_2.setOpaque(true);
+        resetColor(new JPanel[]{btn_1, btn_3, btn_4, btn_5, btn_7, btn_6});
+    }//GEN-LAST:event_btn_2MouseClicked
+
+    private void btn_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_2MouseExited
+
+    private void btn_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseClicked
         Tabpane.setSelectedIndex(2);
         setColor(btn_3);
 //        ind_3.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_1, btn_4, btn_5, btn_7, btn_6, btn_8});
-    }//GEN-LAST:event_btn_3MousePressed
+    }//GEN-LAST:event_btn_3MouseClicked
 
-    private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
+    private void btn_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_3MouseExited
+
+    private void btn_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseClicked
         Tabpane.setSelectedIndex(3);
         setColor(btn_4);
 //        ind_4.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3, btn_1, btn_5, btn_7, btn_6, btn_8});
-    }//GEN-LAST:event_btn_4MousePressed
+    }//GEN-LAST:event_btn_4MouseClicked
 
-    private void btn_5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MousePressed
+    private void btn_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_4MouseExited
+
+    private void btn_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseClicked
         Tabpane.setSelectedIndex(4);
         setColor(btn_5);
 //        ind_5.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_1, btn_7, btn_6, btn_8});
         this.penjualan_id_pengepul.requestFocus();
+    }//GEN-LAST:event_btn_5MouseClicked
 
-    }//GEN-LAST:event_btn_5MousePressed
+    private void btn_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_5MouseExited
 
-    private void btn_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MousePressed
+    private void btn_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseClicked
         Tabpane.setSelectedIndex(5);
         setColor(btn_6);
 //        ind_6.setOpaque(true);
         resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5, btn_7, btn_1, btn_8});
+    }//GEN-LAST:event_btn_6MouseClicked
+
+    private void btn_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_6MouseExited
+
+    private void btn_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MousePressed
+
+    }//GEN-LAST:event_btn_2MousePressed
+
+    private void btn_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_7MouseClicked
+
+        dialogPassword dp = new dialogPassword(this, true);
+        dialogPassword.confirmasi_password_jpassword.requestFocus();
+        dp.setVisible(true);
+
+
+    }//GEN-LAST:event_btn_7MouseClicked
+
+    private void btn_7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_7MouseExited
+
+    private void btn_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MousePressed
+
+    }//GEN-LAST:event_btn_1MousePressed
+
+    private void btn_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MousePressed
+
+    }//GEN-LAST:event_btn_3MousePressed
+
+    private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
+
+    }//GEN-LAST:event_btn_4MousePressed
+
+    private void btn_5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MousePressed
+
+
+    }//GEN-LAST:event_btn_5MousePressed
+
+    private void btn_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MousePressed
+
     }//GEN-LAST:event_btn_6MousePressed
 
     private void btn_7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_7MousePressed
@@ -4722,29 +4729,27 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_7MousePressed
 
     private void btn_8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_8MousePressed
-//        this.dispose();
-//        Login a = new Login(this, true);
-//        a.setVisible(true);
-        setColor(btn_8);
-////        ind_7.setOpaque(true);
-        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5, btn_1, btn_6, btn_7});
-        int pesankeluar = JOptionPane.showOptionDialog(this, "Apakah Benar Ingin Keluar?", "Keluar", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 
-        if (pesankeluar == JOptionPane.YES_OPTION) {
-            this.dispose();
-            Login_user show = new Login_user(this, true);
-            
-
-            show.setVisible(true);
-            Login_user.login_user_username.requestFocus();
-
-        }
 
     }//GEN-LAST:event_btn_8MousePressed
 
     private void btn_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_8MouseClicked
 //        Dialog_keluar keluar = new Dialog_keluar(this, true);
 //        keluar.setVisible(true);
+
+        setColor(btn_8);
+
+        resetColor(new JPanel[]{btn_2, btn_3, btn_4, btn_5, btn_1, btn_6, btn_7});
+        int pesankeluar = JOptionPane.showOptionDialog(this, "Apakah Benar Ingin Keluar?", "Keluar", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+
+        if (pesankeluar == JOptionPane.YES_OPTION) {
+            this.dispose();
+            Login_user show = new Login_user(this, true);
+
+            show.setVisible(true);
+            Login_user.login_user_username.requestFocus();
+
+        }
 
 
     }//GEN-LAST:event_btn_8MouseClicked
@@ -4939,15 +4944,23 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_simpan_tabungan1MouseClicked
 
     private void penarikan_jumlah_penarikan_saldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penarikan_jumlah_penarikan_saldoActionPerformed
+        try {
+            int totalsaldo = Integer.parseInt(this.penarikan_total_saldo_nas.getText());
+            int penarikan = Integer.parseInt(this.penarikan_jumlah_penarikan_saldo.getText());
+            if (totalsaldo >= penarikan) {
+                if (penarikan_jumlah_penarikan_saldo.getText().equals("")) {
 
-        int totalsaldo = Integer.parseInt(this.penarikan_total_saldo_nas.getText());
-        int penarikan = Integer.parseInt(this.penarikan_jumlah_penarikan_saldo.getText());
-        if (totalsaldo >= penarikan) {
-            perhitunganpenarikansaldo();
+                }
 
-        } else {
-            JOptionPane.showMessageDialog(this, "jumlah penarikan lebih besar dari jumlah saldo nasabah, silakan periksa lagi !");
+                perhitunganpenarikansaldo();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "jumlah penarikan lebih besar dari jumlah saldo nasabah, silakan periksa lagi !");
+            }
+
+        } catch (Exception e) {
         }
+
 
     }//GEN-LAST:event_penarikan_jumlah_penarikan_saldoActionPerformed
 
@@ -5061,11 +5074,14 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_simpan_tabunganMouseClicked
 
     private void tabung_banyak_sampahKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tabung_banyak_sampahKeyTyped
-//        char karakter = evt.getKeyChar();
-//        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE)))) {
-//            getToolkit().beep();
-//            evt.consume();
-//        }
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE || (karakter == KeyEvent.VK_ENTER))))) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Hanya Boleh Memasukkan Angka !");
+
+        }
     }//GEN-LAST:event_tabung_banyak_sampahKeyTyped
 
     private void tabung_banyak_sampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabung_banyak_sampahActionPerformed
@@ -5772,8 +5788,30 @@ class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonHover33ActionPerformed
 
     private void main_password_confirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_password_confirmasiActionPerformed
-        
+
     }//GEN-LAST:event_main_password_confirmasiActionPerformed
+
+    private void penarikan_jumlah_penarikan_saldoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_penarikan_jumlah_penarikan_saldoKeyTyped
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE || (karakter == KeyEvent.VK_ENTER))))) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Hanya Boleh Memasukkan Angka !");
+
+        }
+    }//GEN-LAST:event_penarikan_jumlah_penarikan_saldoKeyTyped
+
+    private void penjualan_jumlah_sampahKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_penjualan_jumlah_sampahKeyTyped
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE || (karakter == KeyEvent.VK_ENTER))))) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Hanya Boleh Memasukkan Angka !");
+
+        }
+    }//GEN-LAST:event_penjualan_jumlah_sampahKeyTyped
 
     /**
      * @param args the command line arguments
