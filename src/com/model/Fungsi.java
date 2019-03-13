@@ -69,13 +69,16 @@ public class Fungsi {
         }
 
     }
-
-    public static boolean createUserAplikasi(Query s) {
-        String sql = Query.REGISTER_USER;
+    public static boolean createPetugas(Query s) {
+        String sql = Query.REGISTER_PETUGAS;
         try {
             ps = konek.prepareStatement(sql);
-            ps.setString(1, s.getUsername());
-            ps.setString(2, s.getPassword());
+            ps.setString(1, s.getId_user());
+            ps.setString(2, s.getNama());
+            ps.setString(3, s.getUsername());
+            ps.setString(4, s.getPassword());
+            ps.setString(5, s.getBintang());
+            
 
             ps.executeUpdate();
             return true;
@@ -86,6 +89,23 @@ public class Fungsi {
         }
 
     }
+
+//    public static boolean createUserAplikasi(Query s) {
+//        String sql = Query.REGISTER_USER;
+//        try {
+//            ps = konek.prepareStatement(sql);
+//            ps.setString(1, s.getUsername());
+//            ps.setString(2, s.getPassword());
+//
+//            ps.executeUpdate();
+//            return true;
+//
+//        } catch (SQLException ex) {
+//            return false;
+////            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//    }
 
     public static boolean createSampah(Query s) {
         String sql = Query.REGISTER_SAMPAH;
@@ -194,6 +214,27 @@ public class Fungsi {
         }
 
     }
+    public static boolean updatePetugas(Query s) {
+        String sql = Query.UPDATE_PETUGAS;
+
+        try {
+            ps = konek.prepareStatement(sql);
+            ps.setString(1, s.getNama());
+            ps.setString(2, s.getUsername());
+            ps.setString(3, s.getPassword());
+            ps.setString(4, s.getBintang());
+            ps.setString(5, s.getId_user());
+            
+            ps.executeUpdate();
+            return true;
+
+        } catch (SQLException ex) {
+            return false;
+
+//            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 
     public static boolean updateUser(Query s) {
         String sql = Query.UPDATE_USER;
@@ -203,6 +244,25 @@ public class Fungsi {
             ps.setString(1, s.getUsername());
             ps.setString(2, s.getPassword());
             ps.setString(3, s.getId_user());
+            ps.executeUpdate();
+            return true;
+
+        } catch (SQLException ex) {
+            return false;
+
+//            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public static boolean updateAdmin(Query s) {
+        String sql = Query.UPDATE_ADMIN;
+
+        try {
+            ps = konek.prepareStatement(sql);
+            ps.setString(1, s.getNama());
+            ps.setString(2, s.getUsername());
+            ps.setString(3, s.getPassword());
+            ps.setString(4, s.getId_admin());
             ps.executeUpdate();
             return true;
 
@@ -272,6 +332,48 @@ public class Fungsi {
                 Data[0] = rs.getString("id_nas");
                 Data[1] = rs.getString("kode_nas");
                 Data[2] = rs.getString("nama_nas");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+    public static void Tabel_petugas(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main_Admin.tabel_petugas.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+            sql = Query.DAFTAR_PETUGAS;
+
+        } else {
+            sql = "SELECT * FROM user WHERE ("
+                    + "id_user LIKE'" + cari + "%' OR "
+                    + "nama LIKE'" + cari + "%' OR "
+                    + "username LIKE'" + cari + "%' OR "
+                    + "password LIKE'" + cari + "%'"
+                    + ")";
+        }
+        String Data[] = new String[4];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+
+                Data[0] = rs.getString("id_user");
+                Data[1] = rs.getString("nama");
+                Data[2] = rs.getString("username");
+                
+                Data[3] = rs.getString("bintang");
 
                 model.addRow(Data);
 
@@ -806,6 +908,65 @@ public class Fungsi {
             Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public static void Tabel_admin_setoran(String cari) {
+        DefaultTableModel model = (DefaultTableModel) Main_Admin.tabel_admin_setoran.getModel();
+
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+
+        String sql = "";
+        if (cari.equals("")) {
+//            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            String startDateString = dateFormat.format(Main.laporan_date_dari2.getDate());
+////            Date tanggalLaporan = Main.laporan_date_dari2.getDate();
+            sql = Query.DAFTAR_SIMPANAN;
+////            sql = "SELECT * FROM laporan_tabungan WHERE kode_nas = '" + Main.buku_tabungan_id_nasabah.getText() + "'";
+////            sql = "SELECT * FROM laporan_tabungan WHERE tgl_tabungan = '" + startDateString + "'";
+//
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+//            String tgl_DARI = format.format(Main.laporan_date_setoran_dari.getDate());
+//            String tgl_SAMPAI = format.format(Main.laporan_date_setoran_sampai.getDate());
+//
+////            String sampai = "2019/02/25";
+//            sql = "select * from simpanan where tgl_sim>='" + tgl_DARI + "'and tgl_sim<='" + tgl_SAMPAI + "'";
+////            sql = "select * from laporan_tabungan where tgl_tabungan between '"+dari+"and "+sampai"'";
+////            SELECT * FROM `tabungan` WHERE `tanggal` BETWEEN '09/01/2019' AND '11/01/2019'
+        } else {
+//            sql = "SELECT * FROM simpanan WHERE ("
+//                                        + "tgl_sim LIKE'" + cari + "%'";
+//                                        + "tgl_tabungan LIKE'" + cari + "%' OR "
+//                                        + "kode_nas LIKE'" + cari + "%' OR "
+//                                        + "nama_samp LIKE'" + cari + "%' OR "
+//                                        + "harga_1 LIKE'" + cari + "%' OR "
+//                                        + "harga_2 LIKE'" + cari + "%' OR "
+//                                        + "harga_pgul LIKE'" + cari + "%' OR "
+//                    + "kode_nas LIKE'" + cari + "%'"
+//                    + ")" + "ORDER BY laporan_tabungan.tgl_tabungan ASC";
+        }
+        String Data[] = new String[7];
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                Data[0] = rs.getString("id_sim");    
+                Data[1] = rs.getString("tgl_sim");
+                Data[2] = rs.getString("kode_nas");
+                Data[3] = rs.getString("nama_samp");
+                Data[4] = rs.getString("harga_samp");
+                Data[5] = rs.getString("qty_samp");
+                Data[6] = rs.getString("total_samp");
+
+                model.addRow(Data);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 
     public static void Tabel_laporan_penarikan(String cari) {
         DefaultTableModel model = (DefaultTableModel) Main.tabel_laporan_penarikan.getModel();
@@ -983,6 +1144,56 @@ public class Fungsi {
         } catch (SQLException ex) {
             Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+    }
+    
+    
+    //HAPUS
+    
+    public static boolean hapus_Petugas(Query s) {
+        String sql = Query.DELETE_PETUGAS;
+        try {
+            ps = konek.prepareStatement(sql);
+            ps.setString(1, s.getId_user());
+            ps.executeUpdate();
+            return true;
+
+        } catch (SQLException ex) {
+            return false;
+
+//            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+     public static String extraeIDMax() {
+        String sql = "SELECT MAX(id_user) FROM user";
+        int id_user = 0;
+
+        try {
+            Statement st = konek.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            if (rs.next()) {
+                id_user = rs.getInt(1);
+
+            }
+
+            if (id_user == 0) {
+                id_user = 1;
+
+            } else {
+                id_user = id_user + 1;
+
+            }
+            return String.valueOf(id_user);
+
+        } catch (SQLException ex) {
+            return null;
+
+//            Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        return null;
 
     }
 

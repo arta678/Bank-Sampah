@@ -740,7 +740,7 @@ class Main extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("NanumGothic", 0, 20)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/gambar/setting.png"))); // NOI18N
-        jLabel16.setText(" Pengaturan");
+        jLabel16.setText(" Password");
 
         javax.swing.GroupLayout btn_7Layout = new javax.swing.GroupLayout(btn_7);
         btn_7.setLayout(btn_7Layout);

@@ -502,7 +502,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/com/gambar/setting.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value=" Pengaturan"/>
+                    <Property name="text" type="java.lang.String" value=" Password"/>
                   </Properties>
                 </Component>
               </SubComponents>

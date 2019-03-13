@@ -12,7 +12,7 @@ package com.model;
 public class Query {
 
     public static String DAFTAR_NASABAH = "SELECT * FROM nasabah";
-    public static String DAFTAR_PETUGAS = "SELECT * FROM petugas";
+    public static String DAFTAR_PETUGAS = "SELECT * FROM user";
      public static String DAFTAR_USER = "SELECT * FROM user";
     public static String DAFTAR_SAMPAH = "SELECT * FROM sampah";
      public static String DAFTAR_SAMPAH2 = "SELECT * FROM sampah";
@@ -34,10 +34,13 @@ public class Query {
             + "hp_nas, "
             + "saldo_nas)"
             + "VALUES(?,?,?,?,?)";
-    public static String REGISTER_USER= "INSERT INTO user("
+    public static String REGISTER_PETUGAS= "INSERT INTO user("
+            + "id_user,"
+            + "nama,"
             + "username,"
-            + "password)"
-            + "VALUES(?,?)";
+            + "password,"
+            + "bintang)"
+            + "VALUES(?,?,?,?,?)";
     public static String REGISTER_PENJUALAN = "INSERT INTO penjualan("
             + "tgl_jual,"
             + "nama_pengepul,"
@@ -86,6 +89,18 @@ public class Query {
             + "password = ?"
             + "WHERE id_user = ?";
     
+    public static String UPDATE_PETUGAS = "UPDATE user SET "
+            + "nama= ?,"
+            + "username= ?,"
+            + "password = ?,"
+            + "bintang= ?"
+            + "WHERE id_user = ?";
+    public static String UPDATE_ADMIN = "UPDATE admin SET "
+            + "nama= ?,"
+            + "username= ?,"
+            + "password= ?"
+            + "WHERE id_admin = ?";
+    
     public static String UPDATE_SAMPAH = "UPDATE sampah SET "
             + "kode_samp = ?,"
             + "kategori = ?,"
@@ -95,6 +110,11 @@ public class Query {
             + "harga_pgul = ?,"
             + "stok = ?"
             + "WHERE id_samp = ?";
+    
+    
+    //HAPUS
+    
+    public static String DELETE_PETUGAS = "DELETE FROM user WHERE id_user = ?";
 
     //GET SET
     //GET SET
@@ -128,6 +148,10 @@ public class Query {
     private String harga_pgul;
     private String stok;
     private String catatan_samp;
+    
+    
+    private  String nama;
+    private  String bintang;
     //--------
 
     //SIMPANAN
@@ -144,6 +168,38 @@ public class Query {
     private String tgl_pen;
     private String id_pen;
     private String saldo_penarikan;
+    
+    private String id_admin;
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getBintang() {
+        return bintang;
+    }
+
+    public void setBintang(String bintang) {
+        this.bintang = bintang;
+    }
+    
+    
+    
+    
+    
+
+    public String getId_admin() {
+        return id_admin;
+    }
+
+    public void setId_admin(String id_admin) {
+        this.id_admin = id_admin;
+    }
+    
     
         
     

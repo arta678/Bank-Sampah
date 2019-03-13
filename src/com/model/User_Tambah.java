@@ -196,36 +196,36 @@ public class User_Tambah extends javax.swing.JDialog {
     private void btn_simpan_nasabahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpan_nasabahActionPerformed
         
 
-        if (this.user_username.getText().length() == 0
-                || this.user_password.getText().length() == 0
-                ) {
-
-            JOptionPane.showMessageDialog(this,
-                    "Semua harus diisi", "INFO", JOptionPane.WARNING_MESSAGE);
-
-        } else {
-           
-            Query s = new Query();
-            s.setId_user(this.txt_id.getText());
-            s.setUsername(this.user_username.getText());
-            s.setPassword(this.user_password.getText());
-            
-            
-            if (Fungsi.createUserAplikasi(s)) {
-
-//                setClean();
-//                Fungsi.Tabel_User("");
-//                ts.clickGo();
-                JOptionPane.showMessageDialog(this,
-                        "Pendaftaran Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
-
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        "Pendaftaran Gagal !", "ERROR", JOptionPane.ERROR_MESSAGE);
-            }
-
-        }
-        this.dispose();
+//        if (this.user_username.getText().length() == 0
+//                || this.user_password.getText().length() == 0
+//                ) {
+//
+//            JOptionPane.showMessageDialog(this,
+//                    "Semua harus diisi", "INFO", JOptionPane.WARNING_MESSAGE);
+//
+//        } else {
+//           
+//            Query s = new Query();
+//            s.setId_user(this.txt_id.getText());
+//            s.setUsername(this.user_username.getText());
+//            s.setPassword(this.user_password.getText());
+//            
+//            
+//            if (Fungsi.createUserAplikasi(s)) {
+//
+////                setClean();
+////                Fungsi.Tabel_User("");
+////                ts.clickGo();
+//                JOptionPane.showMessageDialog(this,
+//                        "Pendaftaran Sukses !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+//
+//            } else {
+//                JOptionPane.showMessageDialog(this,
+//                        "Pendaftaran Gagal !", "ERROR", JOptionPane.ERROR_MESSAGE);
+//            }
+//
+//        }
+//        this.dispose();
     }//GEN-LAST:event_btn_simpan_nasabahActionPerformed
 
     private void user_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_usernameActionPerformed

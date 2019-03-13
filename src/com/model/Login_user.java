@@ -226,15 +226,15 @@ login_user_password.requestFocus();
     }//GEN-LAST:event_LoginActionPerformed
 
     private void Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login1ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_Login1ActionPerformed
-
-    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        Login_ADMIN show = new Login_ADMIN(null, true);
+         Login_ADMIN show = new Login_ADMIN(null, true);
         show.setVisible(true);
         Login_ADMIN.login_admin_username.requestFocus();
         
         this.dispose();
+    }//GEN-LAST:event_Login1ActionPerformed
+
+    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+      
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void login_user_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_user_passwordActionPerformed

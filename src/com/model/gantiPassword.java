@@ -173,7 +173,16 @@ this.dispose();
 
     private void Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login1ActionPerformed
 //        if (this.gantipassword_lama.getText() == Main.main_password_user.getText()) {
-            Query s = new Query();
+        if (this.gantipassword_nama.getText().length() == 0
+                || this.gantipassword_baru.getText().length() == 0
+                ) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Tidak Boleh kosong", "INFO", JOptionPane.WARNING_MESSAGE);
+
+        } else{   
+        
+        Query s = new Query();
             s.setId_user(gantipassword_id_user.getText());
             s.setUsername(gantipassword_nama.getText());
             s.setPassword(gantipassword_baru.getText());
@@ -186,7 +195,7 @@ this.dispose();
                         "Gagal Ganti Password !", "ERROR", JOptionPane.ERROR_MESSAGE);
             } 
            this.dispose();
-//        }
+        }
         
         
         
